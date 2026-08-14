@@ -1,176 +1,24 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Prime24 AI — AI Systems Built Around Your Business</title>
-  <meta name="description" content="Prime24 AI finds repetitive work, designs supervised AI workflows, and deploys practical AI systems fast. Powered by ALPHA." />
-  <style>
-    :root{
-      --bg:#07100d; --panel:#0c1713; --panel2:#0f1d18; --ink:#f4f7f5; --muted:#aebdb5;
-      --line:#203129; --accent:#8cffb6; --accent2:#41d982; --glow:rgba(140,255,182,.18);
-      --max:1180px;
-    }
-    *{box-sizing:border-box}
-    html{scroll-behavior:smooth}
-    body{margin:0;background:
-      radial-gradient(1000px 520px at 75% -10%,rgba(65,217,130,.14),transparent 60%),
-      radial-gradient(800px 500px at 0% 25%,rgba(140,255,182,.08),transparent 60%),
-      var(--bg);color:var(--ink);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
-    a{color:inherit;text-decoration:none}
-    .wrap{width:min(var(--max),calc(100% - 40px));margin:auto}
-    .nav{position:sticky;top:0;z-index:20;background:rgba(7,16,13,.82);backdrop-filter:blur(18px);border-bottom:1px solid rgba(255,255,255,.06)}
-    .navin{height:74px;display:flex;align-items:center;justify-content:space-between}
-    .brand{font-weight:900;letter-spacing:-.04em;font-size:20px}.brand span{color:var(--accent)}
-    .links{display:flex;gap:28px;align-items:center;color:var(--muted);font-size:14px}
-    .btn{display:inline-flex;align-items:center;justify-content:center;padding:13px 18px;border-radius:12px;border:1px solid var(--line);font-weight:750;font-size:14px;transition:.2s}
-    .btn.primary{background:var(--accent);color:#07100d;border-color:var(--accent);box-shadow:0 0 0 6px rgba(140,255,182,.06)}
-    .btn:hover{transform:translateY(-1px)}
-    .hero{padding:110px 0 70px}
-    .eyebrow{display:inline-flex;gap:8px;align-items:center;border:1px solid var(--line);border-radius:999px;padding:7px 11px;color:#cfe5d9;background:rgba(255,255,255,.02);font-size:12px;font-weight:700;letter-spacing:.04em;text-transform:uppercase}
-    .dot{width:7px;height:7px;border-radius:50%;background:var(--accent);box-shadow:0 0 14px var(--accent)}
-    h1{font-size:clamp(52px,8vw,96px);line-height:.95;letter-spacing:-.065em;margin:24px 0 26px;max-width:1050px}
-    h1 em{font-style:normal;color:var(--accent)}
-    .lead{max-width:760px;font-size:20px;line-height:1.6;color:var(--muted)}
-    .cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:34px}
-    .proofrow{display:flex;gap:28px;flex-wrap:wrap;margin-top:44px;color:#c7d5ce;font-size:13px}
-    .proofrow span:before{content:"✓";color:var(--accent);margin-right:8px;font-weight:900}
-    section{padding:88px 0}
-    .kicker{color:var(--accent);font-weight:800;font-size:12px;text-transform:uppercase;letter-spacing:.12em}
-    h2{font-size:clamp(36px,5vw,60px);line-height:1.02;letter-spacing:-.05em;margin:10px 0 18px}
-    .sub{color:var(--muted);font-size:18px;line-height:1.6;max-width:760px}
-    .grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:34px}
-    .card{padding:24px;border:1px solid var(--line);border-radius:18px;background:linear-gradient(180deg,rgba(255,255,255,.025),rgba(255,255,255,.01));min-height:190px}
-    .card b{display:block;font-size:19px;margin-bottom:12px}.card p{color:var(--muted);line-height:1.55;font-size:14px;margin:0}
-    .icon{font-size:22px;margin-bottom:20px;color:var(--accent)}
-    .workflow{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:36px}
-    .panel{border:1px solid var(--line);border-radius:22px;background:var(--panel);padding:28px}
-    .steps{display:grid;gap:12px;margin-top:20px}
-    .step{display:flex;gap:13px;padding:14px;border:1px solid var(--line);border-radius:14px;background:rgba(255,255,255,.018)}
-    .num{height:28px;width:28px;display:grid;place-items:center;border-radius:9px;background:var(--glow);color:var(--accent);font-weight:800;font-size:12px}
-    .step div:last-child{color:#dfe8e3}.step small{display:block;color:var(--muted);margin-top:4px}
-    .alpha{border:1px solid rgba(140,255,182,.34);background:radial-gradient(650px 260px at 90% 10%,rgba(140,255,182,.12),transparent 60%),var(--panel2)}
-    .alpha .big{font-size:48px;font-weight:950;letter-spacing:-.055em;margin:8px 0}
-    .alpha ul{padding:0;list-style:none;color:var(--muted);line-height:2}
-    .alpha li:before{content:"◆";color:var(--accent);margin-right:10px;font-size:9px}
-    .offers{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:34px}
-    .offer{border:1px solid var(--line);border-radius:20px;padding:26px;background:var(--panel);position:relative}
-    .offer.featured{border-color:rgba(140,255,182,.55);box-shadow:0 0 40px rgba(140,255,182,.06)}
-    .tag{position:absolute;right:16px;top:16px;font-size:10px;font-weight:900;color:#07100d;background:var(--accent);border-radius:999px;padding:5px 8px}
-    .price{font-size:34px;letter-spacing:-.04em;font-weight:900;margin:18px 0 4px}.offer p{color:var(--muted);font-size:14px;line-height:1.5}.offer ul{padding:0;list-style:none;color:#d2ded8;font-size:13px;line-height:2}.offer li:before{content:"✓";color:var(--accent);margin-right:8px}
-    .bot{display:grid;grid-template-columns:.9fr 1.1fr;gap:20px;margin-top:36px}
-    .chat{border:1px solid var(--line);border-radius:22px;background:#f5faf7;color:#0a1711;overflow:hidden}
-    .chathead{background:#123025;color:white;padding:16px 18px;display:flex;justify-content:space-between;align-items:center}.online{font-size:12px;color:#baf8d0}
-    .messages{padding:18px;display:grid;gap:12px}.bubble{max-width:84%;padding:11px 13px;border-radius:14px;background:#e4eee8;font-size:14px;line-height:1.45}.bubble.bot{background:#d6f7e3}
-    .input{margin:0 18px 18px;border:1px solid #cbd8d0;border-radius:12px;padding:12px;color:#6c7972}
-    .final{padding:96px 0 110px;text-align:center}.final .box{border:1px solid var(--line);border-radius:28px;padding:58px 26px;background:radial-gradient(500px 220px at 50% 0%,rgba(140,255,182,.11),transparent 70%),var(--panel)}
-    footer{border-top:1px solid var(--line);padding:30px 0;color:#829188;font-size:13px}.foot{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
-    @media(max-width:900px){.grid,.offers{grid-template-columns:1fr 1fr}.workflow,.bot{grid-template-columns:1fr}.links a:not(.btn){display:none}}
-    @media(max-width:600px){.wrap{width:min(100% - 24px,var(--max))}.hero{padding-top:76px}.grid,.offers{grid-template-columns:1fr}h1{font-size:52px}.lead{font-size:17px}}
-  </style>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Prime24 AI — AI Systems Built Around Your Business</title>
+<meta name="description" content="Prime24 AI finds repetitive work, routes it through ALPHA specialist agents, and builds supervised AI systems fast.">
+<link rel="canonical" href="https://prime24ai.com/"><meta property="og:title" content="Prime24 AI — Powered by ALPHA"><meta property="og:description" content="Run a business mission through ALPHA and see the specialist team, workflow, tools, and approval boundary."><meta property="og:url" content="https://prime24ai.com/"><meta property="og:type" content="website">
+<link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <nav class="nav"><div class="wrap navin">
-    <a class="brand" href="#">Prime24 <span>AI</span></a>
-    <div class="links">
-      <a href="#systems">Systems</a><a href="#alpha">ALPHA</a><a href="#offers">Offers</a><a href="#chatbots">Chatbots</a>
-      <a class="btn primary" href="mailto:darnley.weekes@gmail.com?subject=Free%20Prime24%20AI%20Workflow%20Assessment">Free Workflow Assessment</a>
-    </div>
-  </div></nav>
-
-  <main>
-    <header class="hero"><div class="wrap">
-      <div class="eyebrow"><span class="dot"></span> Powered by ALPHA · Supervised AI Operations</div>
-      <h1>AI systems built around <em>your business.</em></h1>
-      <p class="lead">Prime24 AI finds the repetitive work consuming your team's time, designs the right supervised AI workflow, and deploys practical systems fast — without forcing you to become an AI expert.</p>
-      <div class="cta">
-        <a class="btn primary" href="mailto:darnley.weekes@gmail.com?subject=Free%20Prime24%20AI%20Workflow%20Assessment">Get a Free Workflow Assessment →</a>
-        <a class="btn" href="https://darnleyweekes-spec.github.io/jarvis-workforce-hq/" target="_blank" rel="noopener">See ALPHA in Action</a>
-      </div>
-      <div class="proofrow"><span>Human approval stays in control</span><span>One meaningful workflow at a time</span><span>Built for measurable business outcomes</span></div>
-    </div></header>
-
-    <section id="systems"><div class="wrap">
-      <div class="kicker">Start with the work</div>
-      <h2>What should disappear from your team's week?</h2>
-      <p class="sub">We do not start by selling “AI.” We start with the expensive repetitive work your team should not be doing manually.</p>
-      <div class="grid">
-        <div class="card"><div class="icon">↗</div><b>Lead qualification</b><p>Research, enrich, score, summarize, and prepare leads before a human takes over.</p></div>
-        <div class="card"><div class="icon">◎</div><b>Client intake</b><p>Collect requests, classify needs, prepare next steps, and route work to the right person.</p></div>
-        <div class="card"><div class="icon">⌕</div><b>Research</b><p>Turn open-ended market, company, competitor, or document research into source-backed briefs.</p></div>
-        <div class="card"><div class="icon">◫</div><b>Document workflows</b><p>Extract, categorize, summarize, request missing information, and prepare human review.</p></div>
-        <div class="card"><div class="icon">↻</div><b>Follow-up</b><p>Prepare personalized follow-ups, status updates, reminders, and next-action recommendations.</p></div>
-        <div class="card"><div class="icon">▦</div><b>Reporting</b><p>Turn recurring inputs into concise weekly, monthly, client, or management reporting.</p></div>
-        <div class="card"><div class="icon">◇</div><b>Knowledge retrieval</b><p>Give teams fast answers from internal documents, procedures, policies, and business knowledge.</p></div>
-        <div class="card"><div class="icon">◉</div><b>AI customer support</b><p>Deploy brand-aligned assistants that answer questions, qualify requests, and capture leads 24/7.</p></div>
-      </div>
-    </div></section>
-
-    <section id="alpha"><div class="wrap">
-      <div class="workflow">
-        <div class="panel">
-          <div class="kicker">The Prime24 method</div>
-          <h2 style="font-size:42px">Find it. Map it. Build it.</h2>
-          <div class="steps">
-            <div class="step"><div class="num">1</div><div>Identify the expensive workflow<small>Where does repetitive work consume staff time?</small></div></div>
-            <div class="step"><div class="num">2</div><div>Map AI vs. human ownership<small>Automate preparation and repetition — not sensitive judgment.</small></div></div>
-            <div class="step"><div class="num">3</div><div>Build one bounded system<small>Integrate the workflow, controls, tools, and handoffs.</small></div></div>
-            <div class="step"><div class="num">4</div><div>Measure and improve<small>Track output, time saved, quality, failures, and expansion opportunities.</small></div></div>
-          </div>
-        </div>
-        <div class="panel alpha">
-          <div class="kicker">Powered by ALPHA</div>
-          <div class="big">A supervised AI operating system.</div>
-          <p class="sub" style="font-size:16px">ALPHA coordinates specialist capabilities for research, workflow design, automation, analysis, implementation, and quality control — while keeping human approval gates around important decisions.</p>
-          <ul><li>Skill-first agent routing</li><li>Research with source grounding</li><li>Human approval boundaries</li><li>Validation and failure controls</li><li>Reusable workflow modules</li><li>Continuous optimization</li></ul>
-          <a class="btn" href="https://darnleyweekes-spec.github.io/jarvis-workforce-hq/" target="_blank" rel="noopener">Open ALPHA Mission Control →</a>
-        </div>
-      </div>
-    </div></section>
-
-    <section id="offers"><div class="wrap">
-      <div class="kicker">Simple path to value</div>
-      <h2>Start small. Prove it. Then scale.</h2>
-      <p class="sub">No giant transformation project required. Begin with one workflow and expand only when the economics make sense.</p>
-      <div class="offers">
-        <div class="offer"><b>Workflow Assessment</b><div class="price">Free</div><p>A short diagnostic to identify the best first opportunity.</p><ul><li>Likely bottleneck</li><li>Automation opportunity</li><li>Human-owned decisions</li></ul><a class="btn" href="mailto:darnley.weekes@gmail.com?subject=Free%20Prime24%20AI%20Workflow%20Assessment">Request Assessment</a></div>
-        <div class="offer featured"><div class="tag">BEST FIRST STEP</div><b>48-Hour Blueprint</b><div class="price">$299</div><p>A complete implementation map for one business workflow.</p><ul><li>Current-state audit</li><li>Technical stack</li><li>Approval controls</li><li>30-day rollout plan</li></ul><a class="btn primary" href="mailto:darnley.weekes@gmail.com?subject=Prime24%20AI%2048-Hour%20Blueprint">Start Blueprint</a></div>
-        <div class="offer"><b>AI Build Sprint</b><div class="price">$1,500+</div><p>We build the approved workflow and get it operating.</p><ul><li>One meaningful workflow</li><li>Integrations</li><li>Testing and controls</li><li>Launch support</li></ul><a class="btn" href="mailto:darnley.weekes@gmail.com?subject=Prime24%20AI%20Build%20Sprint">Discuss a Build</a></div>
-        <div class="offer"><b>Managed AI Ops</b><div class="price">$500+/mo</div><p>Ongoing monitoring, optimization, reporting, and expansion.</p><ul><li>Workflow health</li><li>Optimization</li><li>KPI reviews</li><li>Expansion planning</li></ul><a class="btn" href="mailto:darnley.weekes@gmail.com?subject=Prime24%20AI%20Managed%20Ops">Explore Managed Ops</a></div>
-      </div>
-    </div></section>
-
-    <section id="chatbots"><div class="wrap">
-      <div class="kicker">Still available</div>
-      <h2>Chatbots are one system we build.</h2>
-      <p class="sub">Prime24 AI began with fast custom chatbots. That offer stays — now it sits inside a broader AI systems practice.</p>
-      <div class="bot">
-        <div class="panel">
-          <h3 style="font-size:30px;letter-spacing:-.035em;margin-top:0">Custom AI chatbot</h3>
-          <p class="sub" style="font-size:16px">Trained on your business information and brand voice. Use it to answer FAQs, qualify leads, capture inquiries, and reduce repetitive support work.</p>
-          <div class="proofrow" style="display:grid;gap:10px;margin-top:24px"><span>24/7 customer answers</span><span>Lead capture and qualification</span><span>Brand-aligned responses</span><span>Optional ongoing maintenance</span></div>
-          <div class="cta"><a class="btn primary" href="mailto:darnley.weekes@gmail.com?subject=Prime24%20AI%20Chatbot">Build My Chatbot →</a></div>
-        </div>
-        <div class="chat">
-          <div class="chathead"><b>Bailey · Sunrise Wellness Studio</b><span class="online">● Online</span></div>
-          <div class="messages">
-            <div class="bubble bot">Hi! I’m Bailey, the AI assistant for Sunrise Wellness Studio. What can I help you with today?</div>
-            <div class="bubble" style="margin-left:auto">What classes do you offer?</div>
-            <div class="bubble bot">We offer yoga, strength, mobility, and small-group coaching. I can also help you find the right class and explain pricing.</div>
-          </div>
-          <div class="input">Ask Bailey anything…</div>
-        </div>
-      </div>
-    </div></section>
-
-    <section class="final"><div class="wrap"><div class="box">
-      <div class="kicker">Free first step</div>
-      <h2>Tell us the workflow that wastes your team's time.</h2>
-      <p class="sub" style="margin:0 auto 28px">ALPHA will identify the bottleneck, what AI can realistically prepare, and what should remain human-owned.</p>
-      <a class="btn primary" href="mailto:darnley.weekes@gmail.com?subject=Free%20Prime24%20AI%20Workflow%20Assessment">Get My Free Assessment →</a>
-    </div></div></section>
-  </main>
-
-  <footer><div class="wrap foot"><div><b>Prime24 AI</b> · Powered by ALPHA</div><div>AI systems built around your business.</div></div></footer>
-</body>
-</html>
+<nav><div class="wrap nav"><a class="brand" href="#">Prime24 <span>AI</span></a><div class="links"><a href="#mission">Mission Lab</a><a href="#systems">Systems</a><a href="#agents">Agents</a><a href="#offers">Offers</a><a class="btn primary" href="mailto:darnley.weekes@gmail.com?subject=Free%20Prime24%20AI%20Workflow%20Assessment">Free Assessment</a></div></div></nav>
+<main>
+<header class="hero"><div class="wrap"><div class="pill"><i></i> POWERED BY ALPHA · SUPERVISED AI OPERATIONS</div><h1>AI systems built around <em>your business.</em></h1><p class="lead">Prime24 AI finds the repetitive work consuming your team’s time, routes the problem to the right specialist agents, and turns it into a supervised AI workflow with humans in control of important decisions.</p><div class="actions"><a class="btn primary" href="#mission">Run a Mission with ALPHA →</a><a class="btn" href="mailto:darnley.weekes@gmail.com?subject=Free%20Prime24%20AI%20Workflow%20Assessment">Get Free Assessment</a></div><div class="checks"><span>Human approval stays in control</span><span>One high-value workflow at a time</span><span>Built for measurable outcomes</span></div></div></header>
+<section id="mission"><div class="wrap"><div class="kicker">ALPHA Mission Lab</div><h2>Give ALPHA a business objective.</h2><p class="lead small">Describe the outcome. ALPHA classifies the mission, selects a specialist team, recommends the workflow and tools, and shows where human approval belongs.</p><div class="mission"><div class="panel form"><div class="live">Browser-safe public demo</div><label for="missionInput">What do you want to accomplish?</label><textarea id="missionInput" placeholder="Example: Find qualified accounting firms, research their intake workflow, and design personalized outreach while keeping final send approval human-owned."></textarea><label for="industry">Business context</label><select id="industry"><option value="general">General / not sure yet</option><option value="professional">Professional services</option><option value="agency">Marketing / creative agency</option><option value="recruiting">Recruiting / staffing</option><option value="property">Property management / real estate</option><option value="sales">B2B sales</option><option value="technology">Technology / software</option></select><div class="actions"><button class="btn primary" id="runMission">Route Mission →</button><button class="btn" id="exampleMission">Load Example</button></div><p class="note"><b>Privacy:</b> this public version performs deterministic routing in your browser. Mission text is not sent to an AI backend. Connected research, email, CRM, deployments, or other external actions require a separately approved implementation.</p></div><div class="panel output"><div class="outhead"><b>ALPHA / MISSION OUTPUT</b><span id="missionState">AWAITING OBJECTIVE</span></div><div id="empty" class="empty">ALPHA is ready. Enter a concrete objective to see the mission mode, specialist team, workflow, candidate stack, five-step plan, and approval boundary.</div><div id="result" class="results" hidden></div><div id="resultActions" class="actions" hidden><button class="btn compact" id="copyMission">Copy Brief</button><button class="btn compact" id="downloadMission">Download Brief</button><a class="btn primary compact" href="mailto:darnley.weekes@gmail.com?subject=Prime24%20AI%20Mission%20Implementation">Have Prime24 Build This →</a></div></div></div></div></section>
+<section id="systems"><div class="wrap"><div class="kicker">Start with the work</div><h2>What should disappear from your team’s week?</h2><p class="lead small">We do not start by selling “AI.” We start with expensive repetitive work that should not require skilled staff every time.</p><div class="cards"><article><b>Lead qualification</b><p>Research, enrich, score, summarize, and prepare leads before a human takes over.</p></article><article><b>Client intake</b><p>Collect requests, classify needs, prepare next steps, and route work.</p></article><article><b>Research</b><p>Turn market, company, competitor, or document research into source-backed briefs.</p></article><article><b>Documents</b><p>Extract, categorize, summarize, request missing information, and prepare review.</p></article><article><b>Follow-up</b><p>Prepare personalized follow-ups, status updates, and next actions.</p></article><article><b>Reporting</b><p>Turn recurring inputs into concise client and management reporting.</p></article><article><b>Knowledge retrieval</b><p>Answer questions from internal procedures, documents, and business knowledge.</p></article><article><b>Customer support</b><p>Answer questions, qualify inquiries, and capture leads 24/7.</p></article></div></div></section>
+<section id="alpha"><div class="wrap split"><div class="panel"><div class="kicker">The Prime24 method</div><h2 class="mid">Find it. Map it. Build it.</h2><ol class="steps"><li><b>Identify the expensive workflow</b><span>Locate repetition, delay, errors, and preparation work.</span></li><li><b>Map AI vs. human ownership</b><span>Automate preparation and repetition—not sensitive judgment.</span></li><li><b>Build one bounded system</b><span>Integrate tools, controls, state, and handoffs.</span></li><li><b>Measure and improve</b><span>Track output, time saved, quality, failures, and ROI.</span></li></ol></div><div class="panel alpha"><div class="kicker">Powered by ALPHA</div><h2 class="mid">A supervised agent operating system.</h2><p>ALPHA builds the context packet, routes specialist agents, synthesizes results, verifies completion, and gates consequential actions.</p><ul><li>Skill-first agent routing</li><li>Research with source grounding</li><li>Human approval boundaries</li><li>Validation and failure controls</li><li>Reusable workflow modules</li></ul><div class="actions"><a class="btn primary" href="#mission">Run Mission Lab</a><a class="btn" href="https://darnleyweekes-spec.github.io/jarvis-workforce-hq/" target="_blank" rel="noopener">Advanced Mission Control</a></div></div></div></section>
+<section id="agents"><div class="wrap"><div class="kicker">Specialist agent network</div><h2>ALPHA routes the work. Specialists do the depth.</h2><p class="lead small">Customers do not manage a wall of agents. ALPHA selects the smallest useful team and applies permission and approval boundaries.</p><div class="agentgroups"><article><h3>Research & Intelligence</h3><p><b>ROSALIND</b><span>Current research, source comparison, evidence-backed synthesis.</span></p><p><b>MR. HOLMES</b><span>Permission-scoped public-source intelligence.</span></p><p><b>SAM</b><span>Scoped information discovery.</span></p></article><article><h3>Product & Strategy</h3><p><b>VISION</b><span>Goal decomposition, planning, validation.</span></p><p><b>PAM</b><span>Product framing and prioritization.</span></p><p><b>BIANCA</b><span>Solution architecture and integrations.</span></p></article><article><h3>AI Engineering</h3><p><b>HAL</b><span>ML/LLM systems, data, evaluation.</span></p><p><b>JAN</b><span>NLP, retrieval, language workflows.</span></p><p><b>BOB</b><span>AI engineering and implementation.</span></p><p><b>SARAH</b><span>Deep generative systems.</span></p><p><b>OMEGA</b><span>Advanced/quantum evaluation where justified.</span></p></article><article><h3>Delivery & Operations</h3><p><b>FRED</b><span>Forward-deployed implementation.</span></p><p><b>TED</b><span>MLOps, monitoring, reliability.</span></p><p><b>MARK</b><span>AI operations and adoption.</span></p></article><article><h3>Safety & Governance</h3><p><b>BENICIO</b><span>Security review and threat modeling.</span></p><p><b>BILLY</b><span>Governance, ethics, compliance.</span></p><p><b>PAUL</b><span>Authorized security testing only.</span></p></article><article class="alpha"><h3>Controller</h3><p><b>ALPHA</b><span>Context, routing, synthesis, verification, and final action gates.</span></p><p><b>Human approval</b><span>Sensitive communication, spend, credentials, security testing, and irreversible actions remain gated.</span></p></article></div></div></section>
+<section id="offers"><div class="wrap"><div class="kicker">Simple path to value</div><h2>Start small. Prove it. Then scale.</h2><div class="offers"><article><b>Workflow Assessment</b><strong>Free</strong><p>Find the best first automation opportunity.</p><a class="btn" href="mailto:darnley.weekes@gmail.com?subject=Free%20Prime24%20AI%20Workflow%20Assessment">Request Assessment</a></article><article class="featured"><small>BEST FIRST STEP</small><b>48-Hour Blueprint</b><strong>$299</strong><p>Implementation map, stack, controls, and rollout plan.</p><a class="btn primary" href="mailto:darnley.weekes@gmail.com?subject=Prime24%20AI%2048-Hour%20Blueprint">Start Blueprint</a></article><article><b>AI Build Sprint</b><strong>$1,500+</strong><p>Build, integrate, test, and launch one approved workflow.</p><a class="btn" href="mailto:darnley.weekes@gmail.com?subject=Prime24%20AI%20Build%20Sprint">Discuss a Build</a></article><article><b>Managed AI Ops</b><strong>$500+/mo</strong><p>Monitoring, optimization, reporting, and expansion.</p><a class="btn" href="mailto:darnley.weekes@gmail.com?subject=Prime24%20AI%20Managed%20Ops">Explore Managed Ops</a></article></div></div></section>
+<section id="chatbots"><div class="wrap split"><div><div class="kicker">Still available</div><h2>Chatbots are one system we build.</h2><p class="lead small">Prime24 AI began with fast custom chatbots. That offer stays—now it sits inside a broader AI systems practice.</p><div class="checks vertical"><span>24/7 customer answers</span><span>Lead capture and qualification</span><span>Brand-aligned responses</span><span>Optional maintenance</span></div><a class="btn primary" href="mailto:darnley.weekes@gmail.com?subject=Prime24%20AI%20Chatbot">Build My Chatbot →</a></div><div class="chat"><div class="chathead"><b>Bailey · Sunrise Wellness Studio</b><span>● Online</span></div><div class="bubbles"><p>Hi! I’m Bailey. What can I help you with today?</p><p class="user">What classes do you offer?</p><p>We offer yoga, strength, mobility, and small-group coaching. I can also help you choose the right class.</p></div></div></div></section>
+<section class="final"><div class="wrap box"><div class="kicker">Free first step</div><h2>Tell ALPHA what is wasting your team’s time.</h2><p class="lead small center">Get the bottleneck, realistic automation opportunity, recommended specialist team, and approval boundary.</p><a class="btn primary" href="#mission">Run the Free Mission Lab →</a></div></section>
+</main>
+<footer><div class="wrap foot"><b>Prime24 AI · Powered by ALPHA</b><span>Supervised AI systems built around your business.</span></div></footer>
+<script src="alpha.js"></script>
+</body></html>
