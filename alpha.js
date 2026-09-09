@@ -11,7 +11,7 @@
   const P={
     growth:{mode:'GROWTH / OUTREACH',agents:['ALPHA','ROSALIND','VISION','PAM','FRED','BILLY'],stack:'Vane/ROSALIND research · approved CRM/spreadsheet · Postiz/listmonk only after approval',flow:'Define buyer → research visible pain → score accounts → prepare personalized angle → human review → approved outreach → measure replies',plan:['Define ICP, offer, proof and conversion target','Research a small qualified account set with source provenance','Generate one workflow-specific observation per prospect','Human-review messaging and approve any external send','Track replies, objections, calls, Blueprint and implementation conversion'],gate:'Human approval before external outreach, posting, spend, CRM mutation, or commitment.'},
     research:{mode:'EVIDENCE-BACKED RESEARCH',agents:['ALPHA','ROSALIND','MR. HOLMES','SAM','VISION'],stack:'Vane/ROSALIND · permitted web extraction · document normalization · source log',flow:'Frame question → collect current sources → compare claims → separate fact from inference → synthesize decision brief',plan:['Clarify the decision the research must support','Collect current first-party and credible external evidence','Cross-check conflicting claims and capture uncertainty','Synthesize findings into options, risks, and indicators','Return a source-backed brief with next action'],gate:'Human approval before using private data, contacting subjects, or acting on research.'},
-    build:{mode:'PRODUCT / BUILD',agents:['ALPHA','VISION','PAM','BIANCA','BOB','FRED','BENICIO'],stack:'GitHub · chosen app framework · Supabase where useful · workflow tools only when justified',flow:'Outcome → acceptance criteria → architecture → bounded implementation → tests → security review → deployment approval',plan:['Convert objective into measurable acceptance criteria','Inspect existing code, integrations, and constraints','Choose the smallest architecture that can prove value','Build and test the bounded workflow','Run security/quality review before production deployment'],gate:'Human approval before production deployment, destructive migrations, credential use, or paid infrastructure changes.'},
+    build:{mode:'PRODUCT / BUILD',agents:['ALPHA','VISION','PAM','BIANCA','BOB','FRED','BENICIO'],stack:'GitHub · chosen app framework · existing data store where useful · workflow tools only when justified',flow:'Outcome → acceptance criteria → architecture → bounded implementation → tests → security review → deployment approval',plan:['Convert objective into measurable acceptance criteria','Inspect existing code, integrations, and constraints','Choose the smallest architecture that can prove value','Build and test the bounded workflow','Run security/quality review before production deployment'],gate:'Human approval before production deployment, destructive migrations, credential use, or paid infrastructure changes.'},
     automation:{mode:'WORKFLOW AUTOMATION',agents:['ALPHA','VISION','BIANCA','FRED','TED','BILLY'],stack:'n8n/compatible workflow layer · existing business systems · logs/audit trail · state store if required',flow:'Map current process → separate judgment from repetition → automate preparation/routing → add approval gates → instrument KPIs',plan:['Map steps, owners, inputs, and failure points','Identify repetitive steps with measurable cost','Design idempotent workflow and approval points','Implement one high-value automation first','Measure time saved, errors, throughput, and expansion value'],gate:'Human approval for consequential messages, financial changes, deletions, access changes, or exceptions.'},
     ai:{mode:'AI / ML SYSTEM',agents:['ALPHA','HAL','JAN','BOB','SARAH','TED','BILLY'],stack:'Strong foundation-model baseline · retrieval if needed · evaluation harness · provider routing if justified',flow:'Objective → data/eval set → baseline → model/RAG strategy → safety checks → deployment → monitoring',plan:['Define task, baseline, and success metrics','Inspect data quality, privacy, provenance, and evaluation coverage','Compare prompting/RAG/fine-tuning before custom training','Build representative tests including negative and edge cases','Deploy with monitoring, fallback, and versioned evaluation'],gate:'Human approval before sensitive-data training, production model changes, or high-impact automated decisions.'},
     security:{mode:'SECURITY / GOVERNANCE',agents:['ALPHA','BENICIO','BILLY','PAUL'],stack:'Defensive review tools · audit logs · permission-scoped test environment',flow:'Confirm authorization → define scope → threat model → defensive checks → findings → remediation → retest',plan:['Verify ownership/authorization and exact scope','Threat-model assets and data flows','Run non-destructive checks inside approved boundaries','Prioritize findings by likelihood and business impact','Remediate and validate without expanding scope'],gate:'Explicit authorization is mandatory before intrusive testing, scanning outside owned scope, credential use, exploitation, or destructive actions.'},
@@ -47,7 +47,7 @@
     result.hidden=false;
     acts.hidden=false;
     const blocks=[
-      ['Objective',obj],['Mission mode',p.mode],['Specialist team','<div class="chips">'+p.agents.map(a=>'<span class="chip">'+a+'</span>').join('')+'</div>'],['Recommended workflow',p.flow],['Candidate stack',p.stack],['5-step plan','<ol>'+p.plan.map(x=>'<li>'+x+'</li>').join('')+'</ol>'],['Human approval boundary',p.gate],['Business context',ctx]
+      ['Objective',obj.replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))],['Mission mode',p.mode],['Specialist team','<div class="chips">'+p.agents.map(a=>'<span class="chip">'+a+'</span>').join('')+'</div>'],['Recommended workflow',p.flow],['Candidate stack',p.stack],['5-step plan','<ol>'+p.plan.map(x=>'<li>'+x+'</li>').join('')+'</ol>'],['Human approval boundary',p.gate],['Business context',ctx]
     ];
     result.innerHTML=blocks.map(([l,v])=>'<div class="result"><small>'+l+'</small><div>'+v+'</div></div>').join('');
     brief=`PRIME24 AI — ALPHA MISSION BRIEF\n\nOBJECTIVE\n${obj}\n\nBUSINESS CONTEXT\n${ctx}\n\nMISSION MODE\n${p.mode}\n\nSPECIALIST TEAM\n${p.agents.join(', ')}\n\nWORKFLOW\n${p.flow}\n\nCANDIDATE STACK\n${p.stack}\n\nEXECUTION PLAN\n${p.plan.map((x,i)=>`${i+1}. ${x}`).join('\n')}\n\nHUMAN APPROVAL BOUNDARY\n${p.gate}\n\nGenerated by the browser-side Prime24 AI ALPHA Mission Lab. No external action was executed.`;
@@ -111,11 +111,11 @@
   const contactStatus=q('#contactStatus');
   const openEmail=q('#openEmail');
   const copyEmail=q('#copyEmail');
-  let selectedSubject='Free Prime24 AI Workflow Assessment';
+  let selectedSubject='Prime24 AI $299 Blueprint';
 
   if(contactEmail)contactEmail.textContent=email;
   if(contactHelp)contactHelp.textContent='Your selected service is ready. Open Gmail with the correct recipient and subject, or copy the address and contact Prime24 AI directly.';
-  if(openEmail)openEmail.textContent='Send via Gmail →';
+  if(openEmail)openEmail.textContent='Email Darnley →';
 
   document.querySelectorAll('a').forEach(a=>{
     const label=a.textContent.trim().replace(/\s+/g,' ');
@@ -129,16 +129,13 @@
     a.addEventListener('click',()=>{
       selectedSubject=subject;
       if(contactService)contactService.textContent=display;
-      if(contactStatus)contactStatus.textContent='Selected: '+subject+'. Choose Send via Gmail or Copy Email.';
+      if(contactStatus)contactStatus.textContent='Selected: '+subject+'. Choose Email Darnley or Copy Email.';
     });
   });
 
   if(openEmail)openEmail.addEventListener('click',()=>{
-    const gmailUrl='https://mail.google.com/mail/?view=cm&fs=1&to='+encodeURIComponent(email)+'&su='+encodeURIComponent(selectedSubject);
-    if(contactStatus)contactStatus.textContent='Opening Gmail compose…';
-    const popup=window.open(gmailUrl,'_blank','noopener,noreferrer');
-    if(!popup)window.location.assign(gmailUrl);
-    else if(contactStatus)contactStatus.textContent='Gmail compose opened in a new tab.';
+    openEmail.href='mailto:'+email+'?subject='+encodeURIComponent(selectedSubject);
+    if(contactStatus)contactStatus.textContent='Your email app will open. Review and send your message there.';
   });
 
   if(copyEmail)copyEmail.addEventListener('click',async()=>{
