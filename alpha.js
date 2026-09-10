@@ -29,9 +29,9 @@
     if(h(['security','pentest','penetration','vulnerability','threat']))return'security';
     if(h(['machine learning','llm','rag','model','fine-tun','embedding','generative']))return'ai';
     if(h(['build','website','app','software','product','develop','code','deploy']))return'build';
+    if(h(['lead','prospect','outreach','marketing','campaign','sales','linkedin','email','customer acquisition']))return'growth';
     if(h(['automate','automation','workflow','intake','routing','follow-up','follow up','reporting','document']))return'automation';
     if(h(['research','competitor','market','compare','investigate']))return'research';
-    if(h(['lead','prospect','outreach','marketing','campaign','sales','linkedin','email','customer acquisition']))return'growth';
     return'operations';
   }
 
@@ -155,12 +155,12 @@
 
   // Contact / conversion handling
   const email=['darnleyweekes','prime24ai.com'].join('@');
+  const blueprintPaymentLink='https://book.stripe.com/dRm6oB0ftgVq1001zr48003';
   const legacy={
     'Free Assessment':['Free Prime24 AI Workflow Assessment','Free Workflow Assessment'],
     'Get Free Assessment':['Free Prime24 AI Workflow Assessment','Free Workflow Assessment'],
     'Request Assessment':['Free Prime24 AI Workflow Assessment','Free Workflow Assessment'],
     'Have Prime24 Build This →':['Prime24 AI Mission Implementation','Mission Implementation'],
-    'Start Blueprint':['Prime24 AI 48-Hour Blueprint','48-Hour Blueprint'],
     'Discuss a Build':['Prime24 AI Build Sprint','AI Build Sprint'],
     'Explore Managed Ops':['Prime24 AI Managed Ops','Managed AI Ops'],
     'Build My Chatbot →':['Prime24 AI Chatbot','Custom Chatbot']
@@ -179,6 +179,8 @@
   const contactStatus=q('#contactStatus');
   const openEmail=q('#openEmail');
   const copyEmail=q('#copyEmail');
+  const assessmentForm=q('#assessmentForm');
+  const assessmentService=q('#assessmentForm select[name="service"]');
   let selectedSubject='Free Prime24 AI Workflow Assessment';
 
   if(contactEmail)contactEmail.textContent=email;
@@ -186,10 +188,11 @@
   if(openEmail)openEmail.textContent='Send via Gmail →';
 
   $$('a').forEach(a=>{
+    if(a.href.includes('dRm6oBftgVq1001zr48003'))a.href=blueprintPaymentLink;
     const label=a.textContent.trim().replace(/\s+/g,' ');
     const fallback=legacy[label];
     const subject=a.dataset.contactSubject||(fallback&&fallback[0]);
-    if(!subject)return;
+    if(!subject||/^https:\/\/(?:buy|book)\.stripe\.com\//.test(a.href))return;
     const display=a.dataset.contactLabel||(fallback&&fallback[1])||'Contact Prime24 AI';
     a.href='#contact';a.removeAttribute('data-cfemail');a.removeAttribute('target');
     a.addEventListener('click',()=>{
@@ -213,4 +216,21 @@
     if(contactStatus)contactStatus.textContent=ok?'Copied '+email+' to your clipboard.':'Email: '+email;
     setTimeout(()=>copyEmail.textContent='Copy Email',1800);
   });
+
+  // Mobile navigation and assessment context
+  const menuToggle=q('#menuToggle');
+  const siteLinks=q('#siteLinks');
+  const closeMenu=()=>{if(!menuToggle||!siteLinks)return;menuToggle.setAttribute('aria-expanded','false');siteLinks.classList.remove('is-open');};
+  if(menuToggle&&siteLinks){
+    menuToggle.addEventListener('click',()=>{const open=menuToggle.getAttribute('aria-expanded')!=='true';menuToggle.setAttribute('aria-expanded',String(open));siteLinks.classList.toggle('is-open',open);});
+    siteLinks.addEventListener('click',e=>{if(e.target.closest('a'))closeMenu();});
+  }
+  if(assessmentService){
+    $$('a[data-contact-label]').forEach(a=>a.addEventListener('click',()=>{
+      const label=(a.dataset.contactLabel||'').toLowerCase();
+      const value=label.includes('blueprint')||label.includes('work slop')?'$299 48-Hour Blueprint':label.includes('build')||label.includes('mission')?'AI Build Sprint':label.includes('managed')?'Managed AI Ops':'Free workflow assessment';
+      assessmentService.value=value;
+    }));
+  }
+  if(new URLSearchParams(location.search).get('assessment')==='received'&&q('#contactStatus'))q('#contactStatus').textContent='Assessment received. Prime24AI will review it and reply by email.';
 })();
