@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Client Follow-Up Kit Intake | Prime24AI</title>
+<meta name="description" content="Send the information Prime24AI needs to begin your $149 Client Follow-Up Kit setup.">
+<link rel="stylesheet" href="../kit.css">
+</head>
+<body>
+<nav class="wrap"><a class="brand" href="/">Prime24<span>AI</span></a><div><a href="/follow-up/">Back to the kit</a></div></nav>
+<main>
+<section class="wrap">
+<p class="eyebrow">PAYMENT RECEIVED / NEXT STEP</p>
+<h1>Send the setup details.</h1>
+<p class="lead">This form starts your $149 Client Follow-Up Kit intake. Do not include client records, financial documents, passwords or portal credentials.</p>
+<div class="note">Your form opens a prepared email for review. Nothing is sent until you choose the email option below.</div>
+<form id="intake" class="intake">
+<label>Firm name<input id="firm" required maxlength="120" autocomplete="organization"></label>
+<label>Work email<input id="email" type="email" required maxlength="160" autocomplete="email"></label>
+<label>Existing portal address (optional)<input id="portal" type="url" maxlength="500" placeholder="https://"></label>
+<label>Preferred reminder tone<select id="tone"><option>Direct and concise</option><option>Warm and professional</option><option>Formal</option></select></label>
+<label class="wide">What do you request each month?<textarea id="workflow" required maxlength="2000" rows="5" placeholder="For example: bank statements, receipts and answers to transaction questions."></textarea></label>
+<button type="submit" class="blue">Prepare intake email</button>
+</form>
+<p id="status" role="status"></p>
+<div id="result" hidden>
+<label for="draft">Prepared intake</label>
+<textarea id="draft" rows="11" readonly></textarea>
+<div class="actions"><a id="email" class="button">Open in email</a><a id="gmail" class="button" target="_blank" rel="noopener noreferrer">Open in Gmail</a></div>
+<p>If your email app does not open, copy the prepared text and send it to <a href="mailto:darnleyweekes@prime24ai.com">darnleyweekes@prime24ai.com</a>.</p>
+</div>
+</section>
+</main>
+<footer class="wrap"><a class="brand" href="/">Prime24<span>AI</span></a><p>Client Follow-Up Kit · $149 one-time setup</p></footer>
+<script>
+(()=>{const q=s=>document.querySelector(s), form=q('#intake'), result=q('#result'), status=q('#status');
+form.addEventListener('submit',e=>{e.preventDefault();const body='Client Follow-Up Kit setup\n\nFirm: '+q('#firm').value+'\nWork email: '+q('#email').value+'\nExisting portal: '+q('#portal').value+'\nPreferred tone: '+q('#tone').value+'\nWorkflow: '+q('#workflow').value+'\n\nI understand this is a $149 manual setup service for one monthly workflow.';q('#draft').value=body;result.hidden=false;q('#email').href='mailto:darnleyweekes@prime24ai.com?subject='+encodeURIComponent('Client Follow-Up Kit intake')+'&body='+encodeURIComponent(body);q('#gmail').href='https://mail.google.com/mail/?view=cm&fs=1&to=darnleyweekes%40prime24ai.com&su='+encodeURIComponent('Client Follow-Up Kit intake')+'&body='+encodeURIComponent(body);status.textContent='Your intake is ready. Review it, then choose an email option to send it.';});})();
+</script>
+</body>
+</html>
