@@ -12,3 +12,7 @@
 #assessmentForm label{display:grid!important;grid-template-columns:1fr!important;gap:6px!important;align-items:stretch;width:100%;min-width:0}
 #assessmentForm label input,#assessmentForm label select,#assessmentForm label textarea{display:block;width:100%;min-width:0}
 .contact-card>div{min-width:0}
+/* Keep form controls stacked even if a browser creates an anonymous grid item for label text. */
+.lead-form label{display:block!important}
+.lead-form label input,.lead-form label select,.lead-form label textarea{display:block;margin-top:6px}
+@media(min-width:981px){.menu-toggle{display:none!important}.links{display:flex!important}}
