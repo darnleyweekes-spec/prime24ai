@@ -16,3 +16,6 @@
 .lead-form label{display:block!important}
 .lead-form label input,.lead-form label select,.lead-form label textarea{display:block;margin-top:6px}
 @media(min-width:981px){.menu-toggle{display:none!important}.links{display:flex!important}}
+
+/* Buyer-gap positioning */
+.buyer-gap{background:linear-gradient(180deg,#07182c,#0c2745);color:#fff}.buyer-gap .lead{color:#cbd8e7}.buyer-gap .demo-note{color:#d5e2ef}.buyer-gap .gap-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:30px}.buyer-gap .gap-grid article{padding:22px;border:1px solid rgba(255,255,255,.14);background:rgba(255,255,255,.05)}.buyer-gap .gap-grid article>b{display:block;color:#55c2ff;font-size:10px;letter-spacing:.08em}.buyer-gap .gap-grid h3{margin:28px 0 8px;font-size:20px}.buyer-gap .gap-grid p{color:#cbd8e7;font-size:12px;line-height:1.55}@media(max-width:980px){.buyer-gap .gap-grid{grid-template-columns:1fr 1fr}}@media(max-width:620px){.buyer-gap .gap-grid{grid-template-columns:1fr}}
