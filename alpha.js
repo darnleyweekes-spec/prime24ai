@@ -163,7 +163,7 @@
       if(!next){guide.hidden=true;return;}
       guide.hidden=false;
       guideLink.href='#'+next.id;
-      guideLink.textContent='Next: '+guideSections[Math.max(current,0)].dataset.guideLabel+' ↓';
+      guideLink.textContent='Next: '+next.dataset.guideLabel+' ↓';
     };
     updateGuide();
     window.addEventListener('scroll',updateGuide,{passive:true});
