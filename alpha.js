@@ -146,6 +146,28 @@
   }
 
   q('#runSlop')?.addEventListener('click',renderSlop);
+
+  const guideSections=[...document.querySelectorAll('[data-guide-label]')];
+  if(guideSections.length){
+    const guide=document.createElement('aside');
+    guide.className='section-guide';
+    guide.setAttribute('aria-label','Guided page navigation');
+    guide.innerHTML='<span>Continue the walkthrough</span><a class="btn compact primary" href="#work-slop-check">Next section ↓</a>';
+    document.body.appendChild(guide);
+    const guideLink=guide.querySelector('a');
+    const updateGuide=()=>{
+      const y=window.scrollY+window.innerHeight*.36;
+      let current=-1;
+      guideSections.forEach((section,index)=>{if(section.offsetTop<=y)current=index;});
+      const next=guideSections[current+1];
+      if(!next){guide.hidden=true;return;}
+      guide.hidden=false;
+      guideLink.href='#'+next.id;
+      guideLink.textContent='Next: '+guideSections[Math.max(current,0)].dataset.guideLabel+' ↓';
+    };
+    updateGuide();
+    window.addEventListener('scroll',updateGuide,{passive:true});
+  }
   q('#exampleSlop')?.addEventListener('click',()=>{
     if(!slopWorkflow)return;
     slopWorkflow.value='client';slopOutputs.value='120';slopMinutes.value='12';slopRate.value='55';slopConsequence.value='high';
