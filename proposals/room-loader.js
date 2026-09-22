@@ -12,7 +12,7 @@
     document.body.dataset.proposalProduct = lockedProduct;
 
     const app = document.createElement("script");
-    app.src = "../app.js?v=20260922b";
+    app.src = "../app.js?v=20260922c";
     app.defer = true;
     app.addEventListener("error", () => {
       document.body.innerHTML = '<main class="room-error"><h1>Proposal room unavailable</h1><p>Please email <a href="mailto:darnleyweekes@prime24ai.com">darnleyweekes@prime24ai.com</a>.</p></main>';
