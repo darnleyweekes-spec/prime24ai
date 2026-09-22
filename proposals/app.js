@@ -1,6 +1,6 @@
 const PRODUCTS = {
   prime: {
-    name: "Prime24AI",
+    name: "Prime24AI", brandName: "Prime24AI", brandSubtitle: "Interactive proposal room",
     short: "Workflow pilot",
     url: "https://prime24ai.com/",
     headline: "Turn one expensive workflow into a supervised system.",
@@ -19,7 +19,7 @@ const PRODUCTS = {
     ]
   },
   agents: {
-    name: "Agents by Prime24AI", short: "Supervised agent", url: "https://agents.prime24ai.com/",
+    name: "Agents by Prime24AI", brandName: "Agents", brandSubtitle: "by Prime24AI · Interactive proposal room", short: "Supervised agent", url: "https://agents.prime24ai.com/",
     headline: "Put one agent role on trial before buying an agent platform.",
     subhead: "Define the role, evidence, permissions, and approval boundary first. Then test it against real work.",
     fit: "Best for teams that want an agent outcome but do not want to choose a platform, buy seats, or expose production systems before the job and acceptance test are clear.",
@@ -32,7 +32,7 @@ const PRODUCTS = {
     scopes: [["Agent role pilot","One role, one workflow",["Role contract and permission map","Working agent path","Evidence and event log","Acceptance and failure tests"],"Release only when the agent passes the agreed tests and a human owner accepts the residual risk."],["Agent role library","Design before implementation",["Prioritized role inventory","Tool and data boundaries","Approval map","Pilot recommendation"],"Build only the top role when it has a measurable baseline and a safe fallback."],["Verification sprint","Test an existing agent",["Critical-path test plan","Edge and adversarial cases","Cost and latency evidence","Release recommendation"],"Keep the current system unchanged unless test evidence justifies a controlled revision."]]
   },
   learn: {
-    name: "Learn by Prime24AI", short: "Workflow learning", url: "https://learn.prime24ai.com/",
+    name: "Learn by Prime24AI", brandName: "Learn", brandSubtitle: "by Prime24AI · Interactive proposal room", short: "Workflow learning", url: "https://learn.prime24ai.com/",
     headline: "Teach the actual workflow—not another generic AI course.",
     subhead: "Short, role-specific practice for accounting, insurance, credentialing, HR, mortgage, and real-estate teams.",
     fit: "Best when employees need to use AI inside a real job process with approved examples, review rules, and a manager-visible completion result.",
@@ -45,7 +45,7 @@ const PRODUCTS = {
     scopes: [["Single lesson pilot","One repeated job task",["Workflow-specific interactive lesson","Approved and unsafe examples","Practice artifact","Manager review guide"],"Expand only if learners complete the task more accurately or quickly against the starting baseline."],["Team lesson pack","Three connected tasks",["Three role-specific lessons","Shared review rubric","Completion view","30-day adoption check"],"Keep only lessons that change verified on-the-job behavior."],["Existing-content conversion","Turn SOPs into practice",["Source-content review","Interactive scenarios","Knowledge checks","Owner sign-off"],"Publish only after the process owner verifies every critical step."]]
   },
   pitchme: {
-    name: "PitchMe", short: "Candidate-first recruiting", url: "https://pitchme.prime24ai.com/",
+    name: "PitchMe", brandName: "PitchMe", brandSubtitle: "by Prime24AI · Interactive proposal room", short: "Candidate-first recruiting", url: "https://pitchme.prime24ai.com/",
     headline: "Make employers pitch the opportunity before candidates spend the time.",
     subhead: "A candidate-controlled marketplace where compensation, process, timeline, and selection reason arrive first.",
     fit: "Best for recruiting partners, communities, and employers who want a small, transparent talent campaign rather than another high-volume application funnel.",
@@ -58,7 +58,7 @@ const PRODUCTS = {
     scopes: [["Single-role campaign","One role, one opted-in cohort",["Structured opportunity template","Candidate visibility controls","Employer pitch workflow","Interest and pass summary"],"Continue only if qualified interest improves without increasing candidate time or ambiguity."],["Community pilot","For a member network",["Private onboarding","Employer pitch standard","Cohort dashboard","Feedback review"],"Scale only with explicit candidate consent and a verified employer-response standard."],["Hiring-process audit","Fix the pitch before launch",["Current funnel map","Candidate-effort audit","Transparency gaps","Rewritten structured opportunity"],"Launch only when compensation, process, timeline, and decision criteria are clear."]]
   },
   paws: {
-    name: "Paws & Power", short: "Dog-mom fitness", url: "https://pawsandpowerfit.prime24ai.com/",
+    name: "Paws & Power", brandName: "Paws & Power", brandSubtitle: "by Prime24AI · Interactive proposal room", short: "Dog-mom fitness", url: "https://pawsandpowerfit.prime24ai.com/",
     headline: "Build one routine that includes the dog and the human.",
     subhead: "Personalized human workouts, realistic meal planning, and dog-inclusive activity prompts in one membership.",
     fit: "Best for dog-mom communities, trainers, pet businesses, and wellness partners that want a joint consistency challenge instead of separate human-fitness and pet-tracking products.",
@@ -138,6 +138,10 @@ function calculate(){
 function render(){
   const p=PRODUCTS[state.product];
   document.title=`${p.name} proposal for ${state.company}`;
+  el("projectBrand").href=p.url;
+  el("projectBrand").setAttribute("aria-label",`${p.brandName} home`);
+  el("brandTitle").textContent=p.brandName;
+  el("brandSubtitle").textContent=p.brandSubtitle;
   el("preparedFor").textContent=`Prepared for ${state.company}`;
   el("headline").textContent=p.headline;
   el("subhead").textContent=`${p.subhead} This proposal focuses on ${state.workflow}.`;
@@ -151,5 +155,4 @@ function render(){
 }
 
 ["peopleInput","hoursInput","rateInput","reductionInput"].forEach(id=>el(id).addEventListener("input",calculate));
-el("printButton").addEventListener("click",()=>window.print());
 render();
