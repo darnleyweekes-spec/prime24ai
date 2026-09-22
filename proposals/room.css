@@ -1,0 +1,4 @@
+[hidden]{display:none!important}
+.room-loading,.room-error{width:min(760px,calc(100% - 32px));margin:12vh auto;padding:32px;border:1px solid #e7dee7;border-radius:18px;background:#fffdf9;color:#211a2c;font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;box-shadow:0 20px 54px rgba(31,20,38,.1)}
+.room-loading p,.room-error p{color:#70677a;line-height:1.6}
+.room-loading a,.room-error a{color:#e95731;font-weight:800}
