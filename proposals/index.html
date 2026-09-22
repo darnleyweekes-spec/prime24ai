@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="robots" content="noindex,nofollow" />
+    <title>Prime24AI Proposal Room</title>
+    <meta
+      name="description"
+      content="A personalized, interactive Prime24AI proposal with a competitor comparison, measurable pilot, and ROI scenario."
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="/" aria-label="Prime24AI home">
+        <span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span>
+        <span>Prime24<span>AI</span><small>Interactive proposal room</small></span>
+      </a>
+      <div class="top-actions">
+        <span class="private-pill">Prepared proposal</span>
+        <button class="button quiet" id="printButton" type="button">Save as PDF</button>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero section-shell">
+        <div class="hero-copy">
+          <p class="eyebrow" id="preparedFor">Prepared for your team</p>
+          <h1 id="headline">A smaller, measurable way to fix the workflow.</h1>
+          <p class="lede" id="subhead"></p>
+          <div class="hero-actions">
+            <a class="button primary" id="acceptLink" href="#pilot">Review the pilot</a>
+            <a class="button secondary" id="productLink" href="https://prime24ai.com/">Open the product</a>
+          </div>
+          <p class="fine-print">This is a proposal, not a claim that your current workflow is broken. Baselines and results must be verified with your team.</p>
+        </div>
+        <div class="signal-card" aria-label="Proposed before and after workflow">
+          <div class="signal-head"><span></span><b id="signalTitle">Workflow opportunity</b><small>ALPHA scoped</small></div>
+          <div class="before-after">
+            <div>
+              <small>NOW</small>
+              <strong id="beforeLabel">Manual handoffs</strong>
+              <div class="track"><i style="width: 82%"></i></div>
+              <p id="beforeDetail">Repeated steps compete for attention.</p>
+            </div>
+            <div class="arrow" aria-hidden="true">→</div>
+            <div>
+              <small>PILOT</small>
+              <strong id="afterLabel">One controlled path</strong>
+              <div class="track improved"><i style="width: 42%"></i></div>
+              <p id="afterDetail">Automation prepares; a person approves.</p>
+            </div>
+          </div>
+          <div class="proof-row">
+            <span><b>1</b> workflow</span><span><b>1</b> owner</span><span><b>1</b> KPI</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="product-switcher section-shell" aria-labelledby="switcherTitle">
+        <div>
+          <p class="eyebrow">Choose the relevant offer</p>
+          <h2 id="switcherTitle">Five focused ways to start</h2>
+        </div>
+        <div class="product-tabs" id="productTabs" role="tablist" aria-label="Prime24AI product offers"></div>
+      </section>
+
+      <section class="section-shell problem-grid" aria-labelledby="fitTitle">
+        <div>
+          <p class="eyebrow">Why this fit</p>
+          <h2 id="fitTitle">A proposal tied to one observable bottleneck.</h2>
+          <p class="section-copy" id="fitCopy"></p>
+        </div>
+        <div class="evidence-stack" id="evidenceStack"></div>
+      </section>
+
+      <section class="dark-section" aria-labelledby="comparisonTitle">
+        <div class="section-shell">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow mint">Compare the buying decision</p>
+              <h2 id="comparisonTitle">Where this offer is different</h2>
+            </div>
+            <p class="section-copy light">This is a fit comparison, not a claim that one product is universally better. Competitor facts link to public sources; your requirements decide the winner.</p>
+          </div>
+          <div class="comparison-wrap">
+            <table>
+              <thead id="comparisonHead"></thead>
+              <tbody id="comparisonBody"></tbody>
+            </table>
+          </div>
+          <div class="source-list" id="sourceList"></div>
+        </div>
+      </section>
+
+      <section class="section-shell calculator-grid" aria-labelledby="calculatorTitle">
+        <div>
+          <p class="eyebrow">Scenario calculator</p>
+          <h2 id="calculatorTitle">Pressure-test the economics.</h2>
+          <p class="section-copy">Change the assumptions. ALPHA treats the result as a hypothesis until a baseline is measured during the pilot.</p>
+          <div class="inputs">
+            <label>People doing the work<input id="peopleInput" type="number" min="1" max="500" value="3" /></label>
+            <label>Hours lost per person / week<input id="hoursInput" type="number" min="0" max="80" step="0.5" value="4" /></label>
+            <label>Loaded hourly cost<input id="rateInput" type="number" min="1" max="500" value="45" /></label>
+            <label>Realistic reduction<select id="reductionInput"><option value="0.2">20%</option><option value="0.35" selected>35%</option><option value="0.5">50%</option><option value="0.65">65%</option></select></label>
+          </div>
+        </div>
+        <div class="roi-card" aria-live="polite">
+          <small>ILLUSTRATIVE ANNUAL CAPACITY</small>
+          <strong id="annualValue">$0</strong>
+          <p id="roiSentence"></p>
+          <div class="roi-metrics"><div><b id="hoursSaved">0</b><span>hours / year</span></div><div><b id="monthlyValue">$0</b><span>capacity / month</span></div></div>
+          <p class="fine-print">Not a savings guarantee. Excludes software, integration, change-management, and oversight costs.</p>
+        </div>
+      </section>
+
+      <section class="pilot-section" id="pilot" aria-labelledby="pilotTitle">
+        <div class="section-shell">
+          <div class="section-heading">
+            <div><p class="eyebrow">Hard proposal</p><h2 id="pilotTitle">One pilot. A clear stop or scale decision.</h2></div>
+            <div class="price-card"><small id="offerLabel">PROPOSED START</small><strong id="offerPrice"></strong><span id="offerTiming"></span></div>
+          </div>
+          <div class="pilot-builder">
+            <div class="scope-options" id="scopeOptions"></div>
+            <div class="scope-output">
+              <p class="eyebrow">Selected scope</p>
+              <h3 id="scopeTitle"></h3>
+              <ul id="scopeDeliverables"></ul>
+              <div class="decision-rule"><b>Decision rule</b><p id="decisionRule"></p></div>
+              <a class="button primary full" id="emailLink" href="#">Reply about this scope</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-shell next-step" aria-labelledby="nextTitle">
+        <div>
+          <p class="eyebrow">No long sales cycle</p>
+          <h2 id="nextTitle">Reply with the workflow. I’ll return the boundary.</h2>
+          <p class="section-copy">Send the repeated task, current tool, rough weekly volume, and the person who approves the final action. Do not send credentials, customer records, or regulated data.</p>
+        </div>
+        <a class="button primary large" id="finalEmailLink" href="#">Discuss this proposal</a>
+      </section>
+    </main>
+
+    <footer><a href="https://prime24ai.com/">Prime24AI</a><span>Human-supervised systems. Evidence before scale.</span></footer>
+    <script src="app.js"></script>
+  </body>
+</html>
