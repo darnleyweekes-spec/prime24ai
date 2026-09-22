@@ -74,8 +74,11 @@ const PRODUCTS = {
 
 const params = new URLSearchParams(location.search);
 const safe = (value, fallback, limit = 120) => (value || fallback).replace(/[<>]/g, "").trim().slice(0, limit);
+const lockedProduct = PRODUCTS[document.body.dataset.proposalProduct]
+  ? document.body.dataset.proposalProduct
+  : null;
 const state = {
-  product: PRODUCTS[params.get("product")] ? params.get("product") : "prime",
+  product: lockedProduct || (PRODUCTS[params.get("product")] ? params.get("product") : "prime"),
   company: safe(params.get("company"), "your team"),
   workflow: safe(params.get("workflow"), "the repeated workflow", 180),
   scope: 0
@@ -85,6 +88,13 @@ const el = id => document.getElementById(id);
 const money = value => new Intl.NumberFormat("en-US", {style:"currency",currency:"USD",maximumFractionDigits:0}).format(value);
 
 function renderTabs(){
+  const switcher = document.querySelector(".product-switcher");
+  if (lockedProduct) {
+    switcher.hidden = true;
+    el("productTabs").innerHTML = "";
+    return;
+  }
+  switcher.hidden = false;
   el("productTabs").innerHTML = Object.entries(PRODUCTS).map(([key,p]) => `<button class="product-tab" role="tab" aria-selected="${key===state.product}" data-product="${key}"><b>${p.name}</b><span>${p.short}</span></button>`).join("");
   document.querySelectorAll("[data-product]").forEach(button => button.addEventListener("click",()=>{state.product=button.dataset.product;state.scope=0;const next=new URL(location.href);next.searchParams.set("product",state.product);history.replaceState(null,"",next);render();}));
 }
