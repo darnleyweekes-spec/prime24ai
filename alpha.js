@@ -25,7 +25,7 @@
 
   function classify(t){
     t=t.toLowerCase();
-    const h=a=>a.some(w=>t.includes(w));
+    const h=a=>a.some(w=>w.length<=4?new RegExp('\\b'+w+'\\b').test(t):t.includes(w));
     if(h(['security','pentest','penetration','vulnerability','threat']))return'security';
     if(h(['machine learning','llm','rag','model','fine-tun','embedding','generative']))return'ai';
     if(h(['build','website','app','software','product','develop','code','deploy']))return'build';
