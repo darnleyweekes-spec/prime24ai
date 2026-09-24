@@ -1,6 +1,6 @@
 # Website Sprint — ten individual draft angles
 
-Status: **draft only**. Do not send until the page is published, the form is proven to reach the inbox, and the specific person is checked against prior outreach and permanent-failure records. Every bracketed observation must be verified on the day of sending. No email addresses are presumed. Send manually from the working Gmail account with the Prime24AI address in the signature, with a modest demo image if useful. Offer: https://prime24ai.com/real-estate-sprint/ (not live until approval and deployment).
+Status: **draft only**. Do not send until the page is published, the form is proven to reach the inbox, and the specific person is checked against prior outreach and permanent-failure records. Verify each cited observation on the day of sending. No email addresses are presumed. Send manually from the working Gmail account with the Prime24AI address in the signature, with a modest demo image if useful. Offer: https://prime24ai.com/real-estate-sprint/ (not live until approval and deployment).
 
 Ten named profiles below describe newer or recently licensed agents. Oregon and Washington come first; the other profiles are outside the Pacific Northwest. Recheck current profile facts, site ownership, contact route, and prior outreach before use. A public profile is not proof of purchase intent or absence of a personal website.
 
@@ -11,7 +11,7 @@ Subject: A site around your Portland service area
 
 Hi Jonathan,
 
-Your profile introduces you as a newer Keller Williams agent helping buyers, sellers, and investors across Portland-area communities. There is enough there for a useful personal website with a tighter service-area story and one clear contact action.
+Your profile introduces you as a newer Keller Williams agent helping buyers, sellers, and investors across Portland-area communities. A short page could introduce your services and give people one clear contact action.
 
 I run Prime24AI. I can write and build a mobile-ready one-page site for $750, ready to review within 48 hours of a confirmed start and completed intake. One revision is included.
 
@@ -45,7 +45,7 @@ Subject: A site that connects your business background to real estate
 
 Hi Mario,
 
-Your NextHome bio connects your restaurant and franchise leadership experience with your real-estate work. That is a more specific introduction than most agent pages have room to give. A focused site could put that story, your approved service area, and one contact action together.
+Your NextHome bio connects your restaurant and franchise leadership experience with your real-estate work. That background gives your introduction a specific story to tell. A focused site could put that story, your approved service area, and one contact action together.
 
 I run Prime24AI. I write and build a one-page agent website for $750 for the first three clients. It includes mobile layout, basic SEO, domain guidance, and one revision; the page is ready to review within 48 hours of a confirmed start and complete intake.
 
