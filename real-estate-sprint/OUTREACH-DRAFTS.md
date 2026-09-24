@@ -2,7 +2,7 @@
 
 Status: **draft only**. Do not send until the page is published, the form is proven to reach the inbox, and the specific person is checked against prior outreach and permanent-failure records. Every bracketed observation must be verified on the day of sending. No email addresses are presumed. Send manually from the working Gmail account with the Prime24AI address in the signature, with a modest demo image if useful. Offer: https://prime24ai.com/real-estate-sprint/ (not live until approval and deployment).
 
-Two public profiles below specifically describe the people as new agents. The remaining eight are prospect-specific structures, not claims that identified people qualify. This distinction prevents falsely calling an experienced agent new. Use one draft per verified match and avoid contacting anyone previously reached.
+Ten named profiles below describe newer or recently licensed agents. Oregon and Washington come first; the other profiles are outside the Pacific Northwest. Recheck current profile facts, site ownership, contact route, and prior outreach before use. A public profile is not proof of purchase intent or absence of a personal website.
 
 ## 1 — Jonathan Morar, Keller Williams PDX Central
 Source to recheck: https://www.realtor.com/realestateagents/678914e1658b274537adb173 (profile describes him as a new agent, mentions buying, selling and investing, and lists Portland-area communities).
@@ -38,138 +38,138 @@ Want me to send a free, three-point teardown first?
 
 Darnley Weekes · darnleyweekes@prime24ai.com · prime24ai.com
 
-## 3 — Verified brokerage-profile-only agent
-Verify the agent's name, current brokerage page URL, service area, and absence of a linked personal site before use.
+## 3 — Mario Juarez, NextHome Realty Connection, Oregon
+Source to recheck: https://www.nexthome.com/agent/OR/Portland/Mario-Juarez/27883/ (profile states he is recently licensed and describes prior restaurant ownership, franchise leadership, and investment property experience). This profile already presents substantial real-estate activity; pitch a focused personal introduction, not a beginner's credential.
 
-Subject: A home for your [city] introduction
+Subject: A site that connects your business background to real estate
 
-Hi [name],
+Hi Mario,
 
-I found your [brokerage] profile while looking at agents serving [city]. It covers [specific verified detail], but I did not see a linked personal site when I checked [URL] today.
+Your NextHome bio connects your restaurant and franchise leadership experience with your real-estate work. That is a more specific introduction than most agent pages have room to give. A focused site could put that story, your approved service area, and one contact action together.
 
-I run Prime24AI. I can turn your approved bio, service area, and contact details into a one-page mobile website for $750. It is ready to review within 48 hours of a confirmed start and complete intake; one revision is included.
+I run Prime24AI. I write and build a one-page agent website for $750 for the first three clients. It includes mobile layout, basic SEO, domain guidance, and one revision; the page is ready to review within 48 hours of a confirmed start and complete intake.
 
-Demo and scope: https://prime24ai.com/real-estate-sprint/
+Here is the example: https://prime24ai.com/real-estate-sprint/
 
-Would you like a free teardown of the current profile first?
-
-Darnley Weekes · darnleyweekes@prime24ai.com · prime24ai.com
-
-## 4 — Verified agent with a recent brokerage move
-Verify a dated brokerage announcement and current agent page. Do not imply the person is newly licensed.
-
-Subject: A site for your [brokerage] chapter
-
-Hi [name],
-
-I saw your [dated, linked] move to [brokerage], and your profile highlights [verified niche or service area]. A concise personal site could put that current introduction, brokerage details, and contact action in one place.
-
-Prime24AI is offering three $750 one-page website sprints. The page is mobile-ready, written from your verified facts, and ready to review within 48 hours of confirmed start and complete intake. One revision is included.
-
-Example: https://prime24ai.com/real-estate-sprint/
-
-Could I send a free teardown of the current page?
+Would you like a free teardown of your current online introduction first?
 
 Darnley Weekes · darnleyweekes@prime24ai.com · prime24ai.com
 
-## 5 — Verified first-time-buyer specialist
-Verify this specialty in the agent's own profile or approved brokerage page.
+## 4 — Dustin Haynes, northeast Washington
+Source to recheck: https://www.realtor.com/realestateagents/65df7cd89c02e60968dabc64 (profile lists two years' experience and describes him as a newer agent; verify present brokerage and exact service area before any send).
 
-Subject: Make your first-buyer process easier to find
+Subject: A clearer introduction for your Washington market
 
-Hi [name],
+Hi Dustin,
 
-Your [profile/page] says you work with first-time buyers in [area], and I noticed [one verifiable detail about their approach]. That is a strong foundation for a page explaining how someone starts a conversation with you.
+Your agent profile describes the value you place on honest, steady work in real estate. A personal page could turn that into a concise introduction, identify the Washington communities you actually serve, and make contact easier.
 
-I build one-page agent websites through Prime24AI: custom copy, mobile layout, service area, and contact or booking action. The first three are $750, with one revision and a review-ready site within 48 hours of confirmed start and complete intake.
+Prime24AI's introductory website sprint is $750 for three clients. I write and build a mobile-ready one-page site with basic SEO, domain guidance, and one revision. You receive it for review within 48 hours of our confirmed start and complete materials.
 
 Demo and terms: https://prime24ai.com/real-estate-sprint/
 
-Would a free teardown be useful?
+Would a free three-point teardown of your current profile be useful?
 
 Darnley Weekes · darnleyweekes@prime24ai.com · prime24ai.com
 
-## 6 — Verified agent serving two adjacent cities
-Verify the exact cities and licensure; do not imply cross-state practice without evidence.
+## 5 — Celine Mouslmani, San Dimas, California
+Source to recheck: https://www.realtor.com/realestateagents/681b7361b8735483dba3a696 (profile lists one year of experience and mentions first-time buyers, growing families, investors, and team support).
 
-Subject: Make your [city A] and [city B] focus clear
+Subject: A site for your San Dimas introduction
 
-Hi [name],
+Hi Celine,
 
-Your public profile lists both [city A] and [city B]. I would put those places near the top of a personal site, followed by the services you actually offer and one direct way to reach you.
+Your profile speaks to first-time buyers, growing families, and investors, and notes the team behind your work. I can picture a compact site that gives each audience a clear starting point without burying your own introduction.
 
-I run Prime24AI. The introductory sprint is $750 for three agents: one mobile-ready page, custom copy, basic SEO, domain guidance, and one revision. It is ready to review 48 hours after confirmed start and complete intake.
+I run Prime24AI. The first three agent websites are $750 each: custom copy, mobile layout, service-area positioning, contact action, basic SEO, and one revision. The page is ready to review within 48 hours of a confirmed start and completed intake.
 
 See the sample: https://prime24ai.com/real-estate-sprint/
 
-May I send you a free teardown of your current online introduction?
+Can I send a free teardown of your current online presence?
 
 Darnley Weekes · darnleyweekes@prime24ai.com · prime24ai.com
 
-## 7 — Verified open-house announcement with no clear agent introduction
-Verify event date, agent attribution and source; send only if the event is still relevant.
+## 6 — Stephanie Hornsby, Atlanta, Georgia
+Source to recheck: https://www.realtor.com/realestateagents/67be7c69bb45e58b5d3af2a8 (profile lists one year of experience and describes herself as a new agent working with buyers and sellers).
 
-Subject: A simple follow-up page after [event]
+Subject: A direct place for Atlanta clients to reach you
 
-Hi [name],
+Hi Stephanie,
 
-I saw your [date] open house in [area]. When someone looks you up afterward, a short site with your introduction, service area, and contact option can give them a clear next step.
+Your agent profile welcomes people who are buying, selling, or still figuring out their plans. A one-page site could give each of them a straightforward introduction and one clear way to get in touch.
 
-Prime24AI writes and builds that one-page site for $750 for its first three sprint clients. It is mobile-ready and comes with one revision, ready to review within 48 hours of confirmed start and complete materials.
+Prime24AI is offering three $750 website sprints. I write your copy from approved facts and build a mobile-ready page with your service area, contact action, basic SEO, and one revision. Review delivery is within 48 hours of confirmed start and complete intake.
 
-Example and scope: https://prime24ai.com/real-estate-sprint/
-
-Would you want a free teardown of the page people currently reach?
-
-Darnley Weekes · darnleyweekes@prime24ai.com · prime24ai.com
-
-## 8 — Verified social-first agent
-Verify the account belongs to the agent and whether its bio links to a site. Do not call social presence inadequate.
-
-Subject: One link for your [platform] bio
-
-Hi [name],
-
-Your [platform] profile shares [specific topic or neighborhood]. The link in your bio currently goes to [verified destination]. A personal page could bring your introduction, areas served, and booking or contact choice into one link.
-
-Prime24AI is offering a $750 one-page website sprint to its first three clients. I write the copy and build the mobile page, with one revision. It is ready to review within 48 hours of confirmed start and complete intake.
-
-Here is the sample: https://prime24ai.com/real-estate-sprint/
+The sample and full terms are here: https://prime24ai.com/real-estate-sprint/
 
 Would you like a free teardown before deciding?
 
 Darnley Weekes · darnleyweekes@prime24ai.com · prime24ai.com
 
-## 9 — Verified agent with a dated or hard-to-use personal site
-Visit the site on a phone first and cite only an observable issue; do not assert poor conversion.
+## 7 — Gislene Ferreira-Murphy, Greensburg, Pennsylvania
+Source to recheck: https://www.realtor.com/realestateagents/68ae72781948b723b4e4e883 (profile lists one year of experience and describes helping people buy or sell with personal attention).
 
-Subject: One page to sharpen your [area] introduction
+Subject: Make your Greensburg introduction easier to find
 
-Hi [name],
+Hi Gislene,
 
-I looked at your site at [URL] on a phone today. [Describe one specific, reproducible issue, e.g. the contact link is below several screens of listings.] Your [verified strength] deserves an easier first step.
+Your profile describes the time and care you want to give people buying or selling a home. A personal site could give that approach space, name the places you serve, and end with a direct contact choice.
 
-I run Prime24AI. The $750 introductory sprint covers an original one-page mobile site, updated copy, service-area positioning, contact action, basic SEO, and one revision. Review delivery is within 48 hours of a confirmed start and complete materials.
+I run Prime24AI. The first three one-page agent sites are $750. The sprint includes original copy, mobile layout, basic SEO, domain guidance, and one revision, ready for review within 48 hours of a confirmed start and complete intake.
 
-Example: https://prime24ai.com/real-estate-sprint/
+Here's the example: https://prime24ai.com/real-estate-sprint/
 
-Can I send you a free three-point teardown?
+Could I send a free three-point teardown of your current profile?
 
 Darnley Weekes · darnleyweekes@prime24ai.com · prime24ai.com
 
-## 10 — Verified agent launching a neighborhood focus
-Verify the precise neighborhood and launch announcement; do not imply market expertise or results not in the source.
+## 8 — Diana De Jesus, East Rutherford, New Jersey
+Source to recheck: https://www.realtor.com/realestateagents/69354bab749dc504bdf3a475 (profile lists one year of experience, describes a newer real-estate career, and cites customer service and insurance experience).
 
-Subject: A focused [neighborhood] introduction
+Subject: A website that explains your client-service background
 
-Hi [name],
+Hi Diana,
 
-Your [dated post or profile] says you are focusing on [neighborhood]. A short website could make that focus, your actual services, and your brokerage details easy to find without asking someone to scroll through a feed.
+Your profile mentions customer service and insurance work alongside your real-estate launch. A short personal site could explain how that background shapes your approach, then give buyers and sellers a simple contact path.
 
-Prime24AI's introductory price is $750 for the first three website sprints. It includes custom copy, a mobile-ready page, one revision, basic SEO, and domain guidance. The site is ready to review 48 hours after confirmed start and complete intake.
+Prime24AI's $750 introductory sprint covers one mobile-ready page, custom copy, service area, basic SEO, domain guidance, and one revision. It is ready to review within 48 hours after a confirmed start and complete intake.
 
-Demo and terms: https://prime24ai.com/real-estate-sprint/
+Demo and scope: https://prime24ai.com/real-estate-sprint/
 
-Would a free teardown help you decide?
+Would a free teardown be useful first?
+
+Darnley Weekes · darnleyweekes@prime24ai.com · prime24ai.com
+
+## 9 — Joshua Gielecki, Newberry, Michigan
+Source to recheck: https://www.realtor.com/realestateagents/680bdce077a58235b95f2735 (profile lists one year of experience and mentions homes and land, clear communication, and personalized service).
+
+Subject: Separate your home and land introductions
+
+Hi Joshua,
+
+Your profile covers both home searches and land. A personal page could make those paths distinct while keeping your service area and contact details easy to find.
+
+I run Prime24AI. For the first three clients, I write and build a one-page agent website for $750. The site is mobile-ready, includes basic SEO and domain guidance, and comes with one revision. It is ready to review within 48 hours of confirmed start and complete materials.
+
+Here is an original demo: https://prime24ai.com/real-estate-sprint/
+
+Would you like a free teardown of your current introduction?
+
+Darnley Weekes · darnleyweekes@prime24ai.com · prime24ai.com
+
+## 10 — Mellisa Alfaro, Crescent City, California
+Source to recheck: https://www.realtor.com/realestateagents/6920777489d843f8411cd893 (profile lists one year of experience, calls her a newer agent, and describes her business-coaching, podcasting and notary background). Verify preferred spelling from current profile before sending.
+
+Subject: A focused Crescent City agent page
+
+Hi Mellisa,
+
+Your profile brings together real estate, coaching, podcasting, and notary work. For a prospective home buyer or seller, a short site could make your real-estate role and Crescent City service area clear right away, with one direct contact choice.
+
+Prime24AI is offering its first three agent website sprints at $750. I write and build the mobile-ready page, set up basic SEO, guide domain connection, and include one revision. It is ready to review within 48 hours of confirmed start and complete intake.
+
+See the example and terms: https://prime24ai.com/real-estate-sprint/
+
+Can I send a free teardown first?
 
 Darnley Weekes · darnleyweekes@prime24ai.com · prime24ai.com
