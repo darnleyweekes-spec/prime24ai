@@ -250,7 +250,7 @@
   if(assessmentService){
     $$('a[data-contact-label]').forEach(a=>a.addEventListener('click',()=>{
       const label=(a.dataset.contactLabel||'').toLowerCase();
-      const value=label.includes('blueprint')||label.includes('work slop')?'$299 48-Hour Blueprint':label.includes('build')||label.includes('mission')?'AI Build Sprint':label.includes('managed')?'Managed AI Ops':'Free workflow assessment';
+      const value=label.includes('pilot')?'$1,500 Service Intake Pilot':label.includes('blueprint')||label.includes('work slop')?'$299 48-Hour Blueprint':label.includes('build')||label.includes('mission')?'AI Build Sprint':label.includes('managed')?'Managed AI Ops':'Free workflow assessment';
       assessmentService.value=value;
     }));
   }
