@@ -1,0 +1,60 @@
+name: Add GA4 funnel tracking
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  instrument:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Inject shared analytics helper
+        shell: bash
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          paths = [
+              Path('index.html'),
+              Path('proposals/index.html'),
+              Path('proposals/prime24ai/index.html'),
+              Path('proposals/agents/index.html'),
+              Path('proposals/learn/index.html'),
+              Path('proposals/pitchme/index.html'),
+              Path('proposals/paws-and-power/index.html'),
+              Path('follow-up/index.html'),
+              Path('follow-up/intake/index.html'),
+          ]
+
+          helper = '<script src="/analytics.js" defer></script>'
+          for path in paths:
+              text = path.read_text()
+              if helper not in text:
+                  text = text.replace('</head>', f'{helper}</head>', 1)
+              if path == Path('follow-up/index.html'):
+                  text = text.replace(
+                      'This page has no advertising trackers or analytics scripts.',
+                      'This page uses Google Analytics to measure site traffic and usage; it does not use advertising trackers.'
+                  )
+              path.write_text(text)
+          PY
+
+      - name: Commit instrumentation
+        shell: bash
+        run: |
+          git add index.html proposals follow-up
+          if git diff --cached --quiet; then
+            echo "Analytics helper already present on all routes."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "Wire GA4 funnel tracking across Prime24AI routes"
+          git push
