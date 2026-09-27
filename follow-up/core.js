@@ -1,4 +1,26 @@
 "use strict";
+
+// Google tag (gtag.js) — G-1PWC0KB550
+(function(){
+ const tag=document.createElement("script");
+ tag.async=true;
+ tag.src="https://www.googletagmanager.com/gtag/js?id=G-1PWC0KB550";
+ document.head.appendChild(tag);
+ window.dataLayer=window.dataLayer||[];
+ window.gtag=window.gtag||function(){window.dataLayer.push(arguments);};
+ window.gtag('js',new Date());
+ window.gtag('config','G-1PWC0KB550');
+ document.addEventListener('DOMContentLoaded',()=>{
+  document.querySelectorAll('details').forEach(detail=>{
+   const summary=detail.querySelector('summary');
+   const p=detail.querySelector('p');
+   if(summary&&p&&summary.textContent.trim()==='Privacy'){
+    p.textContent=p.textContent.replace('This page has no advertising trackers or analytics scripts.','This page uses Google Analytics to measure site traffic and usage; it does not use advertising trackers.');
+   }
+  });
+ });
+})();
+
 (function(root){
  const statuses=["Missing","Needs correction","Received"];
  function clean(s,max=300){return String(s??"").replace(/[\u0000-\u0008\u000b\u000c\u000e-\u001f]/g,"").trim().slice(0,max);}
