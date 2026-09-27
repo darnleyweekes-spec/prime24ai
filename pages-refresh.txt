@@ -1,1 +1,2 @@
 Prime24AI production publish marker: Work Slop Check merged into current homepage design on 2026-09-09.
+GA4 funnel instrumentation trigger: 2026-09-26.
