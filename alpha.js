@@ -147,12 +147,12 @@
 
   q('#runSlop')?.addEventListener('click',renderSlop);
 
-  const guideSections=[...document.querySelectorAll('[data-guide-label]')];
+  const guideSections=[...document.querySelectorAll('[data-guide-label]:not([hidden])')];
   if(guideSections.length){
     const guide=document.createElement('aside');
     guide.className='section-guide';
     guide.setAttribute('aria-label','Guided page navigation');
-    guide.innerHTML='<span>Continue the walkthrough</span><a class="btn compact primary" href="#work-slop-check">Next section ↓</a>';
+    guide.innerHTML='<span>Continue the walkthrough</span><a class="btn compact primary" href="#tutorial">Next section ↓</a>';
     document.body.appendChild(guide);
     const guideLink=guide.querySelector('a');
     const updateGuide=()=>{
@@ -191,7 +191,7 @@
   let contact=q('#contact');
   if(!contact){
     contact=document.createElement('section');contact.id='contact';
-    contact.innerHTML='<div class="wrap"><div class="panel contact-card"><div class="kicker">Contact Prime24 AI</div><h2 class="mid" id="contactService">Free Workflow Assessment</h2><p class="lead small" id="contactHelp">Your selected service is ready. Open Gmail with the correct recipient and subject, or copy the address and contact Prime24 AI directly.</p><p class="contact-line"><b>Email:</b><span id="contactEmail">Loading contact address…</span></p><div class="actions"><button class="btn primary" id="openEmail" type="button">Send via Gmail →</button><button class="btn" id="copyEmail" type="button">Copy Email</button></div><p class="note" id="contactStatus">No external action happens until you choose an option above.</p></div></div>';
+    contact.innerHTML='<div class="wrap"><div class="panel contact-card"><div class="kicker">Contact Prime24 AI</div><h2 class="mid" id="contactService">Discuss Your Service Request Workflow</h2><p class="lead small" id="contactHelp">Your selected service is ready. Open Gmail with the correct recipient and subject, or copy the address and contact Prime24 AI directly.</p><p class="contact-line"><b>Email:</b><span id="contactEmail">Loading contact address…</span></p><div class="actions"><button class="btn primary" id="openEmail" type="button">Send via Gmail →</button><button class="btn" id="copyEmail" type="button">Copy Email</button></div><p class="note" id="contactStatus">No external action happens until you choose an option above.</p></div></div>';
     const final=q('.final');final?final.before(contact):document.querySelector('main')?.appendChild(contact);
   }
 
@@ -250,7 +250,7 @@
   if(assessmentService){
     $$('a[data-contact-label]').forEach(a=>a.addEventListener('click',()=>{
       const label=(a.dataset.contactLabel||'').toLowerCase();
-      const value=label.includes('pilot')?'$1,500 Service Intake Pilot':label.includes('blueprint')||label.includes('work slop')?'$299 48-Hour Blueprint':label.includes('build')||label.includes('mission')?'AI Build Sprint':label.includes('managed')?'Managed AI Ops':'Free workflow assessment';
+      const value=label.includes('pilot')?'$1,500 Service Request Workflow Pilot':'Free workflow review';
       assessmentService.value=value;
     }));
   }
