@@ -1,0 +1,11 @@
+{
+  "name": "prime24ai-site",
+  "private": true,
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build"
+  },
+  "devDependencies": {
+    "vite": "8.0.13"
+  }
+}
