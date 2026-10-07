@@ -51,7 +51,7 @@
   e.preventDefault();
   const body="Client Follow-Up Kit setup\n\nFirm: "+$("firm").value+"\nWork email: "+$("email").value+"\nExisting portal: "+$("intake-portal").value+"\nWorkflow: "+$("workflow").value+"\n\nI understand this is a $149 manual setup service for one monthly workflow. Please confirm availability before I order.";
   $("intake-text").value=body;$("intake-result").hidden=false;
-  $("email-draft").href="mailto:darnleyweekes@prime24ai.com?subject="+encodeURIComponent("Client Follow-Up Kit setup request")+"&body="+encodeURIComponent(body);
+  $("email-draft").href="mailto:darnley.weekes@gmail.com?subject="+encodeURIComponent("Client Follow-Up Kit setup request")+"&body="+encodeURIComponent(body);
   $("gmail-draft").href="https://mail.google.com/mail/?view=cm&fs=1&to=darnleyweekes%40prime24ai.com&su="+encodeURIComponent("Client Follow-Up Kit setup request")+"&body="+encodeURIComponent(body);
   $("intake-status").textContent="Your request is prepared below. Open it in email and send it to submit. This page has not sent anything.";
  };

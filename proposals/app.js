@@ -118,7 +118,7 @@ function renderScopes(p){
 function updateEmailLinks(p,scope){
   const subject=encodeURIComponent(`${p.name} proposal for ${state.company}`);
   const body=encodeURIComponent(`Darnley,\n\nI reviewed the ${p.name} proposal room. I want to discuss the ${scope} for ${state.workflow}.\n\nCompany: ${state.company}\nCurrent tool(s): \nWeekly volume: \nApproval owner: \n\nBest next step:`);
-  const href=`mailto:darnleyweekes@prime24ai.com?subject=${subject}&body=${body}`;
+  const href=`mailto:darnley.weekes@gmail.com?subject=${subject}&body=${body}`;
   el("emailLink").href=href;el("finalEmailLink").href=href;
 }
 

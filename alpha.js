@@ -176,7 +176,7 @@
   });
 
   // Contact / conversion handling
-  const email=['darnleyweekes','prime24ai.com'].join('@');
+  const email='darnley.weekes@gmail.com';
   const blueprintPaymentLink='https://book.stripe.com/dRm6oB0ftgVq1001zr48003';
   const legacy={
     'Free Assessment':['Free Prime24 AI Workflow Assessment','Free Workflow Assessment'],
@@ -255,10 +255,14 @@
     }));
   }
   if(assessmentForm){
-    assessmentForm.addEventListener('submit',()=>{
-      const submit=assessmentForm.querySelector('button[type="submit"]');
-      if(submit){submit.disabled=true;submit.textContent='Sending assessment…';}
-      if(contactStatus)contactStatus.textContent='Sending your assessment securely. If the page does not confirm receipt, email Prime24AI directly.';
+    assessmentForm.addEventListener('submit',(event)=>{
+      event.preventDefault();
+      const fields=new FormData(assessmentForm);
+      const body=['Prime24AI workflow assessment','',...['name','email','company','workflow','service'].map(key=>key+': '+(fields.get(key)||''))].join('\n');
+      const compose='https://mail.google.com/mail/?view=cm&fs=1&to='+encodeURIComponent(email)+'&su='+encodeURIComponent('New Prime24AI workflow assessment')+'&body='+encodeURIComponent(body);
+      const popup=window.open(compose,'_blank','noopener,noreferrer');
+      if(!popup)window.location.assign(compose);
+      if(contactStatus)contactStatus.textContent='Review and send the prepared email in Gmail. Your request is not submitted until you send it.';
     });
   }
   if(new URLSearchParams(location.search).get('assessment')==='received'&&q('#contactStatus'))q('#contactStatus').textContent='Assessment received. Prime24AI will review it and reply by email.';
