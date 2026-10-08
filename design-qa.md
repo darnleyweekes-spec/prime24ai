@@ -1,31 +1,10 @@
-# Design QA — Prime24AI Guided Workflow
-
-## Evidence
-
-- Source of truth: `/workspace/scratch/20e81f98358f/generated_images/exec-087a1d4a-f41b-447d-9415-0c7ce18ba734.png`
-- Implementation capture: `cloud-browser://tab/2` (normal product view)
-- Full-view comparison: `cloud-browser://tab/5` (reference and live implementation side by side)
-- Viewport: 1344 × 922 CSS pixels
-- Density normalization: both panels were rendered at the same CSS scale in the comparison board.
-
-## Interaction verification
-
-- Verified the five workflow stages, primary CTA, agent demo link, and section anchors render and remain operable.
-- Verified the lead-record and AI-response panels preserve the intended scan order.
-- Browser console: no application errors. One Chrome extension metadata error was observed and excluded from the product result.
-
-## Visual findings
-
-- Hero hierarchy, warm surface, violet/orange palette, relationship framing, stepper, record/response split, and primary CTA closely match the selected direction.
-- Existing site navigation and truthful product language were retained.
-- Third-party logo marks from the concept were omitted because no approved brand assets were supplied.
-
-## Iteration history
-
-1. Initial comparison found the legacy dark hero cascade overriding the selected warm design (P1).
-2. Added scoped guided-hero overrides and refreshed the stylesheet cache key.
-3. Repeated the browser comparison; no remaining P0, P1, or P2 differences were found.
-
-## Final result
-
-passed
+Source visual truth: /workspace/scratch/482bb3321953/generated_images/exec-ff5e0b8a-d36d-46f8-bfc9-d2d0d16e9f09.png
+Source: 1488 x 1056 pixels; intended CSS viewport 1440 x 1024.
+Implementation screenshot: unavailable.
+State: sample scope and fixed pilot offer.
+Full-view and focused comparison: blocked. Supported preview exits with bwrap unable to mount proc on /newroot/proc (Operation not permitted).
+Typography, layout, colors, asset fidelity, copy and mobile/desktop interaction checks require rendered evidence.
+Only the homepage hero is revised. A live HTML sample scope replaces the small static lead dashboard. Existing links, offer price, review form and analytics are retained. No generated artwork is shipped.
+Syntax checks for existing JavaScript passed. Browser interactions and console checks remain unverified.
+Next check: restore preview; compare desktop/mobile with selected mock; test primary CTA and demo link before merge.
+final result: blocked
