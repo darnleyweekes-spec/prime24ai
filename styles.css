@@ -67,7 +67,7 @@
 .pilot-price span{font-size:13px;letter-spacing:0;color:#68798d;background:#fff;border:1px solid var(--line);border-radius:999px;padding:7px 10px;vertical-align:middle;margin-left:8px}
 .pilot-card{background:#fff;border:1px solid #ffad8e;border-radius:20px;padding:28px;box-shadow:0 18px 44px rgba(237,86,48,.11)}
 .pilot-card>b{display:block;font-size:20px;margin-bottom:18px}
-.pilot-boundary{margin:20px 0 0;border-top:1px solid var(--line);padding-top:17px;color:#66778a;font-size:12px;line-height:1.6}
+.pilot-boundary{margin:18px 0 0;border-top:1px solid var(--line);padding-top:16px;color:#405269;font-size:15px;line-height:1.55}.pilot-layout>.pilot-card .pilot-boundary{max-width:62ch}
 .comparison-table{margin-top:30px;border:1px solid #dbcfd9;border-radius:18px;overflow:hidden;background:#fffdf9;box-shadow:0 12px 34px rgba(48,30,52,.05)}
 .comparison-row{display:grid;grid-template-columns:1fr 1fr}
 .comparison-row>*{padding:17px 22px;border-top:1px solid #eadfe7;color:#586a7e;line-height:1.45}
