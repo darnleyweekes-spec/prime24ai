@@ -20,6 +20,6 @@ form.addEventListener('submit', event => {
   const data = Object.fromEntries(new FormData(form));
   const subject = encodeURIComponent(`Prime24AI workflow inquiry — ${data.name}`);
   const body = encodeURIComponent(`Name: ${data.name}\nEmail: ${data.email}\nBusiness: ${data.business || 'Not provided'}\n\nWorkflow:\n${data.message}`);
-  status.textContent = 'Your email app is opening. Review the prepared message and press Send there to deliver your inquiry.';
-  window.location.href = `mailto:darnley.weekes@gmail.com?subject=${subject}&body=${body}`;
+  status.textContent = 'Gmail is opening. Review the prepared message and press Send there to deliver your inquiry.';
+  window.location.href = `https://mail.google.com/mail/?view=cm&fs=1&to=darnley.weekes%40gmail.com&su=${subject}&body=${body}`;
 });
