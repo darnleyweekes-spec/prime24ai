@@ -67,7 +67,7 @@
     const text = safeText(link.textContent, 100).toLowerCase();
     const label = safeText(link.dataset.contactLabel || link.getAttribute("aria-label") || link.textContent, 100);
 
-    if (href.includes("#service-pilot") || text.includes("pilot")) {
+    if (href.includes("#service-pilot") || href === "/pilot/" || text.includes("pilot")) {
       return ["click_service_pilot", { link_text: label, link_url: href }];
     }
     if (/buy\.stripe\.com|book\.stripe\.com|stripe\.com/i.test(href)) {
@@ -79,7 +79,7 @@
     if (href.startsWith("mailto:") || /mail\.google\.com\/mail/i.test(href)) {
       return ["click_email", { link_text: label, link_url: href.split("?")[0] }];
     }
-    if (link.dataset.contactSubject || href === "#contact") {
+    if (link.dataset.contactSubject || href === "#contact" || href === "/contact/") {
       return ["click_contact", { link_text: label, contact_subject: safeText(link.dataset.contactSubject, 160) }];
     }
     if (/\/proposals\//.test(href)) {
