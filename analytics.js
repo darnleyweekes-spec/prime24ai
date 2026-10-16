@@ -117,6 +117,7 @@
     if (!(form instanceof HTMLFormElement)) return;
     const formId = form.id || "unnamed";
     if (formId === "intake") send("intake_completed", { form_id: formId });
+    else if (formId === "inquiry-form") send("form_email_compose", { form_id: formId });
     else send("form_submit", { form_id: formId });
   });
 
