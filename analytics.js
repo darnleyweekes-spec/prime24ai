@@ -64,10 +64,9 @@
 
   function classifyLink(link) {
     const href = link.getAttribute("href") || "";
-    const text = safeText(link.textContent, 100).toLowerCase();
     const label = safeText(link.dataset.contactLabel || link.getAttribute("aria-label") || link.textContent, 100);
 
-    if (href.includes("#service-pilot") || href === "/pilot/" || text.includes("pilot")) {
+    if (href.includes("#service-pilot") || href === "/pilot/") {
       return ["click_service_pilot", { link_text: label, link_url: href }];
     }
     if (/buy\.stripe\.com|book\.stripe\.com|stripe\.com/i.test(href)) {
@@ -117,7 +116,10 @@
     if (!(form instanceof HTMLFormElement)) return;
     const formId = form.id || "unnamed";
     if (formId === "intake") send("intake_completed", { form_id: formId });
-    else if (formId === "inquiry-form") send("form_email_compose", { form_id: formId });
+    else if (formId === "inquiry-form") {
+      const method = event.submitter?.value || "mailto";
+      send(method === "copy" ? "form_copy_requested" : "form_email_compose", { form_id: formId, method });
+    }
     else send("form_submit", { form_id: formId });
   });
 
