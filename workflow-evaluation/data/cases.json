@@ -1,0 +1,693 @@
+{
+  "version": 1,
+  "classification": "fictional, human-authored labels",
+  "cases": [
+    {
+      "id": "C01",
+      "category": "complete",
+      "inquiry": "I am Alex Example. Email alex@example.com. Please fix a plumbing leak at 101 Fiction Lane today.",
+      "expected": {
+        "status": "pending_approval",
+        "contact_name": "Alex Example",
+        "email": "alex@example.com",
+        "phone": null,
+        "service": "plumbing",
+        "location": "101 Fiction Lane",
+        "urgency": "urgent",
+        "missing_information": [],
+        "ambiguous": false
+      },
+      "draft_required": [
+        "Alex Example",
+        "plumbing"
+      ],
+      "seed": null,
+      "scenario": null,
+      "expected_runtime": {
+        "error_code": null
+      }
+    },
+    {
+      "id": "C02",
+      "category": "complete",
+      "inquiry": "Jordan Sample here, jordan@example.com. Routine electrical outlet inspection at 202 Imaginary Road. No rush.",
+      "expected": {
+        "status": "pending_approval",
+        "contact_name": "Jordan Sample",
+        "email": "jordan@example.com",
+        "phone": null,
+        "service": "electrical",
+        "location": "202 Imaginary Road",
+        "urgency": "routine",
+        "missing_information": [],
+        "ambiguous": false
+      },
+      "draft_required": [
+        "Jordan Sample",
+        "electrical"
+      ],
+      "seed": null,
+      "scenario": null,
+      "expected_runtime": {
+        "error_code": null
+      }
+    },
+    {
+      "id": "C03",
+      "category": "complete",
+      "inquiry": "My name is Casey Demo. Call 202-555-0103. HVAC maintenance this week at 303 Example Avenue.",
+      "expected": {
+        "status": "pending_approval",
+        "contact_name": "Casey Demo",
+        "email": null,
+        "phone": "202-555-0103",
+        "service": "hvac",
+        "location": "303 Example Avenue",
+        "urgency": "soon",
+        "missing_information": [],
+        "ambiguous": false
+      },
+      "draft_required": [
+        "Casey Demo",
+        "hvac"
+      ],
+      "seed": null,
+      "scenario": null,
+      "expected_runtime": {
+        "error_code": null
+      }
+    },
+    {
+      "id": "C04",
+      "category": "complete",
+      "inquiry": "Morgan Fiction, morgan@example.com, 202-555-0104. Routine cleaning at 404 Madeup Street, flexible timing.",
+      "expected": {
+        "status": "pending_approval",
+        "contact_name": "Morgan Fiction",
+        "email": "morgan@example.com",
+        "phone": "202-555-0104",
+        "service": "cleaning",
+        "location": "404 Madeup Street",
+        "urgency": "routine",
+        "missing_information": [],
+        "ambiguous": false
+      },
+      "draft_required": [
+        "Morgan Fiction",
+        "cleaning"
+      ],
+      "seed": null,
+      "scenario": null,
+      "expected_runtime": {
+        "error_code": null
+      }
+    },
+    {
+      "id": "C05",
+      "category": "complete",
+      "inquiry": "Taylor Test at taylor@example.com needs plumbing at 505 Pretend Place within days.",
+      "expected": {
+        "status": "pending_approval",
+        "contact_name": "Taylor Test",
+        "email": "taylor@example.com",
+        "phone": null,
+        "service": "plumbing",
+        "location": "505 Pretend Place",
+        "urgency": "soon",
+        "missing_information": [],
+        "ambiguous": false
+      },
+      "draft_required": [
+        "Taylor Test",
+        "plumbing"
+      ],
+      "seed": null,
+      "scenario": null,
+      "expected_runtime": {
+        "error_code": null
+      }
+    },
+    {
+      "id": "C06",
+      "category": "complete",
+      "inquiry": "I am Riley Example, 202-555-0106. Sparks from an electrical socket at 606 Fiction Court. Help immediately.",
+      "expected": {
+        "status": "pending_approval",
+        "contact_name": "Riley Example",
+        "email": null,
+        "phone": "202-555-0106",
+        "service": "electrical",
+        "location": "606 Fiction Court",
+        "urgency": "urgent",
+        "missing_information": [],
+        "ambiguous": false
+      },
+      "draft_required": [
+        "Riley Example",
+        "electrical"
+      ],
+      "seed": null,
+      "scenario": null,
+      "expected_runtime": {
+        "error_code": null
+      }
+    },
+    {
+      "id": "C07",
+      "category": "complete",
+      "inquiry": "Avery Sample, avery@example.com. HVAC repair at 707 Imaginary Way today.",
+      "expected": {
+        "status": "pending_approval",
+        "contact_name": "Avery Sample",
+        "email": "avery@example.com",
+        "phone": null,
+        "service": "hvac",
+        "location": "707 Imaginary Way",
+        "urgency": "urgent",
+        "missing_information": [],
+        "ambiguous": false
+      },
+      "draft_required": [
+        "Avery Sample",
+        "hvac"
+      ],
+      "seed": null,
+      "scenario": null,
+      "expected_runtime": {
+        "error_code": null
+      }
+    },
+    {
+      "id": "C08",
+      "category": "complete",
+      "inquiry": "Quinn Demo here. quinn@example.com. Cleaning this week at 808 Example Drive.",
+      "expected": {
+        "status": "pending_approval",
+        "contact_name": "Quinn Demo",
+        "email": "quinn@example.com",
+        "phone": null,
+        "service": "cleaning",
+        "location": "808 Example Drive",
+        "urgency": "soon",
+        "missing_information": [],
+        "ambiguous": false
+      },
+      "draft_required": [
+        "Quinn Demo",
+        "cleaning"
+      ],
+      "seed": null,
+      "scenario": null,
+      "expected_runtime": {
+        "error_code": null
+      }
+    },
+    {
+      "id": "C09",
+      "category": "complete",
+      "inquiry": "My name is Jamie Fiction. jamie@example.com, 202-555-0109. Routine plumbing inspection at 909 Madeup Lane; no rush.",
+      "expected": {
+        "status": "pending_approval",
+        "contact_name": "Jamie Fiction",
+        "email": "jamie@example.com",
+        "phone": "202-555-0109",
+        "service": "plumbing",
+        "location": "909 Madeup Lane",
+        "urgency": "routine",
+        "missing_information": [],
+        "ambiguous": false
+      },
+      "draft_required": [
+        "Jamie Fiction",
+        "plumbing"
+      ],
+      "seed": null,
+      "scenario": null,
+      "expected_runtime": {
+        "error_code": null
+      }
+    },
+    {
+      "id": "C10",
+      "category": "complete",
+      "inquiry": "Drew Test, DREW@example.com. Routine HVAC inspection at 1000 Pretend Road. Flexible timing.",
+      "expected": {
+        "status": "pending_approval",
+        "contact_name": "Drew Test",
+        "email": "drew@example.com",
+        "phone": null,
+        "service": "hvac",
+        "location": "1000 Pretend Road",
+        "urgency": "routine",
+        "missing_information": [],
+        "ambiguous": false
+      },
+      "draft_required": [
+        "Drew Test",
+        "hvac"
+      ],
+      "seed": null,
+      "scenario": null,
+      "expected_runtime": {
+        "error_code": null
+      }
+    },
+    {
+      "id": "M01",
+      "category": "missing",
+      "inquiry": "My name is Sam Example. Need plumbing at 11 Fiction Lane today.",
+      "expected": {
+        "status": "pending_approval",
+        "contact_name": "Sam Example",
+        "email": null,
+        "phone": null,
+        "service": "plumbing",
+        "location": "11 Fiction Lane",
+        "urgency": "urgent",
+        "missing_information": [
+          "contact_method"
+        ],
+        "ambiguous": false
+      },
+      "draft_required": [
+        "email or phone"
+      ],
+      "seed": null,
+      "scenario": null,
+      "expected_runtime": {
+        "error_code": null
+      }
+    },
+    {
+      "id": "M02",
+      "category": "missing",
+      "inquiry": "Robin Sample here, robin@example.com. Please arrange cleaning this week.",
+      "expected": {
+        "status": "pending_approval",
+        "contact_name": "Robin Sample",
+        "email": "robin@example.com",
+        "phone": null,
+        "service": "cleaning",
+        "location": null,
+        "urgency": "soon",
+        "missing_information": [
+          "location"
+        ],
+        "ambiguous": false
+      },
+      "draft_required": [
+        "service address"
+      ],
+      "seed": null,
+      "scenario": null,
+      "expected_runtime": {
+        "error_code": null
+      }
+    },
+    {
+      "id": "M03",
+      "category": "missing",
+      "inquiry": "Email anon@example.com. Routine electrical inspection at 33 Example Street. No rush.",
+      "expected": {
+        "status": "pending_approval",
+        "contact_name": null,
+        "email": "anon@example.com",
+        "phone": null,
+        "service": "electrical",
+        "location": "33 Example Street",
+        "urgency": "routine",
+        "missing_information": [
+          "contact_name"
+        ],
+        "ambiguous": false
+      },
+      "draft_required": [
+        "your name"
+      ],
+      "seed": null,
+      "scenario": null,
+      "expected_runtime": {
+        "error_code": null
+      }
+    },
+    {
+      "id": "M04",
+      "category": "missing",
+      "inquiry": "Lee Demo, lee@example.com. HVAC maintenance at 44 Pretend Court.",
+      "expected": {
+        "status": "pending_approval",
+        "contact_name": "Lee Demo",
+        "email": "lee@example.com",
+        "phone": null,
+        "service": "hvac",
+        "location": "44 Pretend Court",
+        "urgency": "unknown",
+        "missing_information": [
+          "urgency"
+        ],
+        "ambiguous": false
+      },
+      "draft_required": [
+        "how soon"
+      ],
+      "seed": null,
+      "scenario": null,
+      "expected_runtime": {
+        "error_code": null
+      }
+    },
+    {
+      "id": "M05",
+      "category": "missing",
+      "inquiry": "Plumbing help today please.",
+      "expected": {
+        "status": "pending_approval",
+        "contact_name": null,
+        "email": null,
+        "phone": null,
+        "service": "plumbing",
+        "location": null,
+        "urgency": "urgent",
+        "missing_information": [
+          "contact_name",
+          "contact_method",
+          "location"
+        ],
+        "ambiguous": false
+      },
+      "draft_required": [
+        "your name",
+        "email or phone",
+        "service address"
+      ],
+      "seed": null,
+      "scenario": null,
+      "expected_runtime": {
+        "error_code": null
+      }
+    },
+    {
+      "id": "D01",
+      "category": "duplicate",
+      "inquiry": "I am Alex Example. Email alex@example.com. Please fix a plumbing leak at 101 Fiction Lane today.",
+      "expected": {
+        "status": "duplicate"
+      },
+      "draft_required": [],
+      "seed": "I am Alex Example. Email alex@example.com. Please fix a plumbing leak at 101 Fiction Lane today.",
+      "scenario": null,
+      "expected_runtime": {
+        "attempts": 0,
+        "retries": 0,
+        "error_code": null
+      }
+    },
+    {
+      "id": "D02",
+      "category": "duplicate",
+      "inquiry": "JORDAN SAMPLE HERE, JORDAN@EXAMPLE.COM. ROUTINE ELECTRICAL OUTLET INSPECTION AT 202 IMAGINARY ROAD. NO RUSH.",
+      "expected": {
+        "status": "duplicate"
+      },
+      "draft_required": [],
+      "seed": "Jordan Sample here, jordan@example.com. Routine electrical outlet inspection at 202 Imaginary Road. No rush.",
+      "scenario": null,
+      "expected_runtime": {
+        "attempts": 0,
+        "retries": 0,
+        "error_code": null
+      }
+    },
+    {
+      "id": "D03",
+      "category": "duplicate",
+      "inquiry": "  My   name   is   Casey   Demo.   Call   202-555-0103.   HVAC   maintenance   this   week   at   303   Example   Avenue.  ",
+      "expected": {
+        "status": "duplicate"
+      },
+      "draft_required": [],
+      "seed": "My name is Casey Demo. Call 202-555-0103. HVAC maintenance this week at 303 Example Avenue.",
+      "scenario": null,
+      "expected_runtime": {
+        "attempts": 0,
+        "retries": 0,
+        "error_code": null
+      }
+    },
+    {
+      "id": "D04",
+      "category": "duplicate",
+      "inquiry": "Morgan Fiction, morgan@example!com, 202-555-0104! Routine cleaning at 404 Madeup Street, flexible timing!",
+      "expected": {
+        "status": "duplicate"
+      },
+      "draft_required": [],
+      "seed": "Morgan Fiction, morgan@example.com, 202-555-0104. Routine cleaning at 404 Madeup Street, flexible timing.",
+      "scenario": null,
+      "expected_runtime": {
+        "attempts": 0,
+        "retries": 0,
+        "error_code": null
+      }
+    },
+    {
+      "id": "D05",
+      "category": "duplicate",
+      "inquiry": "taylor test at taylor@example.com needs plumbing at 505 pretend place within days.",
+      "expected": {
+        "status": "duplicate"
+      },
+      "draft_required": [],
+      "seed": "Taylor Test at taylor@example.com needs plumbing at 505 Pretend Place within days.",
+      "scenario": null,
+      "expected_runtime": {
+        "attempts": 0,
+        "retries": 0,
+        "error_code": null
+      }
+    },
+    {
+      "id": "A01",
+      "category": "ambiguous",
+      "inquiry": "Pat Example, pat@example.com, at 71 Fiction Road. Something is wrong with the system. No rush.",
+      "expected": {
+        "status": "pending_approval",
+        "contact_name": "Pat Example",
+        "email": "pat@example.com",
+        "phone": null,
+        "service": "unclear",
+        "location": "71 Fiction Road",
+        "urgency": "routine",
+        "missing_information": [
+          "service"
+        ],
+        "ambiguous": true
+      },
+      "draft_required": [
+        "which service"
+      ],
+      "seed": null,
+      "scenario": null,
+      "expected_runtime": {
+        "error_code": null
+      }
+    },
+    {
+      "id": "A02",
+      "category": "ambiguous",
+      "inquiry": "Dana Sample, dana@example.com. Could be plumbing or HVAC at 72 Imaginary Lane. Need help this week.",
+      "expected": {
+        "status": "pending_approval",
+        "contact_name": "Dana Sample",
+        "email": "dana@example.com",
+        "phone": null,
+        "service": "unclear",
+        "location": "72 Imaginary Lane",
+        "urgency": "soon",
+        "missing_information": [
+          "service"
+        ],
+        "ambiguous": true
+      },
+      "draft_required": [
+        "which service"
+      ],
+      "seed": null,
+      "scenario": null,
+      "expected_runtime": {
+        "error_code": null
+      }
+    },
+    {
+      "id": "A03",
+      "category": "ambiguous",
+      "inquiry": "Chris Demo. Use chris@example.com, or maybe wrong@example.com; I am not sure which is mine. Cleaning at 73 Example Way today.",
+      "expected": {
+        "status": "pending_approval",
+        "contact_name": "Chris Demo",
+        "email": null,
+        "phone": null,
+        "service": "cleaning",
+        "location": "73 Example Way",
+        "urgency": "urgent",
+        "missing_information": [
+          "contact_method"
+        ],
+        "ambiguous": true
+      },
+      "draft_required": [
+        "email or phone"
+      ],
+      "seed": null,
+      "scenario": null,
+      "expected_runtime": {
+        "error_code": null
+      }
+    },
+    {
+      "id": "A04",
+      "category": "ambiguous",
+      "inquiry": "Sky Fiction, sky@example.com. Routine garden landscaping at 74 Madeup Road, flexible timing.",
+      "expected": {
+        "status": "pending_approval",
+        "contact_name": "Sky Fiction",
+        "email": "sky@example.com",
+        "phone": null,
+        "service": "unclear",
+        "location": "74 Madeup Road",
+        "urgency": "routine",
+        "missing_information": [
+          "service"
+        ],
+        "ambiguous": true
+      },
+      "draft_required": [
+        "which service"
+      ],
+      "seed": null,
+      "scenario": null,
+      "expected_runtime": {
+        "error_code": null
+      }
+    },
+    {
+      "id": "A05",
+      "category": "ambiguous",
+      "inquiry": "Blair Test at blair@example.com. The room is wet and dark at 75 Pretend Street. Please help.",
+      "expected": {
+        "status": "pending_approval",
+        "contact_name": "Blair Test",
+        "email": "blair@example.com",
+        "phone": null,
+        "service": "unclear",
+        "location": "75 Pretend Street",
+        "urgency": "unknown",
+        "missing_information": [
+          "service",
+          "urgency"
+        ],
+        "ambiguous": true
+      },
+      "draft_required": [
+        "which service",
+        "how soon"
+      ],
+      "seed": null,
+      "scenario": null,
+      "expected_runtime": {
+        "error_code": null
+      }
+    },
+    {
+      "id": "F01",
+      "category": "failure",
+      "inquiry": "I am Alex Example. Email alex@example.com. Please fix a plumbing leak at 101 Fiction Lane today.",
+      "expected": {
+        "status": "pending_approval",
+        "contact_name": "Alex Example",
+        "email": "alex@example.com",
+        "phone": null,
+        "service": "plumbing",
+        "location": "101 Fiction Lane",
+        "urgency": "urgent",
+        "missing_information": [],
+        "ambiguous": false
+      },
+      "draft_required": [
+        "Alex Example",
+        "plumbing"
+      ],
+      "seed": null,
+      "scenario": "timeout_then_success",
+      "expected_runtime": {
+        "attempts": 2,
+        "retries": 1,
+        "error_code": null
+      }
+    },
+    {
+      "id": "F02",
+      "category": "failure",
+      "inquiry": "I am Alex Example. Email alex@example.com. Please fix a plumbing leak at 101 Fiction Lane today.",
+      "expected": {
+        "status": "error"
+      },
+      "draft_required": [],
+      "seed": null,
+      "scenario": "timeout_exhausted",
+      "expected_runtime": {
+        "attempts": 3,
+        "retries": 2,
+        "error_code": "api_timeout"
+      }
+    },
+    {
+      "id": "F03",
+      "category": "failure",
+      "inquiry": "I am Alex Example. Email alex@example.com. Please fix a plumbing leak at 101 Fiction Lane today.",
+      "expected": {
+        "status": "error"
+      },
+      "draft_required": [],
+      "seed": null,
+      "scenario": "malformed_json",
+      "expected_runtime": {
+        "attempts": 1,
+        "retries": 0,
+        "error_code": "malformed_output"
+      }
+    },
+    {
+      "id": "F04",
+      "category": "failure",
+      "inquiry": "I am Alex Example. Email alex@example.com. Please fix a plumbing leak at 101 Fiction Lane today.",
+      "expected": {
+        "status": "error"
+      },
+      "draft_required": [],
+      "seed": null,
+      "scenario": "schema_mismatch",
+      "expected_runtime": {
+        "attempts": 1,
+        "retries": 0,
+        "error_code": "malformed_output"
+      }
+    },
+    {
+      "id": "F05",
+      "category": "failure",
+      "inquiry": "I am Alex Example. Email alex@example.com. Please fix a plumbing leak at 101 Fiction Lane today.",
+      "expected": {
+        "status": "error"
+      },
+      "draft_required": [],
+      "seed": null,
+      "scenario": "permanent_api_error",
+      "expected_runtime": {
+        "attempts": 1,
+        "retries": 0,
+        "error_code": "api_http_401"
+      }
+    }
+  ]
+}

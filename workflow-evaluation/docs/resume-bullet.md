@@ -1,0 +1,1 @@
+Built a Python/Streamlit AI lead-processing backend and evaluation dashboard with typed output validation, SQLite audit history, staff approval and bounded retries; passed 61 automated tests and 30/30 fictional fixture/injection cases, including 160/160 regular-fixture extraction checks, with live API evaluation explicitly left unmeasured.

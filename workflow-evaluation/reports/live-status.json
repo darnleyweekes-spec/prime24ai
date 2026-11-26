@@ -1,0 +1,7 @@
+{
+  "status": "skipped",
+  "reason": "OPENAI_API_KEY unavailable",
+  "live_calls": 0,
+  "live_results": null,
+  "mock_transport_tests_are_live_measurements": false
+}

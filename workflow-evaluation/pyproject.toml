@@ -1,0 +1,20 @@
+[project]
+name = "prime24ai-workflow-evaluation"
+version = "0.1.0"
+description = "Supervised lead-processing prototype and honest offline/live evaluation dashboard"
+requires-python = ">=3.11"
+dependencies = ["streamlit>=1.41,<2", "pydantic>=2.10,<3", "httpx>=0.28,<1", "pandas>=2,<4"]
+
+[project.optional-dependencies]
+test = ["pytest>=8,<10"]
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+include = ["lead_eval*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]

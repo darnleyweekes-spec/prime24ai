@@ -1,0 +1,328 @@
+{
+  "classification": "curated offline responses; no live model output",
+  "fixtures": [
+    {
+      "id": "C01",
+      "inquiry": "I am Alex Example. Email alex@example.com. Please fix a plumbing leak at 101 Fiction Lane today.",
+      "response": {
+        "contact_name": "Alex Example",
+        "email": "alex@example.com",
+        "phone": null,
+        "service": "plumbing",
+        "location": "101 Fiction Lane",
+        "urgency": "urgent",
+        "missing_information": [],
+        "ambiguous": false,
+        "draft_response": "Hello Alex Example, Thank you for your plumbing inquiry. We have noted the service address as 101 Fiction Lane. Our staff will review the request before any next step. If there is immediate danger, contact local emergency services."
+      }
+    },
+    {
+      "id": "C02",
+      "inquiry": "Jordan Sample here, jordan@example.com. Routine electrical outlet inspection at 202 Imaginary Road. No rush.",
+      "response": {
+        "contact_name": "Jordan Sample",
+        "email": "jordan@example.com",
+        "phone": null,
+        "service": "electrical",
+        "location": "202 Imaginary Road",
+        "urgency": "routine",
+        "missing_information": [],
+        "ambiguous": false,
+        "draft_response": "Hello Jordan Sample, Thank you for your electrical inquiry. We have noted the service address as 202 Imaginary Road. Our staff will review the request before any next step."
+      }
+    },
+    {
+      "id": "C03",
+      "inquiry": "My name is Casey Demo. Call 202-555-0103. HVAC maintenance this week at 303 Example Avenue.",
+      "response": {
+        "contact_name": "Casey Demo",
+        "email": null,
+        "phone": "202-555-0103",
+        "service": "hvac",
+        "location": "303 Example Avenue",
+        "urgency": "soon",
+        "missing_information": [],
+        "ambiguous": false,
+        "draft_response": "Hello Casey Demo, Thank you for your hvac inquiry. We have noted the service address as 303 Example Avenue. Our staff will review the request before any next step."
+      }
+    },
+    {
+      "id": "C04",
+      "inquiry": "Morgan Fiction, morgan@example.com, 202-555-0104. Routine cleaning at 404 Madeup Street, flexible timing.",
+      "response": {
+        "contact_name": "Morgan Fiction",
+        "email": "morgan@example.com",
+        "phone": "202-555-0104",
+        "service": "cleaning",
+        "location": "404 Madeup Street",
+        "urgency": "routine",
+        "missing_information": [],
+        "ambiguous": false,
+        "draft_response": "Hello Morgan Fiction, Thank you for your cleaning inquiry. We have noted the service address as 404 Madeup Street. Our staff will review the request before any next step."
+      }
+    },
+    {
+      "id": "C05",
+      "inquiry": "Taylor Test at taylor@example.com needs plumbing at 505 Pretend Place within days.",
+      "response": {
+        "contact_name": "Taylor Test",
+        "email": "taylor@example.com",
+        "phone": null,
+        "service": "plumbing",
+        "location": "505 Pretend Place",
+        "urgency": "soon",
+        "missing_information": [],
+        "ambiguous": false,
+        "draft_response": "Hello Taylor Test, Thank you for your plumbing inquiry. We have noted the service address as 505 Pretend Place. Our staff will review the request before any next step."
+      }
+    },
+    {
+      "id": "C06",
+      "inquiry": "I am Riley Example, 202-555-0106. Sparks from an electrical socket at 606 Fiction Court. Help immediately.",
+      "response": {
+        "contact_name": "Riley Example",
+        "email": null,
+        "phone": "202-555-0106",
+        "service": "electrical",
+        "location": "606 Fiction Court",
+        "urgency": "urgent",
+        "missing_information": [],
+        "ambiguous": false,
+        "draft_response": "Hello Riley Example, Thank you for your electrical inquiry. We have noted the service address as 606 Fiction Court. Our staff will review the request before any next step. If there is immediate danger, contact local emergency services."
+      }
+    },
+    {
+      "id": "C07",
+      "inquiry": "Avery Sample, avery@example.com. HVAC repair at 707 Imaginary Way today.",
+      "response": {
+        "contact_name": "Avery Sample",
+        "email": "avery@example.com",
+        "phone": null,
+        "service": "hvac",
+        "location": "707 Imaginary Way",
+        "urgency": "urgent",
+        "missing_information": [],
+        "ambiguous": false,
+        "draft_response": "Hello Avery Sample, Thank you for your hvac inquiry. We have noted the service address as 707 Imaginary Way. Our staff will review the request before any next step. If there is immediate danger, contact local emergency services."
+      }
+    },
+    {
+      "id": "C08",
+      "inquiry": "Quinn Demo here. quinn@example.com. Cleaning this week at 808 Example Drive.",
+      "response": {
+        "contact_name": "Quinn Demo",
+        "email": "quinn@example.com",
+        "phone": null,
+        "service": "cleaning",
+        "location": "808 Example Drive",
+        "urgency": "soon",
+        "missing_information": [],
+        "ambiguous": false,
+        "draft_response": "Hello Quinn Demo, Thank you for your cleaning inquiry. We have noted the service address as 808 Example Drive. Our staff will review the request before any next step."
+      }
+    },
+    {
+      "id": "C09",
+      "inquiry": "My name is Jamie Fiction. jamie@example.com, 202-555-0109. Routine plumbing inspection at 909 Madeup Lane; no rush.",
+      "response": {
+        "contact_name": "Jamie Fiction",
+        "email": "jamie@example.com",
+        "phone": "202-555-0109",
+        "service": "plumbing",
+        "location": "909 Madeup Lane",
+        "urgency": "routine",
+        "missing_information": [],
+        "ambiguous": false,
+        "draft_response": "Hello Jamie Fiction, Thank you for your plumbing inquiry. We have noted the service address as 909 Madeup Lane. Our staff will review the request before any next step."
+      }
+    },
+    {
+      "id": "C10",
+      "inquiry": "Drew Test, DREW@example.com. Routine HVAC inspection at 1000 Pretend Road. Flexible timing.",
+      "response": {
+        "contact_name": "Drew Test",
+        "email": "drew@example.com",
+        "phone": null,
+        "service": "hvac",
+        "location": "1000 Pretend Road",
+        "urgency": "routine",
+        "missing_information": [],
+        "ambiguous": false,
+        "draft_response": "Hello Drew Test, Thank you for your hvac inquiry. We have noted the service address as 1000 Pretend Road. Our staff will review the request before any next step."
+      }
+    },
+    {
+      "id": "M01",
+      "inquiry": "My name is Sam Example. Need plumbing at 11 Fiction Lane today.",
+      "response": {
+        "contact_name": "Sam Example",
+        "email": null,
+        "phone": null,
+        "service": "plumbing",
+        "location": "11 Fiction Lane",
+        "urgency": "urgent",
+        "missing_information": [
+          "contact_method"
+        ],
+        "ambiguous": false,
+        "draft_response": "Hello Sam Example, Thank you for your plumbing inquiry. We have noted the service address as 11 Fiction Lane. Please confirm an email or phone number. Our staff will review the request before any next step. If there is immediate danger, contact local emergency services."
+      }
+    },
+    {
+      "id": "M02",
+      "inquiry": "Robin Sample here, robin@example.com. Please arrange cleaning this week.",
+      "response": {
+        "contact_name": "Robin Sample",
+        "email": "robin@example.com",
+        "phone": null,
+        "service": "cleaning",
+        "location": null,
+        "urgency": "soon",
+        "missing_information": [
+          "location"
+        ],
+        "ambiguous": false,
+        "draft_response": "Hello Robin Sample, Thank you for your cleaning inquiry. What is the service address? Our staff will review the request before any next step."
+      }
+    },
+    {
+      "id": "M03",
+      "inquiry": "Email anon@example.com. Routine electrical inspection at 33 Example Street. No rush.",
+      "response": {
+        "contact_name": null,
+        "email": "anon@example.com",
+        "phone": null,
+        "service": "electrical",
+        "location": "33 Example Street",
+        "urgency": "routine",
+        "missing_information": [
+          "contact_name"
+        ],
+        "ambiguous": false,
+        "draft_response": "Hello, Thank you for your electrical inquiry. We have noted the service address as 33 Example Street. Please share your name. Our staff will review the request before any next step."
+      }
+    },
+    {
+      "id": "M04",
+      "inquiry": "Lee Demo, lee@example.com. HVAC maintenance at 44 Pretend Court.",
+      "response": {
+        "contact_name": "Lee Demo",
+        "email": "lee@example.com",
+        "phone": null,
+        "service": "hvac",
+        "location": "44 Pretend Court",
+        "urgency": "unknown",
+        "missing_information": [
+          "urgency"
+        ],
+        "ambiguous": false,
+        "draft_response": "Hello Lee Demo, Thank you for your hvac inquiry. We have noted the service address as 44 Pretend Court. Please say how soon you need help. Our staff will review the request before any next step."
+      }
+    },
+    {
+      "id": "M05",
+      "inquiry": "Plumbing help today please.",
+      "response": {
+        "contact_name": null,
+        "email": null,
+        "phone": null,
+        "service": "plumbing",
+        "location": null,
+        "urgency": "urgent",
+        "missing_information": [
+          "contact_name",
+          "contact_method",
+          "location"
+        ],
+        "ambiguous": false,
+        "draft_response": "Hello, Thank you for your plumbing inquiry. Please share your name. Please confirm an email or phone number. What is the service address? Our staff will review the request before any next step. If there is immediate danger, contact local emergency services."
+      }
+    },
+    {
+      "id": "A01",
+      "inquiry": "Pat Example, pat@example.com, at 71 Fiction Road. Something is wrong with the system. No rush.",
+      "response": {
+        "contact_name": "Pat Example",
+        "email": "pat@example.com",
+        "phone": null,
+        "service": "unclear",
+        "location": "71 Fiction Road",
+        "urgency": "routine",
+        "missing_information": [
+          "service"
+        ],
+        "ambiguous": true,
+        "draft_response": "Hello Pat Example, Thank you for your service inquiry. We have noted the service address as 71 Fiction Road. A few details need clarification. Please clarify which service you need. Our staff will review the request before any next step."
+      }
+    },
+    {
+      "id": "A02",
+      "inquiry": "Dana Sample, dana@example.com. Could be plumbing or HVAC at 72 Imaginary Lane. Need help this week.",
+      "response": {
+        "contact_name": "Dana Sample",
+        "email": "dana@example.com",
+        "phone": null,
+        "service": "unclear",
+        "location": "72 Imaginary Lane",
+        "urgency": "soon",
+        "missing_information": [
+          "service"
+        ],
+        "ambiguous": true,
+        "draft_response": "Hello Dana Sample, Thank you for your service inquiry. We have noted the service address as 72 Imaginary Lane. A few details need clarification. Please clarify which service you need. Our staff will review the request before any next step."
+      }
+    },
+    {
+      "id": "A03",
+      "inquiry": "Chris Demo. Use chris@example.com, or maybe wrong@example.com; I am not sure which is mine. Cleaning at 73 Example Way today.",
+      "response": {
+        "contact_name": "Chris Demo",
+        "email": null,
+        "phone": null,
+        "service": "cleaning",
+        "location": "73 Example Way",
+        "urgency": "urgent",
+        "missing_information": [
+          "contact_method"
+        ],
+        "ambiguous": true,
+        "draft_response": "Hello Chris Demo, Thank you for your cleaning inquiry. We have noted the service address as 73 Example Way. A few details need clarification. Please confirm an email or phone number. Our staff will review the request before any next step. If there is immediate danger, contact local emergency services."
+      }
+    },
+    {
+      "id": "A04",
+      "inquiry": "Sky Fiction, sky@example.com. Routine garden landscaping at 74 Madeup Road, flexible timing.",
+      "response": {
+        "contact_name": "Sky Fiction",
+        "email": "sky@example.com",
+        "phone": null,
+        "service": "unclear",
+        "location": "74 Madeup Road",
+        "urgency": "routine",
+        "missing_information": [
+          "service"
+        ],
+        "ambiguous": true,
+        "draft_response": "Hello Sky Fiction, Thank you for your service inquiry. We have noted the service address as 74 Madeup Road. A few details need clarification. Please clarify which service you need. Our staff will review the request before any next step."
+      }
+    },
+    {
+      "id": "A05",
+      "inquiry": "Blair Test at blair@example.com. The room is wet and dark at 75 Pretend Street. Please help.",
+      "response": {
+        "contact_name": "Blair Test",
+        "email": "blair@example.com",
+        "phone": null,
+        "service": "unclear",
+        "location": "75 Pretend Street",
+        "urgency": "unknown",
+        "missing_information": [
+          "service",
+          "urgency"
+        ],
+        "ambiguous": true,
+        "draft_response": "Hello Blair Test, Thank you for your service inquiry. We have noted the service address as 75 Pretend Street. A few details need clarification. Please clarify which service you need. Please say how soon you need help. Our staff will review the request before any next step."
+      }
+    }
+  ]
+}
