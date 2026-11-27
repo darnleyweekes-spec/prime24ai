@@ -1,4 +1,6 @@
 """Provider contract: extract facts once, then apply the intake policy locally."""
+import re
+
 from pydantic import BaseModel, ConfigDict, Field, field_validator
 from .schema import LeadOutput, Service, Urgency
 
@@ -19,8 +21,32 @@ class IntakeFacts(BaseModel):
         return (value.strip() or None) if value is not None else None
 
 
-def prepare(text):
+# Conservative English evidence rules for this four-service intake prototype.
+SERVICE_TERMS = {
+    'plumbing': r'plumb(?:er|ing)?|pipes?|drains?|faucets?|toilets?|leak(?:s|ing)?',
+    'electrical': r'electric(?:al|ian)?|wir(?:e|es|ing)|outlets?|sockets?|sparks?|breakers?',
+    'hvac': r'hvac|air condition(?:er|ing)|heating|furnace|heat pump|thermostat',
+    'cleaning': r'clean(?:er|ers|ing)?|housekeeping|janitorial',
+}
+URGENT_TERMS = r'urgent(?:ly)?|emergency|immediate(?:ly)?|today|asap|right now|sparks?|active leak|burst pipe'
+
+
+def prepare(text, inquiry):
     facts = IntakeFacts.model_validate_json(text)
+    if facts.service in SERVICE_TERMS and not re.search(
+        rf'\b(?:{SERVICE_TERMS[facts.service]})\b', inquiry, re.I
+    ):
+        facts.service = 'unclear'
+    if facts.urgency == 'urgent' and not re.search(rf'\b(?:{URGENT_TERMS})\b', inquiry, re.I):
+        facts.urgency = 'unknown'
+    # Recover a phone specifically in an email/phone contact list. Avoid guessing
+    # which number to use when several candidates occur in the message.
+    phone_pattern = r'(?<!\w)(?:\+?1[ .-])?(?:\(\d{3}\)|\d{3})[ .-]\d{3}[ .-]\d{4}(?!\w)'
+    phones = re.findall(phone_pattern, inquiry)
+    if facts.phone is None and facts.email and len(phones) == 1:
+        pair = re.escape(facts.email) + r'\s*[,;|]\s*' + re.escape(phones[0])
+        if re.search(pair, inquiry, re.I):
+            facts.phone = phones[0]
     absent = {
         'contact_name': facts.contact_name is None,
         'contact_method': facts.email is None and facts.phone is None,

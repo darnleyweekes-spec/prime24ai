@@ -107,3 +107,13 @@ The fixture run passed **30/30 expected-behavior cases** and **160/160 regular-f
 This is a small English-language home-services benchmark with curated drafts. It does not establish generalization, live model accuracy or production reliability. Deterministic substring checks can miss plausible hallucinations and can reject harmless wording. The model can still infer service/urgency incorrectly; staff must inspect every draft. No message transmission route exists, even after approval.
 
 There is no auth/RBAC, encryption at rest, retention automation, public deployment, emergency dispatch, semantic duplicate matching or automated recovery of a process killed mid-request. A hard crash may leave a `processing` reservation; inspect the corresponding local record before manually clearing it. HTTP request threads and SQLite are suitable for a local demo, not a load-tested public service. The production website has not been connected to this backend. Next useful validation is a live run with explicit pricing, followed by independently reviewed holdout inquiries and adversarial input cases.
+
+### Recorded live evaluation and offline replay
+
+The [saved live run](reports/verified/live-facts-v2.json) passed 18/20 model extractions, 5/5 local duplicate checks and 5/5 simulated failures. The 20 model calls used 8,327 input and 786 output tokens, with zero retries and an estimated cost of $0.0045884. The model omitted a phone number listed after an email and inferred urgent plumbing from a room described as wet and dark.
+
+The revised intake policy recovers a single formatted North American phone number in an email/phone list and requires English service or urgency cues before accepting those classifications. Its vocabulary is intentionally limited and can request clarification for valid paraphrases. Staff still reviews each draft.
+
+Run `python -m pytest tests/test_recorded_facts.py` for an offline replay. It rebuilds drafts from the saved extraction fields for all 20 model responses and rechecks the 10 recorded local and simulated outcomes against the original labels. All 30 pass on replay. A new live run is required to measure fresh model outputs with this revision.
+
+**Résumé bullet** — Built a Python, Streamlit and SQLite lead-intake evaluation dashboard and measured 18/20 successful live model extractions with zero retries, then corrected two failure modes and verified all 20 recorded extractions through offline replay.
