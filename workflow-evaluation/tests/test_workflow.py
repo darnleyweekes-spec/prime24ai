@@ -147,3 +147,20 @@ def test_validation_rule_is_persisted_without_model_input(cases, db):
     saved = db.get_inquiry(result['id'])['result_json']
     assert json.loads(saved)['error_details'][0]['type'] == 'email_format'
     assert 'private-invalid-value' not in saved
+
+
+def test_provider_facts_prepare_clarification_without_inventing_contact(db):
+    from lead_eval.intake import prepare
+    inquiry = 'I am June Example. Contact june@example.com about the water or wiring today.'
+    class FactsClient:
+        mode = 'fixture'
+        decode = staticmethod(prepare)
+        def complete(self, text):
+            return ModelReply(json.dumps(dict(contact_name='June Example', email='june@example.com',
+                phone='', location=None, service='unclear', urgency='urgent', ambiguous=False)))
+    actual = Workflow(db, FactsClient()).process(inquiry)
+    assert actual['status'] == 'pending_approval'
+    lead = actual['extraction']
+    assert lead['phone'] is None and lead['ambiguous']
+    assert set(lead['missing_information']) == {'location', 'service'}
+    assert 'Which service' in lead['draft_response']

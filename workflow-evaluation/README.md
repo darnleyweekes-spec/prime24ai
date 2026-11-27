@@ -45,7 +45,7 @@ Lead request: `{"inquiry":"fictional inquiry text","mode":"fixture"}`. For arbit
 
 The API and Streamlit share `lead_eval.workflow` and the same database; Streamlit calls this application layer directly, so an HTTP process is optional for the dashboard. Backend submissions appear in the corresponding dashboard approval queue. The API returns 201 for a pending draft, 200 for other persisted workflow outcomes, 400 for bad request envelopes, 409 for invalid approval transitions, and 503 for unconfigured live mode. Inspect the returned `status` for business errors.
 
-The HTTP server binds only to loopback and rejects browser Origin headers and unrecognized Host headers. There is no authentication, user management, production frontend wiring or public deployment. Do not expose it through a tunnel or reverse proxy. Staff names are local attribution, not verified identities. The portfolio branch contains the local prototype.
+The HTTP server binds only to loopback and rejects browser Origin headers and unrecognized Host headers. There is no authentication, user management, production frontend wiring or public deployment. Do not expose it through a tunnel or reverse proxy. Staff names are local attribution, not verified identities. The portfolio branch contains the local prototype. Live extraction requests seven typed facts. Python derives missing information and renders the follow-up from those facts before final validation and grounding. This revision awaits a live benchmark.
 
 ## Live model configuration
 
@@ -53,13 +53,13 @@ The paced live run passed 6/20 extraction cases (48/160 fields), 5/5 duplicate c
 
 Copy `.env.example` for reference. Export variables into your process using your shell or secret manager. The app does **not** automatically load `.env` files. `OPENAI_API_KEY` is required only for live mode; never paste keys into the UI or commit them. `.env*`, virtual environments and working databases are ignored by Git. One provider endpoint is used: OpenAI Chat Completions at `https://api.openai.com/v1/chat/completions` with strict JSON Schema and a default model of `gpt-4.1-mini`.
 
-After supplying credentials in the environment:
+For a paced benchmark with no live retries, use the hidden prompt or an existing environment key:
 
 ```bash
-python -m lead_eval --mode live --output reports/live-evaluation.json
+python -m lead_eval --mode live --prompt-key --output reports/live-facts-v2.json
 ```
 
-A live evaluation processes 20 unique live inquiries, 5 duplicate cases without model calls, and 5 separately labeled injected scenarios without model calls. Transient failures can increase the live call count up to 60. Each duplicate's setup seed is a fixture, outside the measurement population. Model/network/schema errors remain actual failed cases; results are never replaced with fixtures.
+A live evaluation processes 20 unique live inquiries, 5 duplicate cases without model calls, and 5 separately labeled injected scenarios without model calls. The benchmark disables live retries and spaces live cases seven seconds apart, outside measured workflow time. Injected scenarios exercise the bounded retry policy locally. Each duplicate's setup seed is a fixture, outside the measurement population. Model/network/schema errors remain actual failed cases; results are never replaced with fixtures.
 
 Configuration: `OPENAI_MODEL`, `API_TIMEOUT_SECONDS` (default 20; allowed 0–120 exclusive of zero), `DATABASE_PATH` (default `data/dashboard.sqlite`), `INPUT_USD_PER_MILLION` (0.40) and `OUTPUT_USD_PER_MILLION` (1.60). Pricing is an **explicit assumed standard uncached rate**, not a claim about current pricing or billed charges. Verify https://openai.com/api/pricing/ for your selected model before running. Override both rates when changing models. Estimate = `(reported input tokens × input rate + reported output tokens × output rate) / 1,000,000`; no cached/batch discounts are modeled.
 

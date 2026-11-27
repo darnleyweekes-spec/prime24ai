@@ -7,6 +7,7 @@ from collections import Counter
 from dataclasses import asdict
 from pathlib import Path
 from .client import FixtureClient, OpenAIClient, ROOT, SimulatedClient, SYSTEM_PROMPT
+from .intake import IntakeFacts
 from .config import Settings
 from .db import Database
 from .guards import draft_checks
@@ -96,7 +97,7 @@ def summarize(rows):
 def sha(path): return hashlib.sha256(Path(path).read_bytes()).hexdigest()
 
 
-def evaluate(db: Database, mode='fixture', settings=None, cases_path=ROOT / 'data/cases.json'):
+def evaluate(db: Database, mode='fixture', settings=None, cases_path=ROOT / 'data/cases.json', *, live_interval=0):
     if mode not in ('fixture','live'): raise ValueError('Choose fixture or live')
     settings = settings or Settings.from_env()
     cases=load_cases(cases_path)
@@ -109,7 +110,11 @@ def evaluate(db: Database, mode='fixture', settings=None, cases_path=ROOT / 'dat
               'pricing_note':'Assumed USD per million tokens, not a verified current quote; no cached/batch discounts. Verify https://openai.com/api/pricing/ before live use.',
               'duplicate_seeds':'Fixture-only setup, excluded from measured attempts',
               'live_evaluation': 'not requested' if mode=='fixture' else 'requested; simulated cases never call live API'}
+    metadata['live_interval_seconds'] = live_interval
+    metadata['provider_schema_sha256'] = hashlib.sha256(json.dumps(IntakeFacts.model_json_schema(), sort_keys=True).encode()).hexdigest()
     run_id=db.start_run(mode,metadata)
+    import time
+    last_live_start = None
     results=[]
     try:
         for case in cases:
@@ -118,7 +123,13 @@ def evaluate(db: Database, mode='fixture', settings=None, cases_path=ROOT / 'dat
                 seed=Workflow(db,FixtureClient(),settings).process(case['seed'],scope=scope)
                 if seed['status']!='pending_approval': raise RuntimeError('Duplicate seed setup failed')
             chosen=SimulatedClient(case['scenario']) if case['scenario'] else client
-            actual=Workflow(db,chosen,settings).process(case['inquiry'],scope=scope)
+            if chosen.mode == 'live' and not case['seed']:
+                if last_live_start is not None:
+                    time.sleep(max(0, live_interval - (time.monotonic() - last_live_start)))
+                last_live_start = time.monotonic()
+            # Keep injected retry scenarios independent of the live no-retry policy.
+            case_settings = Settings() if mode == 'live' and case['scenario'] else settings
+            actual=Workflow(db,chosen,case_settings).process(case['inquiry'],scope=scope)
             row=score(case,actual)
             results.append(row)
             db.save_case(run_id,row)

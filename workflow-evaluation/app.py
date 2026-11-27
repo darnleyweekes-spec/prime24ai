@@ -1,4 +1,5 @@
 """Streamlit presentation only; business logic lives in lead_eval/."""
+from dataclasses import replace
 import json
 import os
 from pathlib import Path
@@ -45,9 +46,9 @@ with benchmark:
             report=evaluate(db,'fixture',settings)
         st.session_state['selected_run']=report['run_id']
         st.success('Fixture evaluation saved to SQLite. No model API calls made.')
-    if cols[1].button('Run live evaluation (20 cases; retries may add paid calls)',disabled=not key_available):
+    if cols[1].button('Run live evaluation (20 cases, one call each)',disabled=not key_available):
         with st.spinner('Evaluating live model; injected failures use a separate client…'):
-            report=evaluate(db,'live',settings)
+            report=evaluate(db,'live',replace(settings,max_retries=0),live_interval=7)
         st.session_state['selected_run']=report['run_id']
     if not key_available: st.caption('Live evaluation unavailable: OPENAI_API_KEY is absent. Fixture mode is fully usable.')
     runs=db.runs()

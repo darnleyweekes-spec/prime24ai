@@ -61,7 +61,8 @@ class Workflow:
                         output_tokens += reply.output_tokens
                         known_output += 1
                     usage_missing |= reply.input_tokens is None or reply.output_tokens is None
-                    output = LeadOutput.model_validate_json(reply.text)
+                    decode = getattr(self.client, "decode", LeadOutput.model_validate_json)
+                    output = decode(reply.text)
                     validate_grounding(output, stored)
                     checks = draft_checks(output.draft_response, [QUESTIONS[f] for f in output.missing_information])
                     if not all(checks.values()):

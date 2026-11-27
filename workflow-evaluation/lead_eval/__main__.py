@@ -1,3 +1,6 @@
+from dataclasses import replace
+from getpass import getpass
+from .config import Settings
 import argparse
 import json
 import os
@@ -11,10 +14,15 @@ def main():
     parser.add_argument('--mode',choices=['fixture','live'],default='fixture')
     parser.add_argument('--db',default=os.getenv('DATABASE_PATH','data/dashboard.sqlite'))
     parser.add_argument('--output',default='reports/evaluation.json')
+    parser.add_argument('--prompt-key', action='store_true', help='Prompt privately for the live API key')
     args=parser.parse_args()
+    if args.mode=='live' and args.prompt_key and not os.getenv('OPENAI_API_KEY'):
+        os.environ['OPENAI_API_KEY']=getpass('OpenAI API key (hidden): ')
     if args.mode=='live' and not os.getenv('OPENAI_API_KEY','').strip():
         parser.error('Live evaluation skipped: OPENAI_API_KEY is unavailable. No calls made.')
-    report=evaluate(Database(args.db),args.mode)
+    settings=Settings.from_env()
+    if args.mode=='live': settings=replace(settings,max_retries=0)
+    report=evaluate(Database(args.db),args.mode,settings,live_interval=7 if args.mode=='live' else 0)
     path=Path(args.output)
     path.parent.mkdir(parents=True,exist_ok=True)
     path.write_text(json.dumps(report,indent=2)+'\n')

@@ -4,6 +4,7 @@ from dataclasses import dataclass
 from pathlib import Path
 from typing import Protocol
 import httpx
+from .intake import IntakeFacts, prepare
 from .config import Settings
 from .schema import LeadOutput, normalize
 
@@ -48,17 +49,14 @@ Keep original substrings for these fields. Do not guess or choose between confli
 Service is plumbing/electrical/hvac/cleaning, or unclear for unsupported, multiple possible or unknown services.
 Urgency: urgent for explicit immediate/emergency/today or active leak/sparks; soon for this week/within days;
 routine only for explicit routine/flexible/no rush; unknown otherwise. Never infer urgency from vague help.
-Required: contact_name, contact_method (at least email or phone), service, location, urgency.
-missing_information lists exactly the absent required fields. ambiguous is true for unclear intent,
-conflicting contacts, multiple candidate services, or unsupported services. Missing data alone is not ambiguity.
-Draft a brief follow-up grounded only in these facts. Include the person's name and supported service when known.
-Ask for each missing detail using these phrases: your name; email or phone; which service; service address; how soon.
-Every draft must contain 'staff will review'. Never claim an action was sent, booked, scheduled or approved,
-never promise attendance, invent prices, dates, links or contact details. For immediate danger advise local emergency services.
-No tool calls, no external actions. Staff approval happens separately, outside your output.'''
+If exactly one reliable email or phone is supplied, keep it and set the other to JSON null.
+If multiple conflicting values of one contact type are presented without a clear choice, leave that field null.
+Use JSON null for absent strings. Return ambiguous=true for conflicting contacts or unclear intent.
+Missing facts alone do not imply ambiguity. Return only extracted facts. Staff reviews the prepared draft.'''
 
 
 class OpenAIClient:
+    decode = staticmethod(prepare)
     mode = 'live'
     def __init__(self, settings: Settings, *, transport=None):
         key = os.getenv('OPENAI_API_KEY', '').strip()
@@ -80,7 +78,7 @@ class OpenAIClient:
                 'model': self.settings.model, 'temperature': 0, 'max_completion_tokens': 1200,
                 'messages': [{'role':'system','content':SYSTEM_PROMPT}, {'role':'user','content':inquiry}],
                 'response_format': {'type':'json_schema','json_schema': {
-                    'name':'lead_output', 'strict':True, 'schema':LeadOutput.model_json_schema()}}})
+                    'name':'lead_output', 'strict':True, 'schema':IntakeFacts.model_json_schema()}}})
         except httpx.TimeoutException as exc:
             raise APIError('api_timeout', transient=True) from exc
         except httpx.TransportError as exc:
