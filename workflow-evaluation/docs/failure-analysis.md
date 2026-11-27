@@ -11,3 +11,7 @@ Validation errors are permanent for the attempt, so the workflow does not blindl
 For comparison, F01 intentionally timed out once and recovered: 2 attempts, 1 retry, pending_approval. F02 exhausted its bound: 3 attempts, 2 retries, api_timeout. These injection timings and unknown usage are excluded from live model metrics.
 
 A future live study should measure malformed-output frequency, add independently reviewed holdout inquiries and evaluate a single explicit repair strategy against cost and quality criteria. This controlled scenario does not estimate real provider failure rates.
+
+## Observed live validation failures
+
+The paced live run passed 6/20 extraction cases (48/160 fields), 5/5 duplicate checks and 5/5 injected scenarios. Each live inquiry made one attempt. Fourteen responses failed validation, including all five ambiguous cases. The historical report retained only a generic validation error. Future runs record specific rule codes. No improvement in live accuracy has been measured since this change.

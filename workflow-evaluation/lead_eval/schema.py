@@ -1,6 +1,7 @@
 import re
 import unicodedata
 from typing import Literal
+from pydantic_core import PydanticCustomError
 from pydantic import BaseModel, ConfigDict, Field, model_validator
 
 Service = Literal['plumbing', 'electrical', 'hvac', 'cleaning', 'unclear']
@@ -28,11 +29,11 @@ class LeadOutput(BaseModel):
     def consistent(self):
         for value in [self.contact_name, self.email, self.phone, self.location]:
             if value is not None and (not value.strip() or any(unicodedata.category(c) == 'Cc' for c in value)):
-                raise ValueError('Contact fields must be nonempty and have no controls')
+                raise PydanticCustomError('blank_or_control_character', 'Contact fields must be nonempty and have no controls')
         if self.email is not None and not re.fullmatch(r'[^\s@]+@[^\s@]+\.[^\s@]+', self.email):
-            raise ValueError('Invalid email')
+            raise PydanticCustomError('email_format', 'Invalid email')
         if self.phone is not None and not 7 <= len(re.sub(r'\D', '', self.phone)) <= 15:
-            raise ValueError('Invalid phone')
+            raise PydanticCustomError('phone_digit_count', 'Invalid phone')
         missing = set()
         if self.contact_name is None: missing.add('contact_name')
         if self.email is None and self.phone is None: missing.add('contact_method')
@@ -40,9 +41,9 @@ class LeadOutput(BaseModel):
         if self.location is None: missing.add('location')
         if self.urgency == 'unknown': missing.add('urgency')
         if len(set(self.missing_information)) != len(self.missing_information) or set(self.missing_information) != missing:
-            raise ValueError('Missing information must agree with extracted fields')
+            raise PydanticCustomError('missing_information_inconsistent', 'Missing information must agree with extracted fields')
         if self.service == 'unclear' and not self.ambiguous:
-            raise ValueError('Unclear service requires ambiguity')
+            raise PydanticCustomError('unclear_service_requires_ambiguity', 'Unclear service requires ambiguity')
         return self
 
 

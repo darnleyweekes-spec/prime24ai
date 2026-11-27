@@ -132,3 +132,18 @@ def test_unknown_live_usage_is_not_fabricated(cases,db):
     assert result['status']=='pending_approval'
     assert result['input_tokens'] is None and result['output_tokens'] is None
     assert result['estimated_cost_usd'] is None and result['usage_complete'] is False
+
+def test_validation_rule_is_persisted_without_model_input(cases, db):
+    payload = json.loads(FixtureClient().complete(cases[0]['inquiry']).text)
+    payload['email'] = 'private-invalid-value'
+
+    class InvalidEmail:
+        mode = 'fixture'
+
+        def complete(self, inquiry):
+            return ModelReply(json.dumps(payload))
+
+    result = Workflow(db, InvalidEmail()).process(cases[0]['inquiry'])
+    saved = db.get_inquiry(result['id'])['result_json']
+    assert json.loads(saved)['error_details'][0]['type'] == 'email_format'
+    assert 'private-invalid-value' not in saved

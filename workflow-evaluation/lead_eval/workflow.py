@@ -76,7 +76,7 @@ class Workflow:
                 except ValidationError as exc:
                     entry['error_code'] = 'malformed_output'
                     # Do not retain Pydantic's input values; store locations and error types.
-                    detail = [{'field':list(e['loc']), 'type':e['type']} for e in exc.errors()]
+                    detail = [{'field':[part if isinstance(part, int) or part in LeadOutput.model_fields else '<unknown>' for part in e['loc']], 'type':e['type']} for e in exc.errors(include_input=False, include_context=False)]
                     result.update(error_code='malformed_output', error_details=detail)
                 except ValueError as exc:
                     entry['error_code'] = 'output_guardrail'

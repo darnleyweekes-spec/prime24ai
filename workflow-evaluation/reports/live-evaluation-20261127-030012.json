@@ -1,0 +1,3350 @@
+{
+  "run_id": "4d7bbe54b13144e5892452fc85af70a3",
+  "mode": "live",
+  "metadata": {
+    "dataset_sha256": "11ce55251fc638fb6828269f9733433373da27e04181d161ae8b84adcccba533",
+    "fixtures_sha256": "289fc8fbaf26c2aeb4824e21fd8cbe92811338dca4cc71b9c6b4d601809228f3",
+    "prompt_sha256": "796667324cac164ccdd875d6bac2048dc433b2bfd45b9dec2a3005f25284563b",
+    "code_sha256": "1d767328d211005ed0fe140efef8b8528d11457d14649df92f4a7125c6123955",
+    "schema_sha256": "99c982c709efbca0b15c8c4b4c0d5c1d28c955d6bc874ef68d39fd9ef62c4806",
+    "settings": {
+      "model": "gpt-4.1-mini",
+      "timeout_seconds": 20.0,
+      "max_retries": 2,
+      "backoff_seconds": 0.1,
+      "input_usd_per_million": 0.4,
+      "output_usd_per_million": 1.6
+    },
+    "dataset_version": 1,
+    "pricing_note": "Assumed USD per million tokens, not a verified current quote; no cached/batch discounts. Verify https://openai.com/api/pricing/ before live use.",
+    "duplicate_seeds": "Fixture-only setup, excluded from measured attempts",
+    "live_evaluation": "requested; simulated cases never call live API",
+    "pacing_note": "Live request starts spaced at least 7 seconds apart; workflow latency includes pacing waits."
+  },
+  "summary": {
+    "overall": {
+      "n": 30,
+      "passed": 16,
+      "pass_rate": 0.5333333333333333,
+      "extraction_correct": 56,
+      "extraction_n": 168,
+      "extraction_case_n": 21,
+      "extraction_accuracy": 0.3333333333333333,
+      "fields": {
+        "contact_name": {
+          "correct": 7,
+          "n": 21,
+          "accuracy": 0.3333333333333333
+        },
+        "email": {
+          "correct": 7,
+          "n": 21,
+          "accuracy": 0.3333333333333333
+        },
+        "phone": {
+          "correct": 7,
+          "n": 21,
+          "accuracy": 0.3333333333333333
+        },
+        "service": {
+          "correct": 7,
+          "n": 21,
+          "accuracy": 0.3333333333333333
+        },
+        "location": {
+          "correct": 7,
+          "n": 21,
+          "accuracy": 0.3333333333333333
+        },
+        "urgency": {
+          "correct": 7,
+          "n": 21,
+          "accuracy": 0.3333333333333333
+        },
+        "missing_information": {
+          "correct": 7,
+          "n": 21,
+          "accuracy": 0.3333333333333333
+        },
+        "ambiguous": {
+          "correct": 7,
+          "n": 21,
+          "accuracy": 0.3333333333333333
+        }
+      },
+      "workflow_latency_n": 30,
+      "workflow_median_ms": 6711.347103002481,
+      "workflow_p95_ms": 7738.984439987689,
+      "attempted_latency_n": 25,
+      "attempted_median_ms": 6751.468975038733,
+      "attempted_p95_ms": 7738.984439987689,
+      "live_usage_case_n": 20,
+      "known_input_tokens": 11007,
+      "known_output_tokens": 2070,
+      "usage_reported_case_n": 20,
+      "usage_complete_case_n": 20,
+      "known_estimated_cost_usd": 0.0077148,
+      "cost_case_n": 20,
+      "retries": 3,
+      "statuses": {
+        "error": 18,
+        "pending_approval": 7,
+        "duplicate": 5
+      }
+    },
+    "by_category": {
+      "complete": {
+        "n": 10,
+        "passed": 2,
+        "pass_rate": 0.2,
+        "extraction_correct": 16,
+        "extraction_n": 80,
+        "extraction_case_n": 10,
+        "extraction_accuracy": 0.2,
+        "fields": {
+          "contact_name": {
+            "correct": 2,
+            "n": 10,
+            "accuracy": 0.2
+          },
+          "email": {
+            "correct": 2,
+            "n": 10,
+            "accuracy": 0.2
+          },
+          "phone": {
+            "correct": 2,
+            "n": 10,
+            "accuracy": 0.2
+          },
+          "service": {
+            "correct": 2,
+            "n": 10,
+            "accuracy": 0.2
+          },
+          "location": {
+            "correct": 2,
+            "n": 10,
+            "accuracy": 0.2
+          },
+          "urgency": {
+            "correct": 2,
+            "n": 10,
+            "accuracy": 0.2
+          },
+          "missing_information": {
+            "correct": 2,
+            "n": 10,
+            "accuracy": 0.2
+          },
+          "ambiguous": {
+            "correct": 2,
+            "n": 10,
+            "accuracy": 0.2
+          }
+        },
+        "workflow_latency_n": 10,
+        "workflow_median_ms": 6747.149179020198,
+        "workflow_p95_ms": 7738.984439987689,
+        "attempted_latency_n": 10,
+        "attempted_median_ms": 6747.149179020198,
+        "attempted_p95_ms": 7738.984439987689,
+        "live_usage_case_n": 10,
+        "known_input_tokens": 5526,
+        "known_output_tokens": 1043,
+        "usage_reported_case_n": 10,
+        "usage_complete_case_n": 10,
+        "known_estimated_cost_usd": 0.0038792,
+        "cost_case_n": 10,
+        "retries": 0,
+        "statuses": {
+          "error": 8,
+          "pending_approval": 2
+        }
+      },
+      "missing": {
+        "n": 5,
+        "passed": 4,
+        "pass_rate": 0.8,
+        "extraction_correct": 32,
+        "extraction_n": 40,
+        "extraction_case_n": 5,
+        "extraction_accuracy": 0.8,
+        "fields": {
+          "contact_name": {
+            "correct": 4,
+            "n": 5,
+            "accuracy": 0.8
+          },
+          "email": {
+            "correct": 4,
+            "n": 5,
+            "accuracy": 0.8
+          },
+          "phone": {
+            "correct": 4,
+            "n": 5,
+            "accuracy": 0.8
+          },
+          "service": {
+            "correct": 4,
+            "n": 5,
+            "accuracy": 0.8
+          },
+          "location": {
+            "correct": 4,
+            "n": 5,
+            "accuracy": 0.8
+          },
+          "urgency": {
+            "correct": 4,
+            "n": 5,
+            "accuracy": 0.8
+          },
+          "missing_information": {
+            "correct": 4,
+            "n": 5,
+            "accuracy": 0.8
+          },
+          "ambiguous": {
+            "correct": 4,
+            "n": 5,
+            "accuracy": 0.8
+          }
+        },
+        "workflow_latency_n": 5,
+        "workflow_median_ms": 6855.306033976376,
+        "workflow_p95_ms": 7155.56084504351,
+        "attempted_latency_n": 5,
+        "attempted_median_ms": 6855.306033976376,
+        "attempted_p95_ms": 7155.56084504351,
+        "live_usage_case_n": 5,
+        "known_input_tokens": 2713,
+        "known_output_tokens": 463,
+        "usage_reported_case_n": 5,
+        "usage_complete_case_n": 5,
+        "known_estimated_cost_usd": 0.0018260000000000001,
+        "cost_case_n": 5,
+        "retries": 0,
+        "statuses": {
+          "pending_approval": 4,
+          "error": 1
+        }
+      },
+      "duplicate": {
+        "n": 5,
+        "passed": 5,
+        "pass_rate": 1.0,
+        "extraction_correct": 0,
+        "extraction_n": 0,
+        "extraction_case_n": 0,
+        "extraction_accuracy": null,
+        "fields": {
+          "contact_name": {
+            "correct": 0,
+            "n": 0,
+            "accuracy": null
+          },
+          "email": {
+            "correct": 0,
+            "n": 0,
+            "accuracy": null
+          },
+          "phone": {
+            "correct": 0,
+            "n": 0,
+            "accuracy": null
+          },
+          "service": {
+            "correct": 0,
+            "n": 0,
+            "accuracy": null
+          },
+          "location": {
+            "correct": 0,
+            "n": 0,
+            "accuracy": null
+          },
+          "urgency": {
+            "correct": 0,
+            "n": 0,
+            "accuracy": null
+          },
+          "missing_information": {
+            "correct": 0,
+            "n": 0,
+            "accuracy": null
+          },
+          "ambiguous": {
+            "correct": 0,
+            "n": 0,
+            "accuracy": null
+          }
+        },
+        "workflow_latency_n": 5,
+        "workflow_median_ms": 8.818064001388848,
+        "workflow_p95_ms": 9.409074962604791,
+        "attempted_latency_n": 0,
+        "attempted_median_ms": null,
+        "attempted_p95_ms": null,
+        "live_usage_case_n": 0,
+        "known_input_tokens": null,
+        "known_output_tokens": null,
+        "usage_reported_case_n": 0,
+        "usage_complete_case_n": 0,
+        "known_estimated_cost_usd": null,
+        "cost_case_n": 0,
+        "retries": 0,
+        "statuses": {
+          "duplicate": 5
+        }
+      },
+      "ambiguous": {
+        "n": 5,
+        "passed": 0,
+        "pass_rate": 0.0,
+        "extraction_correct": 0,
+        "extraction_n": 40,
+        "extraction_case_n": 5,
+        "extraction_accuracy": 0.0,
+        "fields": {
+          "contact_name": {
+            "correct": 0,
+            "n": 5,
+            "accuracy": 0.0
+          },
+          "email": {
+            "correct": 0,
+            "n": 5,
+            "accuracy": 0.0
+          },
+          "phone": {
+            "correct": 0,
+            "n": 5,
+            "accuracy": 0.0
+          },
+          "service": {
+            "correct": 0,
+            "n": 5,
+            "accuracy": 0.0
+          },
+          "location": {
+            "correct": 0,
+            "n": 5,
+            "accuracy": 0.0
+          },
+          "urgency": {
+            "correct": 0,
+            "n": 5,
+            "accuracy": 0.0
+          },
+          "missing_information": {
+            "correct": 0,
+            "n": 5,
+            "accuracy": 0.0
+          },
+          "ambiguous": {
+            "correct": 0,
+            "n": 5,
+            "accuracy": 0.0
+          }
+        },
+        "workflow_latency_n": 5,
+        "workflow_median_ms": 7266.98223996209,
+        "workflow_p95_ms": 8275.054275000002,
+        "attempted_latency_n": 5,
+        "attempted_median_ms": 7266.98223996209,
+        "attempted_p95_ms": 8275.054275000002,
+        "live_usage_case_n": 5,
+        "known_input_tokens": 2768,
+        "known_output_tokens": 564,
+        "usage_reported_case_n": 5,
+        "usage_complete_case_n": 5,
+        "known_estimated_cost_usd": 0.0020096000000000003,
+        "cost_case_n": 5,
+        "retries": 0,
+        "statuses": {
+          "error": 5
+        }
+      },
+      "failure": {
+        "n": 5,
+        "passed": 5,
+        "pass_rate": 1.0,
+        "extraction_correct": 8,
+        "extraction_n": 8,
+        "extraction_case_n": 1,
+        "extraction_accuracy": 1.0,
+        "fields": {
+          "contact_name": {
+            "correct": 1,
+            "n": 1,
+            "accuracy": 1.0
+          },
+          "email": {
+            "correct": 1,
+            "n": 1,
+            "accuracy": 1.0
+          },
+          "phone": {
+            "correct": 1,
+            "n": 1,
+            "accuracy": 1.0
+          },
+          "service": {
+            "correct": 1,
+            "n": 1,
+            "accuracy": 1.0
+          },
+          "location": {
+            "correct": 1,
+            "n": 1,
+            "accuracy": 1.0
+          },
+          "urgency": {
+            "correct": 1,
+            "n": 1,
+            "accuracy": 1.0
+          },
+          "missing_information": {
+            "correct": 1,
+            "n": 1,
+            "accuracy": 1.0
+          },
+          "ambiguous": {
+            "correct": 1,
+            "n": 1,
+            "accuracy": 1.0
+          }
+        },
+        "workflow_latency_n": 5,
+        "workflow_median_ms": 10.650237032677978,
+        "workflow_p95_ms": 310.5259079602547,
+        "attempted_latency_n": 5,
+        "attempted_median_ms": 10.650237032677978,
+        "attempted_p95_ms": 310.5259079602547,
+        "live_usage_case_n": 0,
+        "known_input_tokens": null,
+        "known_output_tokens": null,
+        "usage_reported_case_n": 0,
+        "usage_complete_case_n": 0,
+        "known_estimated_cost_usd": null,
+        "cost_case_n": 0,
+        "retries": 3,
+        "statuses": {
+          "pending_approval": 1,
+          "error": 4
+        }
+      }
+    },
+    "by_measurement": {
+      "fixture": {
+        "n": 0,
+        "passed": 0,
+        "pass_rate": null,
+        "extraction_correct": 0,
+        "extraction_n": 0,
+        "extraction_case_n": 0,
+        "extraction_accuracy": null,
+        "fields": {
+          "contact_name": {
+            "correct": 0,
+            "n": 0,
+            "accuracy": null
+          },
+          "email": {
+            "correct": 0,
+            "n": 0,
+            "accuracy": null
+          },
+          "phone": {
+            "correct": 0,
+            "n": 0,
+            "accuracy": null
+          },
+          "service": {
+            "correct": 0,
+            "n": 0,
+            "accuracy": null
+          },
+          "location": {
+            "correct": 0,
+            "n": 0,
+            "accuracy": null
+          },
+          "urgency": {
+            "correct": 0,
+            "n": 0,
+            "accuracy": null
+          },
+          "missing_information": {
+            "correct": 0,
+            "n": 0,
+            "accuracy": null
+          },
+          "ambiguous": {
+            "correct": 0,
+            "n": 0,
+            "accuracy": null
+          }
+        },
+        "workflow_latency_n": 0,
+        "workflow_median_ms": null,
+        "workflow_p95_ms": null,
+        "attempted_latency_n": 0,
+        "attempted_median_ms": null,
+        "attempted_p95_ms": null,
+        "live_usage_case_n": 0,
+        "known_input_tokens": null,
+        "known_output_tokens": null,
+        "usage_reported_case_n": 0,
+        "usage_complete_case_n": 0,
+        "known_estimated_cost_usd": null,
+        "cost_case_n": 0,
+        "retries": 0,
+        "statuses": {}
+      },
+      "live": {
+        "n": 25,
+        "passed": 11,
+        "pass_rate": 0.44,
+        "extraction_correct": 48,
+        "extraction_n": 160,
+        "extraction_case_n": 20,
+        "extraction_accuracy": 0.3,
+        "fields": {
+          "contact_name": {
+            "correct": 6,
+            "n": 20,
+            "accuracy": 0.3
+          },
+          "email": {
+            "correct": 6,
+            "n": 20,
+            "accuracy": 0.3
+          },
+          "phone": {
+            "correct": 6,
+            "n": 20,
+            "accuracy": 0.3
+          },
+          "service": {
+            "correct": 6,
+            "n": 20,
+            "accuracy": 0.3
+          },
+          "location": {
+            "correct": 6,
+            "n": 20,
+            "accuracy": 0.3
+          },
+          "urgency": {
+            "correct": 6,
+            "n": 20,
+            "accuracy": 0.3
+          },
+          "missing_information": {
+            "correct": 6,
+            "n": 20,
+            "accuracy": 0.3
+          },
+          "ambiguous": {
+            "correct": 6,
+            "n": 20,
+            "accuracy": 0.3
+          }
+        },
+        "workflow_latency_n": 25,
+        "workflow_median_ms": 6751.468975038733,
+        "workflow_p95_ms": 7738.984439987689,
+        "attempted_latency_n": 20,
+        "attempted_median_ms": 6905.754768988118,
+        "attempted_p95_ms": 7738.984439987689,
+        "live_usage_case_n": 20,
+        "known_input_tokens": 11007,
+        "known_output_tokens": 2070,
+        "usage_reported_case_n": 20,
+        "usage_complete_case_n": 20,
+        "known_estimated_cost_usd": 0.0077148,
+        "cost_case_n": 20,
+        "retries": 0,
+        "statuses": {
+          "error": 14,
+          "pending_approval": 6,
+          "duplicate": 5
+        }
+      },
+      "simulated": {
+        "n": 5,
+        "passed": 5,
+        "pass_rate": 1.0,
+        "extraction_correct": 8,
+        "extraction_n": 8,
+        "extraction_case_n": 1,
+        "extraction_accuracy": 1.0,
+        "fields": {
+          "contact_name": {
+            "correct": 1,
+            "n": 1,
+            "accuracy": 1.0
+          },
+          "email": {
+            "correct": 1,
+            "n": 1,
+            "accuracy": 1.0
+          },
+          "phone": {
+            "correct": 1,
+            "n": 1,
+            "accuracy": 1.0
+          },
+          "service": {
+            "correct": 1,
+            "n": 1,
+            "accuracy": 1.0
+          },
+          "location": {
+            "correct": 1,
+            "n": 1,
+            "accuracy": 1.0
+          },
+          "urgency": {
+            "correct": 1,
+            "n": 1,
+            "accuracy": 1.0
+          },
+          "missing_information": {
+            "correct": 1,
+            "n": 1,
+            "accuracy": 1.0
+          },
+          "ambiguous": {
+            "correct": 1,
+            "n": 1,
+            "accuracy": 1.0
+          }
+        },
+        "workflow_latency_n": 5,
+        "workflow_median_ms": 10.650237032677978,
+        "workflow_p95_ms": 310.5259079602547,
+        "attempted_latency_n": 5,
+        "attempted_median_ms": 10.650237032677978,
+        "attempted_p95_ms": 310.5259079602547,
+        "live_usage_case_n": 0,
+        "known_input_tokens": null,
+        "known_output_tokens": null,
+        "usage_reported_case_n": 0,
+        "usage_complete_case_n": 0,
+        "known_estimated_cost_usd": null,
+        "cost_case_n": 0,
+        "retries": 3,
+        "statuses": {
+          "pending_approval": 1,
+          "error": 4
+        }
+      }
+    },
+    "limitations": "30 fictional cases exercise software behavior. Fixture agreement is not live model quality or production reliability. Draft guardrails require staff semantic review."
+  },
+  "results": [
+    {
+      "case_id": "C01",
+      "category": "complete",
+      "inquiry": "I am Alex Example. Email alex@example.com. Please fix a plumbing leak at 101 Fiction Lane today.",
+      "passed": false,
+      "fields": {
+        "status": {
+          "expected": "pending_approval",
+          "actual": "error",
+          "passed": false
+        },
+        "contact_name": {
+          "expected": "Alex Example",
+          "actual": null,
+          "passed": false
+        },
+        "email": {
+          "expected": "alex@example.com",
+          "actual": null,
+          "passed": false
+        },
+        "phone": {
+          "expected": null,
+          "actual": null,
+          "passed": false
+        },
+        "service": {
+          "expected": "plumbing",
+          "actual": null,
+          "passed": false
+        },
+        "location": {
+          "expected": "101 Fiction Lane",
+          "actual": null,
+          "passed": false
+        },
+        "urgency": {
+          "expected": "urgent",
+          "actual": null,
+          "passed": false
+        },
+        "missing_information": {
+          "expected": [],
+          "actual": null,
+          "passed": false
+        },
+        "ambiguous": {
+          "expected": false,
+          "actual": null,
+          "passed": false
+        }
+      },
+      "runtime_checks": {
+        "error_code": {
+          "expected": null,
+          "actual": "malformed_output",
+          "passed": false
+        }
+      },
+      "draft_checks": {
+        "contains:Alex Example": false,
+        "contains:plumbing": false,
+        "staff_review_notice": false,
+        "no_links_or_prices": true,
+        "no_action_claims": true
+      },
+      "actual": {
+        "id": "09ff048f86b142d19eedc8f51a4da4fc",
+        "mode": "live",
+        "status": "error",
+        "duplicate_of": null,
+        "extraction": null,
+        "error_code": "malformed_output",
+        "error_details": [
+          {
+            "field": [],
+            "type": "value_error"
+          }
+        ],
+        "attempts": [
+          {
+            "attempt": 1,
+            "error_code": "malformed_output",
+            "elapsed_ms": 2149.388113990426,
+            "input_tokens": 551,
+            "output_tokens": 95
+          }
+        ],
+        "retries": 0,
+        "input_tokens": 551,
+        "output_tokens": 95,
+        "usage_complete": true,
+        "estimated_cost_usd": 0.0003724,
+        "response_ms": 2157.5209790025838,
+        "requested_model": "gpt-4.1-mini",
+        "actual_model": "gpt-4.1-mini-2025-04-14"
+      }
+    },
+    {
+      "case_id": "C02",
+      "category": "complete",
+      "inquiry": "Jordan Sample here, jordan@example.com. Routine electrical outlet inspection at 202 Imaginary Road. No rush.",
+      "passed": false,
+      "fields": {
+        "status": {
+          "expected": "pending_approval",
+          "actual": "error",
+          "passed": false
+        },
+        "contact_name": {
+          "expected": "Jordan Sample",
+          "actual": null,
+          "passed": false
+        },
+        "email": {
+          "expected": "jordan@example.com",
+          "actual": null,
+          "passed": false
+        },
+        "phone": {
+          "expected": null,
+          "actual": null,
+          "passed": false
+        },
+        "service": {
+          "expected": "electrical",
+          "actual": null,
+          "passed": false
+        },
+        "location": {
+          "expected": "202 Imaginary Road",
+          "actual": null,
+          "passed": false
+        },
+        "urgency": {
+          "expected": "routine",
+          "actual": null,
+          "passed": false
+        },
+        "missing_information": {
+          "expected": [],
+          "actual": null,
+          "passed": false
+        },
+        "ambiguous": {
+          "expected": false,
+          "actual": null,
+          "passed": false
+        }
+      },
+      "runtime_checks": {
+        "error_code": {
+          "expected": null,
+          "actual": "malformed_output",
+          "passed": false
+        }
+      },
+      "draft_checks": {
+        "contains:Jordan Sample": false,
+        "contains:electrical": false,
+        "staff_review_notice": false,
+        "no_links_or_prices": true,
+        "no_action_claims": true
+      },
+      "actual": {
+        "id": "1a5f877e19db4d13be17231b779447bb",
+        "mode": "live",
+        "status": "error",
+        "duplicate_of": null,
+        "extraction": null,
+        "error_code": "malformed_output",
+        "error_details": [
+          {
+            "field": [],
+            "type": "value_error"
+          }
+        ],
+        "attempts": [
+          {
+            "attempt": 1,
+            "error_code": "malformed_output",
+            "elapsed_ms": 6153.165983967483,
+            "input_tokens": 551,
+            "output_tokens": 108
+          }
+        ],
+        "retries": 0,
+        "input_tokens": 551,
+        "output_tokens": 108,
+        "usage_complete": true,
+        "estimated_cost_usd": 0.00039320000000000007,
+        "response_ms": 6164.935278997291,
+        "requested_model": "gpt-4.1-mini",
+        "actual_model": "gpt-4.1-mini-2025-04-14"
+      }
+    },
+    {
+      "case_id": "C03",
+      "category": "complete",
+      "inquiry": "My name is Casey Demo. Call 202-555-0103. HVAC maintenance this week at 303 Example Avenue.",
+      "passed": false,
+      "fields": {
+        "status": {
+          "expected": "pending_approval",
+          "actual": "error",
+          "passed": false
+        },
+        "contact_name": {
+          "expected": "Casey Demo",
+          "actual": null,
+          "passed": false
+        },
+        "email": {
+          "expected": null,
+          "actual": null,
+          "passed": false
+        },
+        "phone": {
+          "expected": "202-555-0103",
+          "actual": null,
+          "passed": false
+        },
+        "service": {
+          "expected": "hvac",
+          "actual": null,
+          "passed": false
+        },
+        "location": {
+          "expected": "303 Example Avenue",
+          "actual": null,
+          "passed": false
+        },
+        "urgency": {
+          "expected": "soon",
+          "actual": null,
+          "passed": false
+        },
+        "missing_information": {
+          "expected": [],
+          "actual": null,
+          "passed": false
+        },
+        "ambiguous": {
+          "expected": false,
+          "actual": null,
+          "passed": false
+        }
+      },
+      "runtime_checks": {
+        "error_code": {
+          "expected": null,
+          "actual": "malformed_output",
+          "passed": false
+        }
+      },
+      "draft_checks": {
+        "contains:Casey Demo": false,
+        "contains:hvac": false,
+        "staff_review_notice": false,
+        "no_links_or_prices": true,
+        "no_action_claims": true
+      },
+      "actual": {
+        "id": "8be115eb23074000aae2d3579bc41c95",
+        "mode": "live",
+        "status": "error",
+        "duplicate_of": null,
+        "extraction": null,
+        "error_code": "malformed_output",
+        "error_details": [
+          {
+            "field": [],
+            "type": "value_error"
+          }
+        ],
+        "attempts": [
+          {
+            "attempt": 1,
+            "error_code": "malformed_output",
+            "elapsed_ms": 7730.772238981444,
+            "input_tokens": 554,
+            "output_tokens": 104
+          }
+        ],
+        "retries": 0,
+        "input_tokens": 554,
+        "output_tokens": 104,
+        "usage_complete": true,
+        "estimated_cost_usd": 0.000388,
+        "response_ms": 7738.984439987689,
+        "requested_model": "gpt-4.1-mini",
+        "actual_model": "gpt-4.1-mini-2025-04-14"
+      }
+    },
+    {
+      "case_id": "C04",
+      "category": "complete",
+      "inquiry": "Morgan Fiction, morgan@example.com, 202-555-0104. Routine cleaning at 404 Madeup Street, flexible timing.",
+      "passed": true,
+      "fields": {
+        "status": {
+          "expected": "pending_approval",
+          "actual": "pending_approval",
+          "passed": true
+        },
+        "contact_name": {
+          "expected": "Morgan Fiction",
+          "actual": "Morgan Fiction",
+          "passed": true
+        },
+        "email": {
+          "expected": "morgan@example.com",
+          "actual": "morgan@example.com",
+          "passed": true
+        },
+        "phone": {
+          "expected": "202-555-0104",
+          "actual": "202-555-0104",
+          "passed": true
+        },
+        "service": {
+          "expected": "cleaning",
+          "actual": "cleaning",
+          "passed": true
+        },
+        "location": {
+          "expected": "404 Madeup Street",
+          "actual": "404 Madeup Street",
+          "passed": true
+        },
+        "urgency": {
+          "expected": "routine",
+          "actual": "routine",
+          "passed": true
+        },
+        "missing_information": {
+          "expected": [],
+          "actual": [],
+          "passed": true
+        },
+        "ambiguous": {
+          "expected": false,
+          "actual": false,
+          "passed": true
+        }
+      },
+      "runtime_checks": {
+        "error_code": {
+          "expected": null,
+          "actual": null,
+          "passed": true
+        }
+      },
+      "draft_checks": {
+        "contains:Morgan Fiction": true,
+        "contains:cleaning": true,
+        "staff_review_notice": true,
+        "no_links_or_prices": true,
+        "no_action_claims": true
+      },
+      "actual": {
+        "id": "fe4e4352ed4d465e90c93d3dba7f937f",
+        "mode": "live",
+        "status": "pending_approval",
+        "duplicate_of": null,
+        "extraction": {
+          "contact_name": "Morgan Fiction",
+          "email": "morgan@example.com",
+          "phone": "202-555-0104",
+          "service": "cleaning",
+          "location": "404 Madeup Street",
+          "urgency": "routine",
+          "missing_information": [],
+          "ambiguous": false,
+          "draft_response": "Hello Morgan Fiction, thank you for reaching out about routine cleaning at 404 Madeup Street. Your request has been noted with flexible timing. Please let us know if there are any additional details or specific preferences. Our staff will review your inquiry and get back to you."
+        },
+        "error_code": null,
+        "error_details": null,
+        "attempts": [
+          {
+            "attempt": 1,
+            "error_code": null,
+            "elapsed_ms": 6639.238997013308,
+            "input_tokens": 557,
+            "output_tokens": 107
+          }
+        ],
+        "retries": 0,
+        "input_tokens": 557,
+        "output_tokens": 107,
+        "usage_complete": true,
+        "estimated_cost_usd": 0.000394,
+        "response_ms": 6647.280225006398,
+        "requested_model": "gpt-4.1-mini",
+        "actual_model": "gpt-4.1-mini-2025-04-14"
+      }
+    },
+    {
+      "case_id": "C05",
+      "category": "complete",
+      "inquiry": "Taylor Test at taylor@example.com needs plumbing at 505 Pretend Place within days.",
+      "passed": false,
+      "fields": {
+        "status": {
+          "expected": "pending_approval",
+          "actual": "error",
+          "passed": false
+        },
+        "contact_name": {
+          "expected": "Taylor Test",
+          "actual": null,
+          "passed": false
+        },
+        "email": {
+          "expected": "taylor@example.com",
+          "actual": null,
+          "passed": false
+        },
+        "phone": {
+          "expected": null,
+          "actual": null,
+          "passed": false
+        },
+        "service": {
+          "expected": "plumbing",
+          "actual": null,
+          "passed": false
+        },
+        "location": {
+          "expected": "505 Pretend Place",
+          "actual": null,
+          "passed": false
+        },
+        "urgency": {
+          "expected": "soon",
+          "actual": null,
+          "passed": false
+        },
+        "missing_information": {
+          "expected": [],
+          "actual": null,
+          "passed": false
+        },
+        "ambiguous": {
+          "expected": false,
+          "actual": null,
+          "passed": false
+        }
+      },
+      "runtime_checks": {
+        "error_code": {
+          "expected": null,
+          "actual": "malformed_output",
+          "passed": false
+        }
+      },
+      "draft_checks": {
+        "contains:Taylor Test": false,
+        "contains:plumbing": false,
+        "staff_review_notice": false,
+        "no_links_or_prices": true,
+        "no_action_claims": true
+      },
+      "actual": {
+        "id": "30974043779445b2a252c6f633bb990e",
+        "mode": "live",
+        "status": "error",
+        "duplicate_of": null,
+        "extraction": null,
+        "error_code": "malformed_output",
+        "error_details": [
+          {
+            "field": [],
+            "type": "value_error"
+          }
+        ],
+        "attempts": [
+          {
+            "attempt": 1,
+            "error_code": "malformed_output",
+            "elapsed_ms": 6671.276500041131,
+            "input_tokens": 547,
+            "output_tokens": 100
+          }
+        ],
+        "retries": 0,
+        "input_tokens": 547,
+        "output_tokens": 100,
+        "usage_complete": true,
+        "estimated_cost_usd": 0.0003788,
+        "response_ms": 6679.628791986033,
+        "requested_model": "gpt-4.1-mini",
+        "actual_model": "gpt-4.1-mini-2025-04-14"
+      }
+    },
+    {
+      "case_id": "C06",
+      "category": "complete",
+      "inquiry": "I am Riley Example, 202-555-0106. Sparks from an electrical socket at 606 Fiction Court. Help immediately.",
+      "passed": false,
+      "fields": {
+        "status": {
+          "expected": "pending_approval",
+          "actual": "error",
+          "passed": false
+        },
+        "contact_name": {
+          "expected": "Riley Example",
+          "actual": null,
+          "passed": false
+        },
+        "email": {
+          "expected": null,
+          "actual": null,
+          "passed": false
+        },
+        "phone": {
+          "expected": "202-555-0106",
+          "actual": null,
+          "passed": false
+        },
+        "service": {
+          "expected": "electrical",
+          "actual": null,
+          "passed": false
+        },
+        "location": {
+          "expected": "606 Fiction Court",
+          "actual": null,
+          "passed": false
+        },
+        "urgency": {
+          "expected": "urgent",
+          "actual": null,
+          "passed": false
+        },
+        "missing_information": {
+          "expected": [],
+          "actual": null,
+          "passed": false
+        },
+        "ambiguous": {
+          "expected": false,
+          "actual": null,
+          "passed": false
+        }
+      },
+      "runtime_checks": {
+        "error_code": {
+          "expected": null,
+          "actual": "malformed_output",
+          "passed": false
+        }
+      },
+      "draft_checks": {
+        "contains:Riley Example": false,
+        "contains:electrical": false,
+        "staff_review_notice": false,
+        "no_links_or_prices": true,
+        "no_action_claims": true
+      },
+      "actual": {
+        "id": "658e8c197f8c4318b0d16b440d03d311",
+        "mode": "live",
+        "status": "error",
+        "duplicate_of": null,
+        "extraction": null,
+        "error_code": "malformed_output",
+        "error_details": [
+          {
+            "field": [],
+            "type": "value_error"
+          }
+        ],
+        "attempts": [
+          {
+            "attempt": 1,
+            "error_code": "malformed_output",
+            "elapsed_ms": 7011.5007649874315,
+            "input_tokens": 556,
+            "output_tokens": 110
+          }
+        ],
+        "retries": 0,
+        "input_tokens": 556,
+        "output_tokens": 110,
+        "usage_complete": true,
+        "estimated_cost_usd": 0.0003984,
+        "response_ms": 7021.7408669996075,
+        "requested_model": "gpt-4.1-mini",
+        "actual_model": "gpt-4.1-mini-2025-04-14"
+      }
+    },
+    {
+      "case_id": "C07",
+      "category": "complete",
+      "inquiry": "Avery Sample, avery@example.com. HVAC repair at 707 Imaginary Way today.",
+      "passed": false,
+      "fields": {
+        "status": {
+          "expected": "pending_approval",
+          "actual": "error",
+          "passed": false
+        },
+        "contact_name": {
+          "expected": "Avery Sample",
+          "actual": null,
+          "passed": false
+        },
+        "email": {
+          "expected": "avery@example.com",
+          "actual": null,
+          "passed": false
+        },
+        "phone": {
+          "expected": null,
+          "actual": null,
+          "passed": false
+        },
+        "service": {
+          "expected": "hvac",
+          "actual": null,
+          "passed": false
+        },
+        "location": {
+          "expected": "707 Imaginary Way",
+          "actual": null,
+          "passed": false
+        },
+        "urgency": {
+          "expected": "urgent",
+          "actual": null,
+          "passed": false
+        },
+        "missing_information": {
+          "expected": [],
+          "actual": null,
+          "passed": false
+        },
+        "ambiguous": {
+          "expected": false,
+          "actual": null,
+          "passed": false
+        }
+      },
+      "runtime_checks": {
+        "error_code": {
+          "expected": null,
+          "actual": "malformed_output",
+          "passed": false
+        }
+      },
+      "draft_checks": {
+        "contains:Avery Sample": false,
+        "contains:hvac": false,
+        "staff_review_notice": false,
+        "no_links_or_prices": true,
+        "no_action_claims": true
+      },
+      "actual": {
+        "id": "544b4de9cf154298b9d088613bf53d3c",
+        "mode": "live",
+        "status": "error",
+        "duplicate_of": null,
+        "extraction": null,
+        "error_code": "malformed_output",
+        "error_details": [
+          {
+            "field": [],
+            "type": "value_error"
+          }
+        ],
+        "attempts": [
+          {
+            "attempt": 1,
+            "error_code": "malformed_output",
+            "elapsed_ms": 7463.55563699035,
+            "input_tokens": 548,
+            "output_tokens": 103
+          }
+        ],
+        "retries": 0,
+        "input_tokens": 548,
+        "output_tokens": 103,
+        "usage_complete": true,
+        "estimated_cost_usd": 0.000384,
+        "response_ms": 7472.428135981318,
+        "requested_model": "gpt-4.1-mini",
+        "actual_model": "gpt-4.1-mini-2025-04-14"
+      }
+    },
+    {
+      "case_id": "C08",
+      "category": "complete",
+      "inquiry": "Quinn Demo here. quinn@example.com. Cleaning this week at 808 Example Drive.",
+      "passed": false,
+      "fields": {
+        "status": {
+          "expected": "pending_approval",
+          "actual": "error",
+          "passed": false
+        },
+        "contact_name": {
+          "expected": "Quinn Demo",
+          "actual": null,
+          "passed": false
+        },
+        "email": {
+          "expected": "quinn@example.com",
+          "actual": null,
+          "passed": false
+        },
+        "phone": {
+          "expected": null,
+          "actual": null,
+          "passed": false
+        },
+        "service": {
+          "expected": "cleaning",
+          "actual": null,
+          "passed": false
+        },
+        "location": {
+          "expected": "808 Example Drive",
+          "actual": null,
+          "passed": false
+        },
+        "urgency": {
+          "expected": "soon",
+          "actual": null,
+          "passed": false
+        },
+        "missing_information": {
+          "expected": [],
+          "actual": null,
+          "passed": false
+        },
+        "ambiguous": {
+          "expected": false,
+          "actual": null,
+          "passed": false
+        }
+      },
+      "runtime_checks": {
+        "error_code": {
+          "expected": null,
+          "actual": "malformed_output",
+          "passed": false
+        }
+      },
+      "draft_checks": {
+        "contains:Quinn Demo": false,
+        "contains:cleaning": false,
+        "staff_review_notice": false,
+        "no_links_or_prices": true,
+        "no_action_claims": true
+      },
+      "actual": {
+        "id": "c9f318ea306447b18aa3b616aca3f9d3",
+        "mode": "live",
+        "status": "error",
+        "duplicate_of": null,
+        "extraction": null,
+        "error_code": "malformed_output",
+        "error_details": [
+          {
+            "field": [],
+            "type": "value_error"
+          }
+        ],
+        "attempts": [
+          {
+            "attempt": 1,
+            "error_code": "malformed_output",
+            "elapsed_ms": 6743.429113004822,
+            "input_tokens": 548,
+            "output_tokens": 106
+          }
+        ],
+        "retries": 0,
+        "input_tokens": 548,
+        "output_tokens": 106,
+        "usage_complete": true,
+        "estimated_cost_usd": 0.00038880000000000007,
+        "response_ms": 6751.232944021467,
+        "requested_model": "gpt-4.1-mini",
+        "actual_model": "gpt-4.1-mini-2025-04-14"
+      }
+    },
+    {
+      "case_id": "C09",
+      "category": "complete",
+      "inquiry": "My name is Jamie Fiction. jamie@example.com, 202-555-0109. Routine plumbing inspection at 909 Madeup Lane; no rush.",
+      "passed": true,
+      "fields": {
+        "status": {
+          "expected": "pending_approval",
+          "actual": "pending_approval",
+          "passed": true
+        },
+        "contact_name": {
+          "expected": "Jamie Fiction",
+          "actual": "Jamie Fiction",
+          "passed": true
+        },
+        "email": {
+          "expected": "jamie@example.com",
+          "actual": "jamie@example.com",
+          "passed": true
+        },
+        "phone": {
+          "expected": "202-555-0109",
+          "actual": "202-555-0109",
+          "passed": true
+        },
+        "service": {
+          "expected": "plumbing",
+          "actual": "plumbing",
+          "passed": true
+        },
+        "location": {
+          "expected": "909 Madeup Lane",
+          "actual": "909 Madeup Lane",
+          "passed": true
+        },
+        "urgency": {
+          "expected": "routine",
+          "actual": "routine",
+          "passed": true
+        },
+        "missing_information": {
+          "expected": [],
+          "actual": [],
+          "passed": true
+        },
+        "ambiguous": {
+          "expected": false,
+          "actual": false,
+          "passed": true
+        }
+      },
+      "runtime_checks": {
+        "error_code": {
+          "expected": null,
+          "actual": null,
+          "passed": true
+        }
+      },
+      "draft_checks": {
+        "contains:Jamie Fiction": true,
+        "contains:plumbing": true,
+        "staff_review_notice": true,
+        "no_links_or_prices": true,
+        "no_action_claims": true
+      },
+      "actual": {
+        "id": "c225f796d4344043aa2c937c7a13f72e",
+        "mode": "live",
+        "status": "pending_approval",
+        "duplicate_of": null,
+        "extraction": {
+          "contact_name": "Jamie Fiction",
+          "email": "jamie@example.com",
+          "phone": "202-555-0109",
+          "service": "plumbing",
+          "location": "909 Madeup Lane",
+          "urgency": "routine",
+          "missing_information": [],
+          "ambiguous": false,
+          "draft_response": "Hello Jamie Fiction, thank you for reaching out about your routine plumbing inspection at 909 Madeup Lane. Could you please confirm if there is a preferred date or time for the inspection? Our staff will review your request and get back to you."
+        },
+        "error_code": null,
+        "error_details": null,
+        "attempts": [
+          {
+            "attempt": 1,
+            "error_code": null,
+            "elapsed_ms": 6733.513428946026,
+            "input_tokens": 561,
+            "output_tokens": 102
+          }
+        ],
+        "retries": 0,
+        "input_tokens": 561,
+        "output_tokens": 102,
+        "usage_complete": true,
+        "estimated_cost_usd": 0.00038760000000000004,
+        "response_ms": 6743.065414018929,
+        "requested_model": "gpt-4.1-mini",
+        "actual_model": "gpt-4.1-mini-2025-04-14"
+      }
+    },
+    {
+      "case_id": "C10",
+      "category": "complete",
+      "inquiry": "Drew Test, DREW@example.com. Routine HVAC inspection at 1000 Pretend Road. Flexible timing.",
+      "passed": false,
+      "fields": {
+        "status": {
+          "expected": "pending_approval",
+          "actual": "error",
+          "passed": false
+        },
+        "contact_name": {
+          "expected": "Drew Test",
+          "actual": null,
+          "passed": false
+        },
+        "email": {
+          "expected": "drew@example.com",
+          "actual": null,
+          "passed": false
+        },
+        "phone": {
+          "expected": null,
+          "actual": null,
+          "passed": false
+        },
+        "service": {
+          "expected": "hvac",
+          "actual": null,
+          "passed": false
+        },
+        "location": {
+          "expected": "1000 Pretend Road",
+          "actual": null,
+          "passed": false
+        },
+        "urgency": {
+          "expected": "routine",
+          "actual": null,
+          "passed": false
+        },
+        "missing_information": {
+          "expected": [],
+          "actual": null,
+          "passed": false
+        },
+        "ambiguous": {
+          "expected": false,
+          "actual": null,
+          "passed": false
+        }
+      },
+      "runtime_checks": {
+        "error_code": {
+          "expected": null,
+          "actual": "malformed_output",
+          "passed": false
+        }
+      },
+      "draft_checks": {
+        "contains:Drew Test": false,
+        "contains:hvac": false,
+        "staff_review_notice": false,
+        "no_links_or_prices": true,
+        "no_action_claims": true
+      },
+      "actual": {
+        "id": "4a8e9064054243f9b65997d2c7f6dbde",
+        "mode": "live",
+        "status": "error",
+        "duplicate_of": null,
+        "extraction": null,
+        "error_code": "malformed_output",
+        "error_details": [
+          {
+            "field": [],
+            "type": "value_error"
+          }
+        ],
+        "attempts": [
+          {
+            "attempt": 1,
+            "error_code": "malformed_output",
+            "elapsed_ms": 7250.830660981592,
+            "input_tokens": 553,
+            "output_tokens": 108
+          }
+        ],
+        "retries": 0,
+        "input_tokens": 553,
+        "output_tokens": 108,
+        "usage_complete": true,
+        "estimated_cost_usd": 0.000394,
+        "response_ms": 7260.601488000248,
+        "requested_model": "gpt-4.1-mini",
+        "actual_model": "gpt-4.1-mini-2025-04-14"
+      }
+    },
+    {
+      "case_id": "M01",
+      "category": "missing",
+      "inquiry": "My name is Sam Example. Need plumbing at 11 Fiction Lane today.",
+      "passed": true,
+      "fields": {
+        "status": {
+          "expected": "pending_approval",
+          "actual": "pending_approval",
+          "passed": true
+        },
+        "contact_name": {
+          "expected": "Sam Example",
+          "actual": "Sam Example",
+          "passed": true
+        },
+        "email": {
+          "expected": null,
+          "actual": null,
+          "passed": true
+        },
+        "phone": {
+          "expected": null,
+          "actual": null,
+          "passed": true
+        },
+        "service": {
+          "expected": "plumbing",
+          "actual": "plumbing",
+          "passed": true
+        },
+        "location": {
+          "expected": "11 Fiction Lane",
+          "actual": "11 Fiction Lane",
+          "passed": true
+        },
+        "urgency": {
+          "expected": "urgent",
+          "actual": "urgent",
+          "passed": true
+        },
+        "missing_information": {
+          "expected": [
+            "contact_method"
+          ],
+          "actual": [
+            "contact_method"
+          ],
+          "passed": true
+        },
+        "ambiguous": {
+          "expected": false,
+          "actual": false,
+          "passed": true
+        }
+      },
+      "runtime_checks": {
+        "error_code": {
+          "expected": null,
+          "actual": null,
+          "passed": true
+        }
+      },
+      "draft_checks": {
+        "contains:email or phone": true,
+        "staff_review_notice": true,
+        "no_links_or_prices": true,
+        "no_action_claims": true
+      },
+      "actual": {
+        "id": "de0eba9a32314c0498701f7be967e811",
+        "mode": "live",
+        "status": "pending_approval",
+        "duplicate_of": null,
+        "extraction": {
+          "contact_name": "Sam Example",
+          "email": null,
+          "phone": null,
+          "service": "plumbing",
+          "location": "11 Fiction Lane",
+          "urgency": "urgent",
+          "missing_information": [
+            "contact_method"
+          ],
+          "ambiguous": false,
+          "draft_response": "Hello Sam Example, thank you for reaching out about plumbing service. We are missing your email or phone to contact you. Could you please provide your email or phone? Our staff will review your request promptly."
+        },
+        "error_code": null,
+        "error_details": null,
+        "attempts": [
+          {
+            "attempt": 1,
+            "error_code": null,
+            "elapsed_ms": 6847.495237016119,
+            "input_tokens": 544,
+            "output_tokens": 88
+          }
+        ],
+        "retries": 0,
+        "input_tokens": 544,
+        "output_tokens": 88,
+        "usage_complete": true,
+        "estimated_cost_usd": 0.00035840000000000004,
+        "response_ms": 6855.306033976376,
+        "requested_model": "gpt-4.1-mini",
+        "actual_model": "gpt-4.1-mini-2025-04-14"
+      }
+    },
+    {
+      "case_id": "M02",
+      "category": "missing",
+      "inquiry": "Robin Sample here, robin@example.com. Please arrange cleaning this week.",
+      "passed": true,
+      "fields": {
+        "status": {
+          "expected": "pending_approval",
+          "actual": "pending_approval",
+          "passed": true
+        },
+        "contact_name": {
+          "expected": "Robin Sample",
+          "actual": "Robin Sample",
+          "passed": true
+        },
+        "email": {
+          "expected": "robin@example.com",
+          "actual": "robin@example.com",
+          "passed": true
+        },
+        "phone": {
+          "expected": null,
+          "actual": null,
+          "passed": true
+        },
+        "service": {
+          "expected": "cleaning",
+          "actual": "cleaning",
+          "passed": true
+        },
+        "location": {
+          "expected": null,
+          "actual": null,
+          "passed": true
+        },
+        "urgency": {
+          "expected": "soon",
+          "actual": "soon",
+          "passed": true
+        },
+        "missing_information": {
+          "expected": [
+            "location"
+          ],
+          "actual": [
+            "location"
+          ],
+          "passed": true
+        },
+        "ambiguous": {
+          "expected": false,
+          "actual": false,
+          "passed": true
+        }
+      },
+      "runtime_checks": {
+        "error_code": {
+          "expected": null,
+          "actual": null,
+          "passed": true
+        }
+      },
+      "draft_checks": {
+        "contains:service address": true,
+        "staff_review_notice": true,
+        "no_links_or_prices": true,
+        "no_action_claims": true
+      },
+      "actual": {
+        "id": "446fa2edc2f24bad97a104a416f3db0c",
+        "mode": "live",
+        "status": "pending_approval",
+        "duplicate_of": null,
+        "extraction": {
+          "contact_name": "Robin Sample",
+          "email": "robin@example.com",
+          "phone": null,
+          "service": "cleaning",
+          "location": null,
+          "urgency": "soon",
+          "missing_information": [
+            "location"
+          ],
+          "ambiguous": false,
+          "draft_response": "Hello Robin Sample, thank you for your cleaning inquiry. Our staff will review your request. Could you please provide the service address and let us know how soon you need the cleaning? Also, please confirm your phone number if available."
+        },
+        "error_code": null,
+        "error_details": null,
+        "attempts": [
+          {
+            "attempt": 1,
+            "error_code": null,
+            "elapsed_ms": 6840.101840964053,
+            "input_tokens": 543,
+            "output_tokens": 93
+          }
+        ],
+        "retries": 0,
+        "input_tokens": 543,
+        "output_tokens": 93,
+        "usage_complete": true,
+        "estimated_cost_usd": 0.000366,
+        "response_ms": 6851.333275029901,
+        "requested_model": "gpt-4.1-mini",
+        "actual_model": "gpt-4.1-mini-2025-04-14"
+      }
+    },
+    {
+      "case_id": "M03",
+      "category": "missing",
+      "inquiry": "Email anon@example.com. Routine electrical inspection at 33 Example Street. No rush.",
+      "passed": true,
+      "fields": {
+        "status": {
+          "expected": "pending_approval",
+          "actual": "pending_approval",
+          "passed": true
+        },
+        "contact_name": {
+          "expected": null,
+          "actual": null,
+          "passed": true
+        },
+        "email": {
+          "expected": "anon@example.com",
+          "actual": "anon@example.com",
+          "passed": true
+        },
+        "phone": {
+          "expected": null,
+          "actual": null,
+          "passed": true
+        },
+        "service": {
+          "expected": "electrical",
+          "actual": "electrical",
+          "passed": true
+        },
+        "location": {
+          "expected": "33 Example Street",
+          "actual": "33 Example Street",
+          "passed": true
+        },
+        "urgency": {
+          "expected": "routine",
+          "actual": "routine",
+          "passed": true
+        },
+        "missing_information": {
+          "expected": [
+            "contact_name"
+          ],
+          "actual": [
+            "contact_name"
+          ],
+          "passed": true
+        },
+        "ambiguous": {
+          "expected": false,
+          "actual": false,
+          "passed": true
+        }
+      },
+      "runtime_checks": {
+        "error_code": {
+          "expected": null,
+          "actual": null,
+          "passed": true
+        }
+      },
+      "draft_checks": {
+        "contains:your name": true,
+        "staff_review_notice": true,
+        "no_links_or_prices": true,
+        "no_action_claims": true
+      },
+      "actual": {
+        "id": "e137d1fa780744c0977a134a9e48dac3",
+        "mode": "live",
+        "status": "pending_approval",
+        "duplicate_of": null,
+        "extraction": {
+          "contact_name": null,
+          "email": "anon@example.com",
+          "phone": null,
+          "service": "electrical",
+          "location": "33 Example Street",
+          "urgency": "routine",
+          "missing_information": [
+            "contact_name"
+          ],
+          "ambiguous": false,
+          "draft_response": "Thank you for your inquiry about a routine electrical inspection at 33 Example Street. We do not have your name on file. Please provide your name so our staff will review your request."
+        },
+        "error_code": null,
+        "error_details": null,
+        "attempts": [
+          {
+            "attempt": 1,
+            "error_code": null,
+            "elapsed_ms": 7148.144970997237,
+            "input_tokens": 546,
+            "output_tokens": 85
+          }
+        ],
+        "retries": 0,
+        "input_tokens": 546,
+        "output_tokens": 85,
+        "usage_complete": true,
+        "estimated_cost_usd": 0.0003544,
+        "response_ms": 7155.56084504351,
+        "requested_model": "gpt-4.1-mini",
+        "actual_model": "gpt-4.1-mini-2025-04-14"
+      }
+    },
+    {
+      "case_id": "M04",
+      "category": "missing",
+      "inquiry": "Lee Demo, lee@example.com. HVAC maintenance at 44 Pretend Court.",
+      "passed": false,
+      "fields": {
+        "status": {
+          "expected": "pending_approval",
+          "actual": "error",
+          "passed": false
+        },
+        "contact_name": {
+          "expected": "Lee Demo",
+          "actual": null,
+          "passed": false
+        },
+        "email": {
+          "expected": "lee@example.com",
+          "actual": null,
+          "passed": false
+        },
+        "phone": {
+          "expected": null,
+          "actual": null,
+          "passed": false
+        },
+        "service": {
+          "expected": "hvac",
+          "actual": null,
+          "passed": false
+        },
+        "location": {
+          "expected": "44 Pretend Court",
+          "actual": null,
+          "passed": false
+        },
+        "urgency": {
+          "expected": "unknown",
+          "actual": null,
+          "passed": false
+        },
+        "missing_information": {
+          "expected": [
+            "urgency"
+          ],
+          "actual": null,
+          "passed": false
+        },
+        "ambiguous": {
+          "expected": false,
+          "actual": null,
+          "passed": false
+        }
+      },
+      "runtime_checks": {
+        "error_code": {
+          "expected": null,
+          "actual": "malformed_output",
+          "passed": false
+        }
+      },
+      "draft_checks": {
+        "contains:how soon": false,
+        "staff_review_notice": false,
+        "no_links_or_prices": true,
+        "no_action_claims": true
+      },
+      "actual": {
+        "id": "486c40ecacd24cb0b119dfab07ffb3a8",
+        "mode": "live",
+        "status": "error",
+        "duplicate_of": null,
+        "extraction": null,
+        "error_code": "malformed_output",
+        "error_details": [
+          {
+            "field": [],
+            "type": "value_error"
+          }
+        ],
+        "attempts": [
+          {
+            "attempt": 1,
+            "error_code": "malformed_output",
+            "elapsed_ms": 6947.578277962748,
+            "input_tokens": 545,
+            "output_tokens": 105
+          }
+        ],
+        "retries": 0,
+        "input_tokens": 545,
+        "output_tokens": 105,
+        "usage_complete": true,
+        "estimated_cost_usd": 0.000386,
+        "response_ms": 6956.203503999859,
+        "requested_model": "gpt-4.1-mini",
+        "actual_model": "gpt-4.1-mini-2025-04-14"
+      }
+    },
+    {
+      "case_id": "M05",
+      "category": "missing",
+      "inquiry": "Plumbing help today please.",
+      "passed": true,
+      "fields": {
+        "status": {
+          "expected": "pending_approval",
+          "actual": "pending_approval",
+          "passed": true
+        },
+        "contact_name": {
+          "expected": null,
+          "actual": null,
+          "passed": true
+        },
+        "email": {
+          "expected": null,
+          "actual": null,
+          "passed": true
+        },
+        "phone": {
+          "expected": null,
+          "actual": null,
+          "passed": true
+        },
+        "service": {
+          "expected": "plumbing",
+          "actual": "plumbing",
+          "passed": true
+        },
+        "location": {
+          "expected": null,
+          "actual": null,
+          "passed": true
+        },
+        "urgency": {
+          "expected": "urgent",
+          "actual": "urgent",
+          "passed": true
+        },
+        "missing_information": {
+          "expected": [
+            "contact_name",
+            "contact_method",
+            "location"
+          ],
+          "actual": [
+            "contact_name",
+            "contact_method",
+            "location"
+          ],
+          "passed": true
+        },
+        "ambiguous": {
+          "expected": false,
+          "actual": false,
+          "passed": true
+        }
+      },
+      "runtime_checks": {
+        "error_code": {
+          "expected": null,
+          "actual": null,
+          "passed": true
+        }
+      },
+      "draft_checks": {
+        "contains:your name": true,
+        "contains:email or phone": true,
+        "contains:service address": true,
+        "staff_review_notice": true,
+        "no_links_or_prices": true,
+        "no_action_claims": true
+      },
+      "actual": {
+        "id": "95228132a33e4e42a23791adaf09ac19",
+        "mode": "live",
+        "status": "pending_approval",
+        "duplicate_of": null,
+        "extraction": {
+          "contact_name": null,
+          "email": null,
+          "phone": null,
+          "service": "plumbing",
+          "location": null,
+          "urgency": "urgent",
+          "missing_information": [
+            "contact_name",
+            "contact_method",
+            "location"
+          ],
+          "ambiguous": false,
+          "draft_response": "Thank you for reaching out about plumbing help. Could you please provide your name, email or phone, and the service address? Also, please confirm how soon you need the service. Our staff will review your information."
+        },
+        "error_code": null,
+        "error_details": null,
+        "attempts": [
+          {
+            "attempt": 1,
+            "error_code": null,
+            "elapsed_ms": 6741.686467023101,
+            "input_tokens": 535,
+            "output_tokens": 92
+          }
+        ],
+        "retries": 0,
+        "input_tokens": 535,
+        "output_tokens": 92,
+        "usage_complete": true,
+        "estimated_cost_usd": 0.00036120000000000005,
+        "response_ms": 6751.468975038733,
+        "requested_model": "gpt-4.1-mini",
+        "actual_model": "gpt-4.1-mini-2025-04-14"
+      }
+    },
+    {
+      "case_id": "D01",
+      "category": "duplicate",
+      "inquiry": "I am Alex Example. Email alex@example.com. Please fix a plumbing leak at 101 Fiction Lane today.",
+      "passed": true,
+      "fields": {
+        "status": {
+          "expected": "duplicate",
+          "actual": "duplicate",
+          "passed": true
+        }
+      },
+      "runtime_checks": {
+        "attempts": {
+          "expected": 0,
+          "actual": 0,
+          "passed": true
+        },
+        "retries": {
+          "expected": 0,
+          "actual": 0,
+          "passed": true
+        },
+        "error_code": {
+          "expected": null,
+          "actual": null,
+          "passed": true
+        }
+      },
+      "draft_checks": {},
+      "actual": {
+        "id": "bcb9736ee53042b6a237c336aaf84ca2",
+        "mode": "live",
+        "status": "duplicate",
+        "duplicate_of": "2891c9ce379940e4a05c4129d9b6f9b2",
+        "extraction": null,
+        "error_code": null,
+        "error_details": null,
+        "attempts": [],
+        "retries": 0,
+        "input_tokens": null,
+        "output_tokens": null,
+        "usage_complete": null,
+        "estimated_cost_usd": null,
+        "response_ms": 8.563912007957697,
+        "requested_model": "gpt-4.1-mini",
+        "actual_model": null
+      }
+    },
+    {
+      "case_id": "D02",
+      "category": "duplicate",
+      "inquiry": "JORDAN SAMPLE HERE, JORDAN@EXAMPLE.COM. ROUTINE ELECTRICAL OUTLET INSPECTION AT 202 IMAGINARY ROAD. NO RUSH.",
+      "passed": true,
+      "fields": {
+        "status": {
+          "expected": "duplicate",
+          "actual": "duplicate",
+          "passed": true
+        }
+      },
+      "runtime_checks": {
+        "attempts": {
+          "expected": 0,
+          "actual": 0,
+          "passed": true
+        },
+        "retries": {
+          "expected": 0,
+          "actual": 0,
+          "passed": true
+        },
+        "error_code": {
+          "expected": null,
+          "actual": null,
+          "passed": true
+        }
+      },
+      "draft_checks": {},
+      "actual": {
+        "id": "06720cea8c7a47ecbf30901f5dc0757b",
+        "mode": "live",
+        "status": "duplicate",
+        "duplicate_of": "caa7b4b79d3840a9a3efb4de6ab8f06e",
+        "extraction": null,
+        "error_code": null,
+        "error_details": null,
+        "attempts": [],
+        "retries": 0,
+        "input_tokens": null,
+        "output_tokens": null,
+        "usage_complete": null,
+        "estimated_cost_usd": null,
+        "response_ms": 8.774169022217393,
+        "requested_model": "gpt-4.1-mini",
+        "actual_model": null
+      }
+    },
+    {
+      "case_id": "D03",
+      "category": "duplicate",
+      "inquiry": "  My   name   is   Casey   Demo.   Call   202-555-0103.   HVAC   maintenance   this   week   at   303   Example   Avenue.  ",
+      "passed": true,
+      "fields": {
+        "status": {
+          "expected": "duplicate",
+          "actual": "duplicate",
+          "passed": true
+        }
+      },
+      "runtime_checks": {
+        "attempts": {
+          "expected": 0,
+          "actual": 0,
+          "passed": true
+        },
+        "retries": {
+          "expected": 0,
+          "actual": 0,
+          "passed": true
+        },
+        "error_code": {
+          "expected": null,
+          "actual": null,
+          "passed": true
+        }
+      },
+      "draft_checks": {},
+      "actual": {
+        "id": "67018be84b154d17bba3cd6e589dc4d5",
+        "mode": "live",
+        "status": "duplicate",
+        "duplicate_of": "2d2d808387a24c97afde0f99017436d6",
+        "extraction": null,
+        "error_code": null,
+        "error_details": null,
+        "attempts": [],
+        "retries": 0,
+        "input_tokens": null,
+        "output_tokens": null,
+        "usage_complete": null,
+        "estimated_cost_usd": null,
+        "response_ms": 8.818064001388848,
+        "requested_model": "gpt-4.1-mini",
+        "actual_model": null
+      }
+    },
+    {
+      "case_id": "D04",
+      "category": "duplicate",
+      "inquiry": "Morgan Fiction, morgan@example!com, 202-555-0104! Routine cleaning at 404 Madeup Street, flexible timing!",
+      "passed": true,
+      "fields": {
+        "status": {
+          "expected": "duplicate",
+          "actual": "duplicate",
+          "passed": true
+        }
+      },
+      "runtime_checks": {
+        "attempts": {
+          "expected": 0,
+          "actual": 0,
+          "passed": true
+        },
+        "retries": {
+          "expected": 0,
+          "actual": 0,
+          "passed": true
+        },
+        "error_code": {
+          "expected": null,
+          "actual": null,
+          "passed": true
+        }
+      },
+      "draft_checks": {},
+      "actual": {
+        "id": "cb460604b233459f840ff539add30490",
+        "mode": "live",
+        "status": "duplicate",
+        "duplicate_of": "e28dd3b63a374466945edfb61aa431f9",
+        "extraction": null,
+        "error_code": null,
+        "error_details": null,
+        "attempts": [],
+        "retries": 0,
+        "input_tokens": null,
+        "output_tokens": null,
+        "usage_complete": null,
+        "estimated_cost_usd": null,
+        "response_ms": 9.359476971440017,
+        "requested_model": "gpt-4.1-mini",
+        "actual_model": null
+      }
+    },
+    {
+      "case_id": "D05",
+      "category": "duplicate",
+      "inquiry": "taylor test at taylor@example.com needs plumbing at 505 pretend place within days.",
+      "passed": true,
+      "fields": {
+        "status": {
+          "expected": "duplicate",
+          "actual": "duplicate",
+          "passed": true
+        }
+      },
+      "runtime_checks": {
+        "attempts": {
+          "expected": 0,
+          "actual": 0,
+          "passed": true
+        },
+        "retries": {
+          "expected": 0,
+          "actual": 0,
+          "passed": true
+        },
+        "error_code": {
+          "expected": null,
+          "actual": null,
+          "passed": true
+        }
+      },
+      "draft_checks": {},
+      "actual": {
+        "id": "d0a4c0b86e9349c79504596ff56f615b",
+        "mode": "live",
+        "status": "duplicate",
+        "duplicate_of": "1789d27f597449c9b69536bec1df66b2",
+        "extraction": null,
+        "error_code": null,
+        "error_details": null,
+        "attempts": [],
+        "retries": 0,
+        "input_tokens": null,
+        "output_tokens": null,
+        "usage_complete": null,
+        "estimated_cost_usd": null,
+        "response_ms": 9.409074962604791,
+        "requested_model": "gpt-4.1-mini",
+        "actual_model": null
+      }
+    },
+    {
+      "case_id": "A01",
+      "category": "ambiguous",
+      "inquiry": "Pat Example, pat@example.com, at 71 Fiction Road. Something is wrong with the system. No rush.",
+      "passed": false,
+      "fields": {
+        "status": {
+          "expected": "pending_approval",
+          "actual": "error",
+          "passed": false
+        },
+        "contact_name": {
+          "expected": "Pat Example",
+          "actual": null,
+          "passed": false
+        },
+        "email": {
+          "expected": "pat@example.com",
+          "actual": null,
+          "passed": false
+        },
+        "phone": {
+          "expected": null,
+          "actual": null,
+          "passed": false
+        },
+        "service": {
+          "expected": "unclear",
+          "actual": null,
+          "passed": false
+        },
+        "location": {
+          "expected": "71 Fiction Road",
+          "actual": null,
+          "passed": false
+        },
+        "urgency": {
+          "expected": "routine",
+          "actual": null,
+          "passed": false
+        },
+        "missing_information": {
+          "expected": [
+            "service"
+          ],
+          "actual": null,
+          "passed": false
+        },
+        "ambiguous": {
+          "expected": true,
+          "actual": null,
+          "passed": false
+        }
+      },
+      "runtime_checks": {
+        "error_code": {
+          "expected": null,
+          "actual": "malformed_output",
+          "passed": false
+        }
+      },
+      "draft_checks": {
+        "contains:which service": false,
+        "staff_review_notice": false,
+        "no_links_or_prices": true,
+        "no_action_claims": true
+      },
+      "actual": {
+        "id": "61eeb18452334b288593425763f191f3",
+        "mode": "live",
+        "status": "error",
+        "duplicate_of": null,
+        "extraction": null,
+        "error_code": "malformed_output",
+        "error_details": [
+          {
+            "field": [],
+            "type": "value_error"
+          }
+        ],
+        "attempts": [
+          {
+            "attempt": 1,
+            "error_code": "malformed_output",
+            "elapsed_ms": 7588.3829580270685,
+            "input_tokens": 552,
+            "output_tokens": 110
+          }
+        ],
+        "retries": 0,
+        "input_tokens": 552,
+        "output_tokens": 110,
+        "usage_complete": true,
+        "estimated_cost_usd": 0.0003968,
+        "response_ms": 7599.7923710383475,
+        "requested_model": "gpt-4.1-mini",
+        "actual_model": "gpt-4.1-mini-2025-04-14"
+      }
+    },
+    {
+      "case_id": "A02",
+      "category": "ambiguous",
+      "inquiry": "Dana Sample, dana@example.com. Could be plumbing or HVAC at 72 Imaginary Lane. Need help this week.",
+      "passed": false,
+      "fields": {
+        "status": {
+          "expected": "pending_approval",
+          "actual": "error",
+          "passed": false
+        },
+        "contact_name": {
+          "expected": "Dana Sample",
+          "actual": null,
+          "passed": false
+        },
+        "email": {
+          "expected": "dana@example.com",
+          "actual": null,
+          "passed": false
+        },
+        "phone": {
+          "expected": null,
+          "actual": null,
+          "passed": false
+        },
+        "service": {
+          "expected": "unclear",
+          "actual": null,
+          "passed": false
+        },
+        "location": {
+          "expected": "72 Imaginary Lane",
+          "actual": null,
+          "passed": false
+        },
+        "urgency": {
+          "expected": "soon",
+          "actual": null,
+          "passed": false
+        },
+        "missing_information": {
+          "expected": [
+            "service"
+          ],
+          "actual": null,
+          "passed": false
+        },
+        "ambiguous": {
+          "expected": true,
+          "actual": null,
+          "passed": false
+        }
+      },
+      "runtime_checks": {
+        "error_code": {
+          "expected": null,
+          "actual": "malformed_output",
+          "passed": false
+        }
+      },
+      "draft_checks": {
+        "contains:which service": false,
+        "staff_review_notice": false,
+        "no_links_or_prices": true,
+        "no_action_claims": true
+      },
+      "actual": {
+        "id": "686811f99b0a491ebbff6719ab06f740",
+        "mode": "live",
+        "status": "error",
+        "duplicate_of": null,
+        "extraction": null,
+        "error_code": "malformed_output",
+        "error_details": [
+          {
+            "field": [],
+            "type": "value_error"
+          }
+        ],
+        "attempts": [
+          {
+            "attempt": 1,
+            "error_code": "malformed_output",
+            "elapsed_ms": 6223.32238702802,
+            "input_tokens": 553,
+            "output_tokens": 107
+          }
+        ],
+        "retries": 0,
+        "input_tokens": 553,
+        "output_tokens": 107,
+        "usage_complete": true,
+        "estimated_cost_usd": 0.00039240000000000005,
+        "response_ms": 6250.267991039436,
+        "requested_model": "gpt-4.1-mini",
+        "actual_model": "gpt-4.1-mini-2025-04-14"
+      }
+    },
+    {
+      "case_id": "A03",
+      "category": "ambiguous",
+      "inquiry": "Chris Demo. Use chris@example.com, or maybe wrong@example.com; I am not sure which is mine. Cleaning at 73 Example Way today.",
+      "passed": false,
+      "fields": {
+        "status": {
+          "expected": "pending_approval",
+          "actual": "error",
+          "passed": false
+        },
+        "contact_name": {
+          "expected": "Chris Demo",
+          "actual": null,
+          "passed": false
+        },
+        "email": {
+          "expected": null,
+          "actual": null,
+          "passed": false
+        },
+        "phone": {
+          "expected": null,
+          "actual": null,
+          "passed": false
+        },
+        "service": {
+          "expected": "cleaning",
+          "actual": null,
+          "passed": false
+        },
+        "location": {
+          "expected": "73 Example Way",
+          "actual": null,
+          "passed": false
+        },
+        "urgency": {
+          "expected": "urgent",
+          "actual": null,
+          "passed": false
+        },
+        "missing_information": {
+          "expected": [
+            "contact_method"
+          ],
+          "actual": null,
+          "passed": false
+        },
+        "ambiguous": {
+          "expected": true,
+          "actual": null,
+          "passed": false
+        }
+      },
+      "runtime_checks": {
+        "error_code": {
+          "expected": null,
+          "actual": "malformed_output",
+          "passed": false
+        }
+      },
+      "draft_checks": {
+        "contains:email or phone": false,
+        "staff_review_notice": false,
+        "no_links_or_prices": true,
+        "no_action_claims": true
+      },
+      "actual": {
+        "id": "881fddedfa7a4fdba7c11ea972518d5b",
+        "mode": "live",
+        "status": "error",
+        "duplicate_of": null,
+        "extraction": null,
+        "error_code": "malformed_output",
+        "error_details": [
+          {
+            "field": [],
+            "type": "value_error"
+          }
+        ],
+        "attempts": [
+          {
+            "attempt": 1,
+            "error_code": "malformed_output",
+            "elapsed_ms": 7233.484874013811,
+            "input_tokens": 560,
+            "output_tokens": 109
+          }
+        ],
+        "retries": 0,
+        "input_tokens": 560,
+        "output_tokens": 109,
+        "usage_complete": true,
+        "estimated_cost_usd": 0.0003984,
+        "response_ms": 7266.98223996209,
+        "requested_model": "gpt-4.1-mini",
+        "actual_model": "gpt-4.1-mini-2025-04-14"
+      }
+    },
+    {
+      "case_id": "A04",
+      "category": "ambiguous",
+      "inquiry": "Sky Fiction, sky@example.com. Routine garden landscaping at 74 Madeup Road, flexible timing.",
+      "passed": false,
+      "fields": {
+        "status": {
+          "expected": "pending_approval",
+          "actual": "error",
+          "passed": false
+        },
+        "contact_name": {
+          "expected": "Sky Fiction",
+          "actual": null,
+          "passed": false
+        },
+        "email": {
+          "expected": "sky@example.com",
+          "actual": null,
+          "passed": false
+        },
+        "phone": {
+          "expected": null,
+          "actual": null,
+          "passed": false
+        },
+        "service": {
+          "expected": "unclear",
+          "actual": null,
+          "passed": false
+        },
+        "location": {
+          "expected": "74 Madeup Road",
+          "actual": null,
+          "passed": false
+        },
+        "urgency": {
+          "expected": "routine",
+          "actual": null,
+          "passed": false
+        },
+        "missing_information": {
+          "expected": [
+            "service"
+          ],
+          "actual": null,
+          "passed": false
+        },
+        "ambiguous": {
+          "expected": true,
+          "actual": null,
+          "passed": false
+        }
+      },
+      "runtime_checks": {
+        "error_code": {
+          "expected": null,
+          "actual": "malformed_output",
+          "passed": false
+        }
+      },
+      "draft_checks": {
+        "contains:which service": false,
+        "staff_review_notice": false,
+        "no_links_or_prices": true,
+        "no_action_claims": true
+      },
+      "actual": {
+        "id": "eb908d12a05447aead3e7f25b2606726",
+        "mode": "live",
+        "status": "error",
+        "duplicate_of": null,
+        "extraction": null,
+        "error_code": "malformed_output",
+        "error_details": [
+          {
+            "field": [],
+            "type": "value_error"
+          }
+        ],
+        "attempts": [
+          {
+            "attempt": 1,
+            "error_code": "malformed_output",
+            "elapsed_ms": 7024.897549999878,
+            "input_tokens": 549,
+            "output_tokens": 118
+          }
+        ],
+        "retries": 0,
+        "input_tokens": 549,
+        "output_tokens": 118,
+        "usage_complete": true,
+        "estimated_cost_usd": 0.00040840000000000006,
+        "response_ms": 7033.415444020648,
+        "requested_model": "gpt-4.1-mini",
+        "actual_model": "gpt-4.1-mini-2025-04-14"
+      }
+    },
+    {
+      "case_id": "A05",
+      "category": "ambiguous",
+      "inquiry": "Blair Test at blair@example.com. The room is wet and dark at 75 Pretend Street. Please help.",
+      "passed": false,
+      "fields": {
+        "status": {
+          "expected": "pending_approval",
+          "actual": "error",
+          "passed": false
+        },
+        "contact_name": {
+          "expected": "Blair Test",
+          "actual": null,
+          "passed": false
+        },
+        "email": {
+          "expected": "blair@example.com",
+          "actual": null,
+          "passed": false
+        },
+        "phone": {
+          "expected": null,
+          "actual": null,
+          "passed": false
+        },
+        "service": {
+          "expected": "unclear",
+          "actual": null,
+          "passed": false
+        },
+        "location": {
+          "expected": "75 Pretend Street",
+          "actual": null,
+          "passed": false
+        },
+        "urgency": {
+          "expected": "unknown",
+          "actual": null,
+          "passed": false
+        },
+        "missing_information": {
+          "expected": [
+            "service",
+            "urgency"
+          ],
+          "actual": null,
+          "passed": false
+        },
+        "ambiguous": {
+          "expected": true,
+          "actual": null,
+          "passed": false
+        }
+      },
+      "runtime_checks": {
+        "error_code": {
+          "expected": null,
+          "actual": "malformed_output",
+          "passed": false
+        }
+      },
+      "draft_checks": {
+        "contains:which service": false,
+        "contains:how soon": false,
+        "staff_review_notice": false,
+        "no_links_or_prices": true,
+        "no_action_claims": true
+      },
+      "actual": {
+        "id": "8032153f899b4850a00ff2024d65fbb9",
+        "mode": "live",
+        "status": "error",
+        "duplicate_of": null,
+        "extraction": null,
+        "error_code": "malformed_output",
+        "error_details": [
+          {
+            "field": [],
+            "type": "value_error"
+          }
+        ],
+        "attempts": [
+          {
+            "attempt": 1,
+            "error_code": "malformed_output",
+            "elapsed_ms": 8265.536036982667,
+            "input_tokens": 554,
+            "output_tokens": 120
+          }
+        ],
+        "retries": 0,
+        "input_tokens": 554,
+        "output_tokens": 120,
+        "usage_complete": true,
+        "estimated_cost_usd": 0.0004136,
+        "response_ms": 8275.054275000002,
+        "requested_model": "gpt-4.1-mini",
+        "actual_model": "gpt-4.1-mini-2025-04-14"
+      }
+    },
+    {
+      "case_id": "F01",
+      "category": "failure",
+      "inquiry": "I am Alex Example. Email alex@example.com. Please fix a plumbing leak at 101 Fiction Lane today.",
+      "passed": true,
+      "fields": {
+        "status": {
+          "expected": "pending_approval",
+          "actual": "pending_approval",
+          "passed": true
+        },
+        "contact_name": {
+          "expected": "Alex Example",
+          "actual": "Alex Example",
+          "passed": true
+        },
+        "email": {
+          "expected": "alex@example.com",
+          "actual": "alex@example.com",
+          "passed": true
+        },
+        "phone": {
+          "expected": null,
+          "actual": null,
+          "passed": true
+        },
+        "service": {
+          "expected": "plumbing",
+          "actual": "plumbing",
+          "passed": true
+        },
+        "location": {
+          "expected": "101 Fiction Lane",
+          "actual": "101 Fiction Lane",
+          "passed": true
+        },
+        "urgency": {
+          "expected": "urgent",
+          "actual": "urgent",
+          "passed": true
+        },
+        "missing_information": {
+          "expected": [],
+          "actual": [],
+          "passed": true
+        },
+        "ambiguous": {
+          "expected": false,
+          "actual": false,
+          "passed": true
+        }
+      },
+      "runtime_checks": {
+        "attempts": {
+          "expected": 2,
+          "actual": 2,
+          "passed": true
+        },
+        "retries": {
+          "expected": 1,
+          "actual": 1,
+          "passed": true
+        },
+        "error_code": {
+          "expected": null,
+          "actual": null,
+          "passed": true
+        }
+      },
+      "draft_checks": {
+        "contains:Alex Example": true,
+        "contains:plumbing": true,
+        "staff_review_notice": true,
+        "no_links_or_prices": true,
+        "no_action_claims": true
+      },
+      "actual": {
+        "id": "0e4f84e5e9d04212a5135d05c8604717",
+        "mode": "simulated",
+        "status": "pending_approval",
+        "duplicate_of": null,
+        "extraction": {
+          "contact_name": "Alex Example",
+          "email": "alex@example.com",
+          "phone": null,
+          "service": "plumbing",
+          "location": "101 Fiction Lane",
+          "urgency": "urgent",
+          "missing_information": [],
+          "ambiguous": false,
+          "draft_response": "Hello Alex Example, Thank you for your plumbing inquiry. We have noted the service address as 101 Fiction Lane. Our staff will review the request before any next step. If there is immediate danger, contact local emergency services."
+        },
+        "error_code": null,
+        "error_details": null,
+        "attempts": [
+          {
+            "attempt": 1,
+            "error_code": "api_timeout",
+            "elapsed_ms": 0.021230021957308054,
+            "input_tokens": null,
+            "output_tokens": null
+          },
+          {
+            "attempt": 2,
+            "error_code": null,
+            "elapsed_ms": 0.38409698754549026,
+            "input_tokens": null,
+            "output_tokens": null
+          }
+        ],
+        "retries": 1,
+        "input_tokens": null,
+        "output_tokens": null,
+        "usage_complete": null,
+        "estimated_cost_usd": null,
+        "response_ms": 135.4878419660963,
+        "requested_model": null,
+        "actual_model": "curated-fixture-v1"
+      }
+    },
+    {
+      "case_id": "F02",
+      "category": "failure",
+      "inquiry": "I am Alex Example. Email alex@example.com. Please fix a plumbing leak at 101 Fiction Lane today.",
+      "passed": true,
+      "fields": {
+        "status": {
+          "expected": "error",
+          "actual": "error",
+          "passed": true
+        }
+      },
+      "runtime_checks": {
+        "attempts": {
+          "expected": 3,
+          "actual": 3,
+          "passed": true
+        },
+        "retries": {
+          "expected": 2,
+          "actual": 2,
+          "passed": true
+        },
+        "error_code": {
+          "expected": "api_timeout",
+          "actual": "api_timeout",
+          "passed": true
+        }
+      },
+      "draft_checks": {},
+      "actual": {
+        "id": "d8a53e704cdf4bbfba0578f3ea258a91",
+        "mode": "simulated",
+        "status": "error",
+        "duplicate_of": null,
+        "extraction": null,
+        "error_code": "api_timeout",
+        "error_details": "Model API call failed; see attempt log.",
+        "attempts": [
+          {
+            "attempt": 1,
+            "error_code": "api_timeout",
+            "elapsed_ms": 0.017408980056643486,
+            "input_tokens": null,
+            "output_tokens": null
+          },
+          {
+            "attempt": 2,
+            "error_code": "api_timeout",
+            "elapsed_ms": 0.04491198342293501,
+            "input_tokens": null,
+            "output_tokens": null
+          },
+          {
+            "attempt": 3,
+            "error_code": "api_timeout",
+            "elapsed_ms": 0.02626102650538087,
+            "input_tokens": null,
+            "output_tokens": null
+          }
+        ],
+        "retries": 2,
+        "input_tokens": null,
+        "output_tokens": null,
+        "usage_complete": null,
+        "estimated_cost_usd": null,
+        "response_ms": 310.5259079602547,
+        "requested_model": null,
+        "actual_model": null
+      }
+    },
+    {
+      "case_id": "F03",
+      "category": "failure",
+      "inquiry": "I am Alex Example. Email alex@example.com. Please fix a plumbing leak at 101 Fiction Lane today.",
+      "passed": true,
+      "fields": {
+        "status": {
+          "expected": "error",
+          "actual": "error",
+          "passed": true
+        }
+      },
+      "runtime_checks": {
+        "attempts": {
+          "expected": 1,
+          "actual": 1,
+          "passed": true
+        },
+        "retries": {
+          "expected": 0,
+          "actual": 0,
+          "passed": true
+        },
+        "error_code": {
+          "expected": "malformed_output",
+          "actual": "malformed_output",
+          "passed": true
+        }
+      },
+      "draft_checks": {},
+      "actual": {
+        "id": "303d995211d348da80821a2f1b938dce",
+        "mode": "simulated",
+        "status": "error",
+        "duplicate_of": null,
+        "extraction": null,
+        "error_code": "malformed_output",
+        "error_details": [
+          {
+            "field": [],
+            "type": "json_invalid"
+          }
+        ],
+        "attempts": [
+          {
+            "attempt": 1,
+            "error_code": "malformed_output",
+            "elapsed_ms": 1.969789038412273,
+            "input_tokens": null,
+            "output_tokens": null
+          }
+        ],
+        "retries": 0,
+        "input_tokens": null,
+        "output_tokens": null,
+        "usage_complete": null,
+        "estimated_cost_usd": null,
+        "response_ms": 10.650237032677978,
+        "requested_model": null,
+        "actual_model": null
+      }
+    },
+    {
+      "case_id": "F04",
+      "category": "failure",
+      "inquiry": "I am Alex Example. Email alex@example.com. Please fix a plumbing leak at 101 Fiction Lane today.",
+      "passed": true,
+      "fields": {
+        "status": {
+          "expected": "error",
+          "actual": "error",
+          "passed": true
+        }
+      },
+      "runtime_checks": {
+        "attempts": {
+          "expected": 1,
+          "actual": 1,
+          "passed": true
+        },
+        "retries": {
+          "expected": 0,
+          "actual": 0,
+          "passed": true
+        },
+        "error_code": {
+          "expected": "malformed_output",
+          "actual": "malformed_output",
+          "passed": true
+        }
+      },
+      "draft_checks": {},
+      "actual": {
+        "id": "0be9122ada5347419b0590c9a2991b44",
+        "mode": "simulated",
+        "status": "error",
+        "duplicate_of": null,
+        "extraction": null,
+        "error_code": "malformed_output",
+        "error_details": [
+          {
+            "field": [
+              "contact_name"
+            ],
+            "type": "string_type"
+          },
+          {
+            "field": [
+              "email"
+            ],
+            "type": "missing"
+          },
+          {
+            "field": [
+              "phone"
+            ],
+            "type": "missing"
+          },
+          {
+            "field": [
+              "service"
+            ],
+            "type": "missing"
+          },
+          {
+            "field": [
+              "location"
+            ],
+            "type": "missing"
+          },
+          {
+            "field": [
+              "urgency"
+            ],
+            "type": "missing"
+          },
+          {
+            "field": [
+              "missing_information"
+            ],
+            "type": "missing"
+          },
+          {
+            "field": [
+              "ambiguous"
+            ],
+            "type": "missing"
+          },
+          {
+            "field": [
+              "draft_response"
+            ],
+            "type": "missing"
+          },
+          {
+            "field": [
+              "unexpected"
+            ],
+            "type": "extra_forbidden"
+          }
+        ],
+        "attempts": [
+          {
+            "attempt": 1,
+            "error_code": "malformed_output",
+            "elapsed_ms": 1.2054440448991954,
+            "input_tokens": null,
+            "output_tokens": null
+          }
+        ],
+        "retries": 0,
+        "input_tokens": null,
+        "output_tokens": null,
+        "usage_complete": null,
+        "estimated_cost_usd": null,
+        "response_ms": 9.095554996747524,
+        "requested_model": null,
+        "actual_model": null
+      }
+    },
+    {
+      "case_id": "F05",
+      "category": "failure",
+      "inquiry": "I am Alex Example. Email alex@example.com. Please fix a plumbing leak at 101 Fiction Lane today.",
+      "passed": true,
+      "fields": {
+        "status": {
+          "expected": "error",
+          "actual": "error",
+          "passed": true
+        }
+      },
+      "runtime_checks": {
+        "attempts": {
+          "expected": 1,
+          "actual": 1,
+          "passed": true
+        },
+        "retries": {
+          "expected": 0,
+          "actual": 0,
+          "passed": true
+        },
+        "error_code": {
+          "expected": "api_http_401",
+          "actual": "api_http_401",
+          "passed": true
+        }
+      },
+      "draft_checks": {},
+      "actual": {
+        "id": "04bcc2b0c1e449a5accef28200a77726",
+        "mode": "simulated",
+        "status": "error",
+        "duplicate_of": null,
+        "extraction": null,
+        "error_code": "api_http_401",
+        "error_details": "Model API call failed; see attempt log.",
+        "attempts": [
+          {
+            "attempt": 1,
+            "error_code": "api_http_401",
+            "elapsed_ms": 0.016511010471731424,
+            "input_tokens": null,
+            "output_tokens": null
+          }
+        ],
+        "retries": 0,
+        "input_tokens": null,
+        "output_tokens": null,
+        "usage_complete": null,
+        "estimated_cost_usd": null,
+        "response_ms": 10.345088026951998,
+        "requested_model": null,
+        "actual_model": null
+      }
+    }
+  ]
+}

@@ -1,8 +1,14 @@
-# Measured verification results
+# Live evaluation
+
+The paced live run passed 6/20 extraction cases (48/160 fields), 5/5 duplicate checks and 5/5 injected scenarios. Each live inquiry made one attempt. Fourteen responses failed validation, including all five ambiguous cases. The historical report retained only a generic validation error. Future runs record specific rule codes. No improvement in live accuracy has been measured since this change.
+
+11,007 input tokens and 2,070 output tokens yielded an estimated $0.0077148. Median workflow time was 6.91 s and p95 was 7.74 s across 20 attempted calls, including pacing.
+
+## Earlier offline verification
 
 Run ID: `a4b2047e9ff342749b4202da20c740e7`. Dataset v1. **FIXTURE + separately labeled SIMULATED injections**. No live model requests.
 
-61 pytest tests passed; see pytest.txt and pytest.xml. HTTP tests use a real local server with fixture inputs. OpenAI transport tests use mocks and fake credentials. Browser inspection confirmed the rendered dashboard; AppTest exercised evaluation, processing and staff approval.
+62 pytest tests passed; see pytest.txt and pytest.xml. HTTP tests use a real local server with fixture inputs. OpenAI transport tests use mocks and fake credentials. Browser inspection confirmed the rendered dashboard; AppTest exercised evaluation, processing and staff approval.
 
 | Population | Cases passed / n | Extraction matches / checks | Attempted-call workflow median | p95 | Timing n |
 |---|---:|---:|---:|---:|---:|
@@ -26,6 +32,6 @@ Token usage and estimated API cost: **N/A** for fixtures and injections. Number 
 
 All eight regular-fixture fields matched 20/20 applicable expected values (160/160 combined). The recovered simulated timeout matched 8/8 separately. Null matches are included; this small curated corpus is not a generalization study.
 
-Live evaluation: skipped because OPENAI_API_KEY was unavailable. CLI rejection was verified before any run or model request. Known remaining blocker: credentials for live measurement only.
+Live evaluation: skipped because OPENAI_API_KEY was unavailable. CLI rejection was verified before any run or model request. Subsequent live measurements appear above.
 
 This 30-case fictional dataset and canned-response agreement are not evidence of production reliability. Timings vary by host and SQLite filesystem.

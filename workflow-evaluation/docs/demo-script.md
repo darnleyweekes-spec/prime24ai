@@ -22,10 +22,10 @@ Open **Staff approval**, choose the pending fixture record, enter “Demo review
 
 Open **Evaluation dashboard**. Show category counts, fixture extraction accuracy, and timing sample sizes.
 
-“I defined field-level criteria and 30 independent expected results before implementation. The fixture benchmark passed 30 of 30 behavior checks, with 160 of 160 extraction checks in the regular fixture population. This verifies the harness; it does not prove live model quality or production reliability. Live evaluation was skipped because no key was configured.”
+“I defined field-level criteria and 30 independent expected results before implementation. The fixture benchmark passed 30 of 30 behavior checks, with 160 of 160 extraction checks in the regular fixture population. This verifies the harness; it does not prove live model quality or production reliability. The separate live run produced six accepted drafts from twenty inquiries. Fourteen responses failed validation.”
 
 **1:35–2:00 — Show a failure and backend**
 
 Inspect case **F03** and its attempt log. Briefly show the backend routes in the README.
 
-“Malformed JSON is rejected after one attempt, with no approvable draft. Timeout scenarios use bounded retries and are measured separately. The project also has local HTTP submission, lookup and approval endpoints. All 61 tests passed, covering scoring, duplicates, approvals, retry behavior, malformed output, persistence, backend routes and the UI.”
+“Malformed JSON is rejected after one attempt, with no approvable draft. Timeout scenarios use bounded retries and are measured separately. The project also has local HTTP submission, lookup and approval endpoints. All 62 tests passed, covering scoring, duplicates, approvals, retry behavior, malformed output, persistence, backend routes and the UI.”
